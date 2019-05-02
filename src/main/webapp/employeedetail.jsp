@@ -1,9 +1,14 @@
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="loginCSS.jsp"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.IOException"%>
 <%@page import="java.net.URL"%>
+<%@page import="com.google.gdata.client.spreadsheet.SpreadsheetService"%>
+<%@page import="com.google.gdata.data.spreadsheet.CustomElementCollection"%>
+<%@page import="com.google.gdata.data.spreadsheet.ListEntry"%>
+<%@page import="com.google.gdata.data.spreadsheet.ListFeed"%>
+<%@page import="com.google.gdata.util.ServiceException"%>
+<%@page import="java.text.SimpleDateFormat"%>
 
 <!DOCTYPE html>
 <html>

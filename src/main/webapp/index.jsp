@@ -72,6 +72,29 @@
                 </div>
             </a>
         </div>-->
-        </center>
+        <div id='body' align='center'>
+             <div id="generatepayslip">
+                 <form action="hello" method="doPost">
+                     <br/>
+                     <input type="text" name="nricfin" class="form-control" placeholder="Enter NRIC/FIN (e.g. S1234567D)" required autofocus>
+                     <br/>
+                     <input id="paslip-month" class="form-control" type="month" name="payslipmonth" value="2017-06" required autofocus>
+                     <br/>
+                     <div class="payslipbtnstyle">
+                         <button class="btn payslipbtn" type="submit">Generate Payslip</button>
+                     </div>
+
+                 </form>
+             </div>
+       </div>
+       <%
+	        String responseObj = (String) request.getAttribute("responseObj");
+	        if (responseObj != null) {
+	            %>
+	            <label class="heading"><%=responseObj%></label>
+	            <%
+	        }
+        %>
+       </center>
     </body>
 </html>
