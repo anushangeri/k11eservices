@@ -55,10 +55,12 @@ public class SimpleServlet extends HttpServlet {
 	        }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			responseObj = responseObj + "Read from DB: " + e;
+			//e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			responseObj = responseObj + "Read from DB: " + e;
 		}
         
         
