@@ -44,8 +44,8 @@ public class SimpleServlet extends HttpServlet {
 		try {
 			connection = Main.getConnection();
 			Statement stmt = connection.createStatement();
-	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
+//	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
+//	        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
 	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 	        while (rs.next()) {
