@@ -1,6 +1,11 @@
 package net.javatutorial.tutorials;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,7 +37,29 @@ public class SimpleServlet extends HttpServlet {
 //                rd.forward(request, response);
 //            }
 //        }
+		Connection conn = null;
 		String responseObj = "Hello " + name;
+		Connection connection;
+		try {
+			connection = Main.getConnection();
+			Statement stmt = connection.createStatement();
+	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
+	        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
+	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+	        while (rs.next()) {
+	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
+	        }
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        
+		
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
