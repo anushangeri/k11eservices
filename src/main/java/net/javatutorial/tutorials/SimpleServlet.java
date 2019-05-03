@@ -43,11 +43,13 @@ public class SimpleServlet extends HttpServlet {
 		Connection connection;
 		try {
 			connection = getConnection();
+			responseObj = responseObj + connection;
 			Statement stmt = connection.createStatement();
 	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
 	        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
 	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+	        responseObj = responseObj + rs;
 	        while (rs.next()) {
 	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
 	        }
