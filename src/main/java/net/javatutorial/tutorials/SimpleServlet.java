@@ -42,14 +42,12 @@ public class SimpleServlet extends HttpServlet {
 		String responseObj = "Hello test change" + name;
 		Connection connection;
 		try {
-			connection = getConnection();
-			responseObj = responseObj + connection;
+			connection = Main.getConnection();
 			Statement stmt = connection.createStatement();
 	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
 	        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
 	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-	        responseObj = responseObj + rs;
 	        while (rs.next()) {
 	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
 	        }
@@ -69,17 +67,6 @@ public class SimpleServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
 	}
-	public static Connection getConnection() throws URISyntaxException, SQLException {
-        URI dbUri = new URI(System.getenv("DATABASE_URL"));
-
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
-
-        return DriverManager.getConnection(dbUrl, username, password);
-//    	String dbUrl = System.getenv("JDBC_DATABASE_URL");
-//        return DriverManager.getConnection(dbUrl);
-    }
 	@Override
 	public void init() throws ServletException {
 		System.out.println("Servlet " + this.getServletName() + " has started");
