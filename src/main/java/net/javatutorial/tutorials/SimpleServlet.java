@@ -1,8 +1,10 @@
 package net.javatutorial.tutorials;
 
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,11 +39,10 @@ public class SimpleServlet extends HttpServlet {
 //                rd.forward(request, response);
 //            }
 //        }
-		Connection conn = null;
 		String responseObj = "Hello test change" + name;
 		Connection connection;
 		try {
-			connection = Main.getConnection();
+			connection = getConnection();
 			Statement stmt = connection.createStatement();
 	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
 	        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
@@ -64,7 +65,17 @@ public class SimpleServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
 	}
-	
+	public static Connection getConnection() throws URISyntaxException, SQLException {
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+
+        return DriverManager.getConnection(dbUrl, username, password);
+//    	String dbUrl = System.getenv("JDBC_DATABASE_URL");
+//        return DriverManager.getConnection(dbUrl);
+    }
 	@Override
 	public void init() throws ServletException {
 		System.out.println("Servlet " + this.getServletName() + " has started");

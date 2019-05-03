@@ -21,11 +21,11 @@ public class Main {
     }
     
     public static Connection getConnection() throws URISyntaxException, SQLException {
-        URI dbUri = new URI("postgres://wseuddtxrosopu:b76f0ccacf297722b37a3532e10e761b414673467f080c4ef06d6beca429edd4@ec2-50-19-114-27.compute-1.amazonaws.com:5432/d24osnerf48752");
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:postgresql://ec2-50-19-114-27.compute-1.amazonaws.com" + dbUri.getPath();
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
 
         return DriverManager.getConnection(dbUrl, username, password);
 //    	String dbUrl = System.getenv("JDBC_DATABASE_URL");
