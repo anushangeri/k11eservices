@@ -38,7 +38,7 @@ public class SimpleServlet extends HttpServlet {
 //            }
 //        }
 		Connection conn = null;
-		String responseObj = "Hello " + name;
+		String responseObj = "Hello test change" + name;
 		Connection connection;
 		try {
 			connection = Main.getConnection();
