@@ -15,6 +15,14 @@
         <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
 </head>
 <body>
+ <%
+	        String responseObj = (String) request.getAttribute("responseObj");
+	        if (responseObj != null) {
+	            %>
+	            <label class="heading"><%=responseObj%></label>
+	            <%
+	        }
+  %>
 	<table class="table">
 	  <thead>
 	    <tr>
@@ -30,16 +38,12 @@
 	      <th scope="row">1</th>
 	      <td>Employee</td>
 	      <td><form action="createEmpTbl" method="post">
-                     <div class="payslipbtnstyle">
-                         <button class="btn payslipbtn" type="submit">Create</button>
-                     </div>
+                  <button class="btn" type="submit">Create</button>
               </form>
           </td>
 	      <td>Update</td>
 	      <td><form action="deleteEmpTbl" method="post">
-                     <div class="payslipbtnstyle">
-                         <button class="btn payslipbtn" type="submit">Delete</button>
-                     </div>
+                  <button class="btn" type="submit">Delete</button>
               </form>
           </td>
 	    </tr>

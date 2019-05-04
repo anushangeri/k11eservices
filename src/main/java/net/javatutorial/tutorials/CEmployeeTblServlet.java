@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.javatutorial.DAO.*;
+
 /**
  * Servlet implementation class ManageTblServlet
  * To create table Employees
@@ -23,60 +25,10 @@ public class CEmployeeTblServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String responseObj = "Successful";
-		Connection connection;
-		try {
-			connection = Main.getConnection();
-			Statement stmt = connection.createStatement();
-//	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS EMPLOYEES(\r\n" + 
-	        		"   EMPLOYEE_ID   VARCHAR (100)              NOT NULL,\r\n" + 
-	        		"   FIRST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   LAST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   GENDER VARCHAR (2)     NOT NULL,\r\n" + 
-	        		"   MARITAL_STATUS VARCHAR (50)     NULL, \r\n" + 
-	        		"   DOB DATE     NOT NULL,\r\n" + 
-	        		"   AGE  INT     NOT NULL,\r\n" + 
-	        		"   NATIONALITY VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   POB VARCHAR (100)     NULL, \r\n" + 
-	        		"   IDENTIFICATION VARCHAR (100)    NOT NULL, \r\n" + 
-	        		"   ID_TYPE VARCHAR (50)    NOT NULL, \r\n" + 
-	        		"   ID_NO VARCHAR (100)    NOT NULL, \r\n" + 
-	        		"   RELIGION VARCHAR (100)     NULL, \r\n" + 
-	        		"   RACE VARCHAR (100)     NULL,\r\n" + 
-	        		"   MOBILE_NO  VARCHAR (100) NOT NULL,   \r\n" + 
-	        		"   EMERGENCY_NAME  VARCHAR (100) NOT NULL, \r\n" + 
-	        		"   EMERGENCY_RLP  VARCHAR (50) NULL,  \r\n" + 
-	        		"   EMERGENCY_CONTACT  VARCHAR (100) NOT NULL,\r\n" + 
-	        		"   EMAIL  VARCHAR (100) NULL,\r\n" + 
-	        		"   ALLOW_LOGIN VARCHAR (2)     NOT NULL,	\r\n" + 
-	        		"   EMPLOYEE_STATUS VARCHAR(50) NOT NULL, \r\n" + 
-	        		"   JOINING_DT DATE     NOT NULL,\r\n" + 
-	        		"   PROB_FROM_DT DATE   NULL, \r\n" + 
-	        		"   PROB_TO_DT DATE   NULL,	\r\n" + 
-	        		"   SUPERVISOR_NAME VARCHAR (100)     NOT NULL, \r\n" + 
-	        		"   HIGHEST_QUAL VARCHAR (100)     NOT NULL, \r\n" + 
-	        		"   PRIMARY KEY (EMPLOYEE_ID)\r\n" + 
-	        		");");
-//	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-//	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-//	        while (rs.next()) {
-//	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
-//	        }
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			responseObj = responseObj + "Read from DB: " + e;
-			//e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			responseObj = responseObj + "Read from DB: " + e;
-		}
-        
-        
-		
+		EmployeesTblDAO empTblDAO = new EmployeesTblDAO();
+		String responseObj = empTblDAO.createEmpTbl();
 		request.setAttribute("responseObj", responseObj);
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("managedatabase.jsp");
         rd.forward(request, response);
 	}
 	@Override
