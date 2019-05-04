@@ -67,7 +67,7 @@
 	      <input type="text" class="form-control" id="inputCity">
 	    </div>
 	    <div class="form-group col-md-4">
-	      <label for="inputState">State</label>
+	      <label for="inputState">Marital Status</label>
 	      <select name="inputState" class="form-control">
 	      	<%
 
@@ -93,5 +93,12 @@
 	  </div>
 	  <button type="submit" class="btn btn-primary">Sign in</button>
 	</form>
+           <%
+           for(int f=0; f < maritalStatus.size(); f++)
+			{
+				System.out.println(maritalStatus.get(f));
+			}
+           %>
+			
 </body>
 </html>
