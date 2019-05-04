@@ -36,7 +36,7 @@
                     && maritalStatuslf.getEntries().size() == 1) {
             	%>
             	
-            	<%= maritalStatuslf.getEntries()%>
+            	CAME IN HERE
             	
             	<%
             }   
