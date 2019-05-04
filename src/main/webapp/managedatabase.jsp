@@ -29,20 +29,19 @@
 	    <tr>
 	      <th scope="row">1</th>
 	      <td>Employee</td>
-	      <td><a href="<%=request.getContextPath()%>/createEmpTbl">Call the servlet</a></td>
-	      <td>@mdo</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td>Larry</td>
-	      <td>the Bird</td>
-	      <td>@twitter</td>
+	      <td><form action="createEmpTbl" method="post">
+                     <div class="payslipbtnstyle">
+                         <button class="btn payslipbtn" type="submit">Create</button>
+                     </div>
+              </form>
+          </td>
+	      <td>Update</td>
+	      <td><form action="deleteEmpTbl" method="post">
+                     <div class="payslipbtnstyle">
+                         <button class="btn payslipbtn" type="submit">Delete</button>
+                     </div>
+              </form>
+          </td>
 	    </tr>
 	  </tbody>
 	</table>

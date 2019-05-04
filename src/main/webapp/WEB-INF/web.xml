@@ -19,6 +19,13 @@
 		<servlet-name>CEmployeeTblServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.CEmployeeTblServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DEmployeeTblServlet</display-name>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DEmployeeTblServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
@@ -27,6 +34,10 @@
 	<servlet-mapping>
 		<servlet-name>CEmployeeTblServlet</servlet-name>
 		<url-pattern>/createEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<url-pattern>/deleteEmpTbl</url-pattern>
 	</servlet-mapping>
 
 </web-app>
