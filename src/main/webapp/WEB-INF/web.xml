@@ -12,10 +12,21 @@
 		<servlet-class>net.javatutorial.tutorials.SimpleServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ManageTblServlet</display-name>
+		<servlet-name>ManageTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ManageTblServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ManageTblServlet</servlet-name>
+		<url-pattern>/managetbl</url-pattern>
 	</servlet-mapping>
 
 </web-app>

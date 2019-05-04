@@ -18,51 +18,51 @@
             </a>
         </div>
         
-        <div class="card">
-            <a href="generatePayslip.jsp">
-                <div class="eachCard crop">
-                    <img class="center-block" src="payslip.png" alt="payslip.jpg">
-                    <h4 class="fontheader"><b>GENERATE PAYSLIP</b></h4> 
-                </div>
-            </a>
-        </div>
-        <br>
-        <div class="card">
-            <a href="generateWPPayslip.jsp">
-                <div class="eachCard crop">
-                    <img class="center-block" src="payslipWP.png" alt="payslipWP.jpg">
-                    <h4 class="fontheader"><b>GENERATE WORK PERMIT PAYSLIP</b></h4> 
-                </div>
-            </a>
-        </div>
-        <br>
-        <div class="card">
-            <a href="todhod_day.jsp">
-                <div class="eachCard crop">
-                    <img class="center-block" src="todhod.png" alt="todhod.jpg">
-                    <h4 class="fontheader"><b>TOD/HOD DETAILS DAY</b></h4> 
-                </div>
-            </a>
-        </div>
+<!--         <div class="card"> -->
+<!--             <a href="generatePayslip.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="payslip.png" alt="payslip.jpg"> -->
+<!--                     <h4 class="fontheader"><b>GENERATE PAYSLIP</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
+<!--         <br> -->
+<!--         <div class="card"> -->
+<!--             <a href="generateWPPayslip.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="payslipWP.png" alt="payslipWP.jpg"> -->
+<!--                     <h4 class="fontheader"><b>GENERATE WORK PERMIT PAYSLIP</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
+<!--         <br> -->
+<!--         <div class="card"> -->
+<!--             <a href="todhod_day.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="todhod.png" alt="todhod.jpg"> -->
+<!--                     <h4 class="fontheader"><b>TOD/HOD DETAILS DAY</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
         
-        <div class="card">
-            <a href="todhod.jsp">
-                <div class="eachCard crop">
-                    <img class="center-block" src="todhod.png" alt="todhodday.jpg">
-                    <h4 class="fontheader"><b>TOD/HOD DETAILS NIGHT</b></h4> 
-                </div>
-            </a>
-        </div>
+<!--         <div class="card"> -->
+<!--             <a href="todhod.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="todhod.png" alt="todhodday.jpg"> -->
+<!--                     <h4 class="fontheader"><b>TOD/HOD DETAILS NIGHT</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
         
-        <br>
-        <div class="card">
-            <a href="generateEP.jsp">
-                <div class="eachCard crop">
-                    <img class="center-block" src="entrypass.png" alt="entrypass.png">
-                    <h4 class="fontheader"><b>GENERATE ENTRY PASS</b></h4> 
-                </div>
-            </a>
-        </div>
+<!--         <br> -->
+<!--         <div class="card"> -->
+<!--             <a href="generateEP.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="entrypass.png" alt="entrypass.png"> -->
+<!--                     <h4 class="fontheader"><b>GENERATE ENTRY PASS</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
         
 <!--        <div class="card">
             <a href="eLearning.jsp">
@@ -87,6 +87,15 @@
                  </form>
              </div>
        </div>
+       <div class="card">
+           <form action="managetbl" method="post">
+                <div class="eachCard crop">
+                    <img class="center-block" src="entrypass.png" alt="entrypass.png">
+                    <button class="btn payslipbtn" type="submit"><h4 class="fontheader"><b>MANAGE DB</b></h4></button> 
+                </div>
+            </form>
+        </div>
+        
        <%
 	        String responseObj = (String) request.getAttribute("responseObj");
 	        if (responseObj != null) {
