@@ -32,29 +32,29 @@ public class ManageTblServlet extends HttpServlet {
 	        		"   EMPLOYEE_ID   VARCHAR (100)              NOT NULL,\r\n" + 
 	        		"   FIRST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   LAST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   GENDER VARCHAR (2)     NOT NULL,	# M,F\r\n" + 
-	        		"   MARITAL_STATUS VARCHAR (50)     NULL, #SINGLE, MARRIED, DIVORCED [K11CLICKS: DROPDOWN EXCEL]\r\n" + 
+	        		"   GENDER VARCHAR (2)     NOT NULL,\r\n" + 
+	        		"   MARITAL_STATUS VARCHAR (50)     NULL, \r\n" + 
 	        		"   DOB DATE     NOT NULL,\r\n" + 
 	        		"   AGE  INT     NOT NULL,\r\n" + 
 	        		"   NATIONALITY VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   POB VARCHAR (100)     NULL, #PLACE OF BIRTH\r\n" + 
-	        		"   IDENTIFICATION VARCHAR (100)    NOT NULL, #CITIZEN, PR, WORKPERMIT [K11CLICKS: DROPDOWN EXCEL]\r\n" + 
-	        		"   ID_TYPE VARCHAR (50)    NOT NULL, #NRIC, FIN, PASSPORT NO. [K11CLICKS: DROPDOWN EXCEL]\r\n" + 
+	        		"   POB VARCHAR (100)     NULL, \r\n" + 
+	        		"   IDENTIFICATION VARCHAR (100)    NOT NULL, \r\n" + 
+	        		"   ID_TYPE VARCHAR (50)    NOT NULL, \r\n" + 
 	        		"   ID_NO VARCHAR (100)    NOT NULL, \r\n" + 
-	        		"   RELIGION VARCHAR (100)     NULL, #[K11CLICKS: DROPDOWN EXCEL]\r\n" + 
-	        		"   RACE VARCHAR (100)     NULL, #[K11CLICKS: DROPDOWN EXCEL]\r\n" + 
+	        		"   RELIGION VARCHAR (100)     NULL, \r\n" + 
+	        		"   RACE VARCHAR (100)     NULL,\r\n" + 
 	        		"   MOBILE_NO  VARCHAR (100) NOT NULL,   \r\n" + 
 	        		"   EMERGENCY_NAME  VARCHAR (100) NOT NULL, \r\n" + 
-	        		"   EMERGENCY_RLP  VARCHAR (50) NULL,  #EMERGENCY RELATIONSHIP: FATHER, MOTHER [K11CLICKS: DROPDOWN EXCEL]\r\n" + 
+	        		"   EMERGENCY_RLP  VARCHAR (50) NULL,  \r\n" + 
 	        		"   EMERGENCY_CONTACT  VARCHAR (100) NOT NULL,\r\n" + 
 	        		"   EMAIL  VARCHAR (100) NULL,\r\n" + 
-	        		"   ALLOW_LOGIN VARCHAR (2)     NOT NULL,	# Y,N\r\n" + 
-	        		"   EMPLOYEE_STATUS VARCHAR(50) NOT NULL, #DIRECTOR, MGMT, SECURITY OFFICER [K11CLICKS: DROPDOWN EXCEL]\r\n" + 
+	        		"   ALLOW_LOGIN VARCHAR (2)     NOT NULL,	\r\n" + 
+	        		"   EMPLOYEE_STATUS VARCHAR(50) NOT NULL, \r\n" + 
 	        		"   JOINING_DT DATE     NOT NULL,\r\n" + 
-	        		"   PROB_FROM_DT DATE   NULL, #PROBATION PERIOD\r\n" + 
-	        		"   PROB_TO_DT DATE   NULL,	#PROBATION PERIOD\r\n" + 
-	        		"   SUPERVISOR_NAME VARCHAR (100)     NOT NULL, #RETRIEVE DIRECTOR,MGMT AND DROPDOWN\r\n" + 
-	        		"   HIGHEST_QUAL VARCHAR (100)     NOT NULL, #[K11CLICKS: DROPDOWN EXCEL]\r\n" + 
+	        		"   PROB_FROM_DT DATE   NULL, \r\n" + 
+	        		"   PROB_TO_DT DATE   NULL,	\r\n" + 
+	        		"   SUPERVISOR_NAME VARCHAR (100)     NOT NULL, \r\n" + 
+	        		"   HIGHEST_QUAL VARCHAR (100)     NOT NULL, \r\n" + 
 	        		"   PRIMARY KEY (EMPLOYEE_ID)\r\n" + 
 	        		");");
 //	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
