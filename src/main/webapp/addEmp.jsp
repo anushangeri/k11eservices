@@ -21,11 +21,16 @@
  <%		
  		ArrayList<String> maritalStatus = new ArrayList<String>();
         SpreadsheetService service = new SpreadsheetService("K11CLICKS: DROPDOWN EXCEL");
+        %>
+		<h1>over here 1</h1>
+		<%
         try {
         	//Dropdown for marital status START
             String maritalStatusUrl
                     = "https://spreadsheets.google.com/feeds/list/116L_MDacE0331uQDZLRQD4UKpKXfHgWKcMFeD0ne324/1/public/values";
-
+			%>
+			<h1>over here 2</h1>
+			<%
             // Use this String as url
             URL maritalStatusurl = new URL(maritalStatusUrl);
 
@@ -34,11 +39,6 @@
             
             if (maritalStatuslf.getEntries() != null
                     && maritalStatuslf.getEntries().size() == 1) {
-            	%>
-            	
-            	CAME IN HERE
-            	
-            	<%
             }   
             for (ListEntry le : maritalStatuslf.getEntries()) {
                 CustomElementCollection cec = le.getCustomElements();
@@ -46,6 +46,9 @@
             }
           //Dropdown for marital status END
         } catch (Exception e) {
+        	%>
+			<h1><%=e %></h1>
+			<%
             e.printStackTrace();
         }
     %>
