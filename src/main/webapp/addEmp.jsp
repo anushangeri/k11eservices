@@ -33,10 +33,7 @@
            
             for (ListEntry le : maritalStatuslf.getEntries()) {
                 CustomElementCollection cec = le.getCustomElements();
-                %>
-                <h1><%= cec.getTags()%></h1>
-                <%
-                maritalStatus.add(cec.getValue("MARITAL_STATUS").trim());
+                maritalStatus.add(cec.getValue("maritalstatus").trim());
             }
           //Dropdown for marital status END
         } catch (Exception e) {
