@@ -9,14 +9,23 @@
     </head>
     <body>
     <center>
-        <div class="card">
-            <a href="employeeparticulars.jsp">
+<!--         <div class="card"> -->
+<!--             <a href="employeeparticulars.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="employeeparticulars.png" alt="employeeparticulars.jpg"> -->
+<!--                     <h4 class="fontheader"><b>EMPLOYEE PARTICULARS</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
+		<div class="card">
+            <a href="addEmp.jsp">
                 <div class="eachCard crop">
                     <img class="center-block" src="employeeparticulars.png" alt="employeeparticulars.jpg">
-                    <h4 class="fontheader"><b>EMPLOYEE PARTICULARS</b></h4> 
+                    <h4 class="fontheader"><b>MANAGE EMPLOYEE PARTICULARS</b></h4> 
                 </div>
             </a>
         </div>
+        
         
 <!--         <div class="card"> -->
 <!--             <a href="generatePayslip.jsp"> -->
@@ -72,21 +81,21 @@
                 </div>
             </a>
         </div>-->
-        <div id='body' align='center'>
-             <div id="generatepayslip">
-                 <form action="hello" method="post">
-                     <br/>
-                     <input type="text" name="nricfin" class="form-control" placeholder="Enter NRIC/FIN (e.g. S1234567D)" required autofocus>
-                     <br/>
-                     <input id="paslip-month" class="form-control" type="month" name="payslipmonth" value="2017-06" required autofocus>
-                     <br/>
-                     <div class="payslipbtnstyle">
-                         <button class="btn payslipbtn" type="submit">Generate Payslip</button>
-                     </div>
+<!--         <div id='body' align='center'> -->
+<!--              <div id="generatepayslip"> -->
+<!--                  <form action="hello" method="post"> -->
+<!--                      <br/> -->
+<!--                      <input type="text" name="nricfin" class="form-control" placeholder="Enter NRIC/FIN (e.g. S1234567D)" required autofocus> -->
+<!--                      <br/> -->
+<!--                      <input id="paslip-month" class="form-control" type="month" name="payslipmonth" value="2017-06" required autofocus> -->
+<!--                      <br/> -->
+<!--                      <div class="payslipbtnstyle"> -->
+<!--                          <button class="btn payslipbtn" type="submit">Generate Payslip</button> -->
+<!--                      </div> -->
 
-                 </form>
-             </div>
-       </div>
+<!--                  </form> -->
+<!--              </div> -->
+<!--        </div> -->
  	<div class="card">
             <a href="managedatabase.jsp">
                 <div class="eachCard crop">
