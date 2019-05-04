@@ -31,7 +31,7 @@
             // Get Feed of Spreadsheet url
             ListFeed maritalStatuslf = service.getFeed(maritalStatusurl, ListFeed.class);
             %>
-            <%= maritalStatuslf.getEntries()%>
+            <h1><%= maritalStatuslf.getEntries()%></h1>
             <%
             for (ListEntry le : maritalStatuslf.getEntries()) {
                 CustomElementCollection cec = le.getCustomElements();
