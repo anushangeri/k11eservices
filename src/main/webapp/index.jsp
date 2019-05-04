@@ -87,15 +87,14 @@
                  </form>
              </div>
        </div>
-       <div class="card">
-           <form action="managetbl" method="post">
+ 	<div class="card">
+            <a href="managedatabase.jsp">
                 <div class="eachCard crop">
-                    <img class="center-block" src="entrypass.png" alt="entrypass.png">
-                    <button class="btn payslipbtn" type="submit"><h4 class="fontheader"><b>MANAGE DB</b></h4></button> 
+                    <img class="center-block" src="elearning.png" alt="elearning.png">
+                    <h4 class="fontheader"><b>MANAGE DATABASE</b></h4> 
                 </div>
-            </form>
+            </a>
         </div>
-        
        <%
 	        String responseObj = (String) request.getAttribute("responseObj");
 	        if (responseObj != null) {

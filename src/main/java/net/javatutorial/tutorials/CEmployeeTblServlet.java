@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ManageTblServlet
  */
-public class ManageTblServlet extends HttpServlet {
+public class CEmployeeTblServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = -4751096228274971485L;
 

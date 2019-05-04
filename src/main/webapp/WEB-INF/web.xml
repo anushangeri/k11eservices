@@ -15,9 +15,9 @@
 	<servlet>
 		<description>
 		</description>
-		<display-name>ManageTblServlet</display-name>
-		<servlet-name>ManageTblServlet</servlet-name>
-		<servlet-class>net.javatutorial.tutorials.ManageTblServlet</servlet-class>
+		<display-name>CEmployeeTblServlet</display-name>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CEmployeeTblServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -25,8 +25,8 @@
 		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>ManageTblServlet</servlet-name>
-		<url-pattern>/managetbl</url-pattern>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<url-pattern>/createEmpTbl</url-pattern>
 	</servlet-mapping>
 
 </web-app>
