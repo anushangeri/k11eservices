@@ -32,7 +32,14 @@
             // Get Feed of Spreadsheet url
             ListFeed maritalStatuslf = service.getFeed(maritalStatusurl, ListFeed.class);
             
-            
+            if (maritalStatuslf.getEntries() != null
+                    && maritalStatuslf.getEntries().size() == 1) {
+            	%>
+            	
+            	<%= maritalStatuslf.getEntries()%>
+            	
+            	<%
+            }   
             for (ListEntry le : maritalStatuslf.getEntries()) {
                 CustomElementCollection cec = le.getCustomElements();
                 maritalStatus.add(cec.getValue("MARITAL_STATUS").trim());
