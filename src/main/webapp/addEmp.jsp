@@ -30,11 +30,12 @@
 
             // Get Feed of Spreadsheet url
             ListFeed maritalStatuslf = service.getFeed(maritalStatusurl, ListFeed.class);
-            %>
-            <h1><%= maritalStatuslf.getEntries()%></h1>
-            <%
+           
             for (ListEntry le : maritalStatuslf.getEntries()) {
                 CustomElementCollection cec = le.getCustomElements();
+                %>
+                <h1><%= cec.getTags()%></h1>
+                <%
                 maritalStatus.add(cec.getValue("MARITAL_STATUS").trim());
             }
           //Dropdown for marital status END
