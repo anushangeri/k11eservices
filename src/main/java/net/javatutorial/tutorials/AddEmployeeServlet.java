@@ -44,6 +44,8 @@ public class AddEmployeeServlet extends HttpServlet {
 		String lastName = request.getParameter("lastName").trim();
 		String gender = request.getParameter("gender");
 		String maritalStatus = request.getParameter("maritalStatus");
+		
+		int age = 0;
 		try {
 			Date curDt = new Date();
 			Calendar currDtCal = Calendar.getInstance(Locale.US);
@@ -53,7 +55,7 @@ public class AddEmployeeServlet extends HttpServlet {
 			Calendar dobcal = Calendar.getInstance(Locale.US);
 			dobcal.setTime(dob);
 			
-			int age = currDtCal.get(YEAR) - dobcal.get(YEAR);
+			age = currDtCal.get(YEAR) - dobcal.get(YEAR);
 		    if (dobcal.get(MONTH) > currDtCal.get(MONTH) || 
 		        (dobcal.get(MONTH) == currDtCal.get(MONTH) && dobcal.get(DATE) > currDtCal.get(DATE))) {
 		    	age--;
@@ -107,7 +109,7 @@ public class AddEmployeeServlet extends HttpServlet {
 		Date created_dt = (Date) Calendar.getInstance().getTime();
 		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
 		
-		String responseObj = "Successful";
+		String responseObj = " " + age + employeeId;
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
         rd.forward(request, response);
