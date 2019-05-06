@@ -2,6 +2,7 @@ package net.javatutorial.tutorials;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Locale;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -14,8 +15,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.joda.time.format.DateTimeFormatter;
+
 import net.javatutorial.DAO.EmployeesManagerDAO;
 import net.javatutorial.DAO.EmployeesTblDAO;
+
+import java.util.Calendar;
+import java.util.Locale;
+import static java.util.Calendar.*;
+import java.util.Date;
 
 /**
  * Servlet implementation class AddEmployeeServlet
@@ -36,12 +44,23 @@ public class AddEmployeeServlet extends HttpServlet {
 		String lastName = request.getParameter("lastName").trim();
 		String gender = request.getParameter("gender");
 		String maritalStatus = request.getParameter("maritalStatus");
-		int age = 0;
 		try {
-			Date dob = (Date) formatter1.parse(request.getParameter("dob"));
 			Date curDt = new Date();
+			Calendar currDtCal = Calendar.getInstance(Locale.US);
+			currDtCal.setTime(curDt);
 			
-			age = (int) (curDt.getTime() - dob.getTime())/(1000 * 60 * 60 * 24);
+			Date dob = (Date) formatter1.parse(request.getParameter("dob"));
+			Calendar dobcal = Calendar.getInstance(Locale.US);
+			dobcal.setTime(dob);
+			
+			int age = currDtCal.get(YEAR) - dobcal.get(YEAR);
+		    if (dobcal.get(MONTH) > currDtCal.get(MONTH) || 
+		        (dobcal.get(MONTH) == currDtCal.get(MONTH) && dobcal.get(DATE) > currDtCal.get(DATE))) {
+		    	age--;
+		    }
+		    
+			
+			
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -88,7 +107,7 @@ public class AddEmployeeServlet extends HttpServlet {
 		Date created_dt = (Date) Calendar.getInstance().getTime();
 		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
 		
-		String responseObj = "" + age;
+		String responseObj = "Successful";
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
         rd.forward(request, response);
