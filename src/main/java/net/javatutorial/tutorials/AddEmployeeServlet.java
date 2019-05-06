@@ -1,7 +1,7 @@
 package net.javatutorial.tutorials;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
