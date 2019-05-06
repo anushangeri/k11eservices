@@ -98,9 +98,9 @@ public class EmployeesTblDAO {
 	        stmt.executeUpdate("ALTER TABLE EMPLOYEES\r\n" + 
 	        		"ADD COLUMN PASSWORD VARCHAR(100) NOT NULL,\r\n" + 
 	        		"ADD COLUMN CREATED_BY VARCHAR(100) NOT NULL,\r\n" + 
-	        		"ADD COLUMN CREATED_DT datetime NOT NULL,\r\n" + 
+	        		"ADD COLUMN CREATED_DT DATE NOT NULL,\r\n" + 
 	        		"ADD COLUMN LAST_MODIFIED_BY VARCHAR(100) NOT NULL,\r\n" + 
-	        		"ADD COLUMN LAST_MODIFIED_DT datetime NOT NULL;");
+	        		"ADD COLUMN LAST_MODIFIED_DT DATE NOT NULL;");
 //	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 //	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 //	        while (rs.next()) {
