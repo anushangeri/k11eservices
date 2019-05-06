@@ -36,12 +36,12 @@ public class AddEmployeeServlet extends HttpServlet {
 		String lastName = request.getParameter("lastName").trim();
 		String gender = request.getParameter("gender");
 		String maritalStatus = request.getParameter("maritalStatus");
+		int age = 0;
 		try {
 			Date dob = (Date) formatter1.parse(request.getParameter("dob"));
-			//age
-			LocalDate localDob = LocalDate.parse(request.getParameter("dob"));
-			LocalDate curDate = LocalDate.now();
-			int age = Period.between(localDob, curDate).getYears();
+			Date curDt = new Date();
+			
+			age = (int) (curDt.getTime() - dob.getTime())/(1000 * 60 * 60 * 24 * 365);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -88,7 +88,7 @@ public class AddEmployeeServlet extends HttpServlet {
 		Date created_dt = (Date) Calendar.getInstance().getTime();
 		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
 		
-		String responseObj = "Successful";
+		String responseObj = "" + age;
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
         rd.forward(request, response);
