@@ -41,7 +41,10 @@
                   <button class="btn" type="submit">Create</button>
               </form>
           </td>
-	      <td>Update</td>
+	      <td><form action="updateEmpTbl" method="post">
+                  <button class="btn" type="submit">Update</button>
+              </form>
+          </td>
 	      <td><form action="deleteEmpTbl" method="post">
                   <button class="btn" type="submit">Delete</button>
               </form>

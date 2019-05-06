@@ -2,14 +2,16 @@ package net.javatutorial.DAO;
 
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import net.javatutorial.tutorials.*;
+import net.javatutorial.entity.Employee;
+import net.javatutorial.tutorials.Main;
 
-public class EmployeesTblDAO {
-
-	public static String createEmpTbl(){
+public class EmployeesManagerDAO {
+	
+	public static String addEmployee(Employee em){
 		Connection connection;
 		String message = "";
 		try {
@@ -62,60 +64,24 @@ public class EmployeesTblDAO {
 		message = "Successful";
 		return message;
 	}
-	public static String deleteEmpTbl(){
+	public static int getNextVal(){
 		Connection connection;
-		String message = "";
+		int result = 0;
 		try {
 			connection = Main.getConnection();
 			Statement stmt = connection.createStatement();
-//	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	        stmt.executeUpdate("DROP TABLE EMPLOYEES;");
-//	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-//	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-//	        while (rs.next()) {
-//	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
-//	        }
+//	        stmt.executeUpdate("SELECT count(*) FROM EMPLOYEES;");
+	        ResultSet rs = stmt.executeQuery("SELECT count(LAST_INSERT_ID()) FROM EMPLOYEES;");
+	        while (rs.next()) {
+                result = rs.getInt(1) + 1;
+            }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
-			message = "" + e;
-			//e.printStackTrace();
+			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			message = "" + e;
+			e.printStackTrace();
 		}
-		message = "Successful";
-		return message;
-	}
-	
-	public static String updateEmpTbl(){
-		Connection connection;
-		String message = "";
-		try {
-			connection = Main.getConnection();
-			Statement stmt = connection.createStatement();
-//	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	        stmt.executeUpdate("ALTER TABLE EMPLOYEES\r\n" + 
-	        		"ADD COLUMN PASSWORD VARCHAR(100) NOT NULL,\r\n" + 
-	        		"ADD COLUMN CREATED_BY VARCHAR(100) NOT NULL,\r\n" + 
-	        		"ADD COLUMN CREATED_DT datetime NOT NULL,\r\n" + 
-	        		"ADD COLUMN LAST_MODIFIED_BY VARCHAR(100) NOT NULL,\r\n" + 
-	        		"ADD COLUMN LAST_MODIFIED_DT datetime NOT NULL;");
-//	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-//	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-//	        while (rs.next()) {
-//	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
-//	        }
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			message = "" + e;
-			//e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			message = "" + e;
-		}
-		message = "Successful";
-		return message;
+		return result;
 	}
 }

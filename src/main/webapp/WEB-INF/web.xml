@@ -26,6 +26,20 @@
 		<servlet-name>DEmployeeTblServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.DEmployeeTblServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddEmployeeServlet</display-name>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UEmployeeTblServlet</display-name>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
@@ -38,6 +52,14 @@
 	<servlet-mapping>
 		<servlet-name>DEmployeeTblServlet</servlet-name>
 		<url-pattern>/deleteEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<url-pattern>/addEmployee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<url-pattern>/updateEmpTbl</url-pattern>
 	</servlet-mapping>
 
 </web-app>
