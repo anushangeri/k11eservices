@@ -41,7 +41,7 @@ public class AddEmployeeServlet extends HttpServlet {
 			Date dob = (Date) formatter1.parse(request.getParameter("dob"));
 			Date curDt = new Date();
 			
-			age = (int) (curDt.getTime() - dob.getTime())/(1000 * 60 * 60 * 24 * 365);
+			age = (int) (curDt.getTime() - dob.getTime())/(1000 * 60 * 60 * 24);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
