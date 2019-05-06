@@ -161,3 +161,7 @@ table.eptable {
     background-color: orange!important;
     -webkit-print-color-adjust: exact; 
 }}
+
+form{
+	width: 80%;
+}
