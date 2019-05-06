@@ -240,11 +240,11 @@
 	  <div class="form-row">
 	    <div class="form-group col-md-4">
 	      <label for="nationality">Nationality: </label>
-	      <select class="selectpicker countrypicker" data-live-search="true" data-default="Singapore" data-flag="true" name="nationality" required></select>
+	      <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="Singapore" data-flag="true" name="nationality" required></select>
 	    </div>
 	    <div class="form-group col-md-4">
 	      <label for="pob">Place of Birth: </label>
-	      <select class="selectpicker countrypicker" data-live-search="true" data-default="Singapore" data-flag="true" name="pob" required></select>
+	      <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="Singapore" data-flag="true" name="pob" required></select>
 	    </div>
 	    <div class="form-group col-md-4">
 	      <label for="identification">Identification: </label>
