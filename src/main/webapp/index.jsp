@@ -44,7 +44,7 @@
 <!--                 </div> -->
 <!--             </a> -->
 <!--         </div> -->
-<!--         <br> -->
+        <br>
         <div class="card">
             <a href="todhod_day.jsp">
                 <div class="eachCard crop">
@@ -53,7 +53,7 @@
                 </div>
             </a>
         </div>
-        
+        <br>
         <div class="card">
             <a href="todhod.jsp">
                 <div class="eachCard crop">
@@ -63,7 +63,7 @@
             </a>
         </div>
         
-<!--         <br> -->
+        <br>
 <!--         <div class="card"> -->
 <!--             <a href="generateEP.jsp"> -->
 <!--                 <div class="eachCard crop"> -->

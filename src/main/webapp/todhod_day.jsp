@@ -23,9 +23,10 @@
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $('#escalation').DataTable();
-        });
+    	$(document).ready(function () {
+	    	$('#dtBasicExample').DataTable();
+	    	$('.dataTables_length').addClass('bs-select');
+    	});
     </script>
 </head>
 <body>
@@ -69,7 +70,7 @@
                         <div class="table-responsive">
                             <div class="table-responsive">                            
 
-                                <table id="escalation" class="table table-striped table-bordered everytable" cellspacing="0" width="100%">
+                                <table id="dtBasicExample" class="table table-striped table-bordered table-sm everytable" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th><center><b>Timestamp (mm/dd/yyyy 24HH:mm:ss)</b></center></th>
