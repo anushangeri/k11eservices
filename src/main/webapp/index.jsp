@@ -45,23 +45,23 @@
 <!--             </a> -->
 <!--         </div> -->
 <!--         <br> -->
-<!--         <div class="card"> -->
-<!--             <a href="todhod_day.jsp"> -->
-<!--                 <div class="eachCard crop"> -->
-<!--                     <img class="center-block" src="todhod.png" alt="todhod.jpg"> -->
-<!--                     <h4 class="fontheader"><b>TOD/HOD DETAILS DAY</b></h4>  -->
-<!--                 </div> -->
-<!--             </a> -->
-<!--         </div> -->
+        <div class="card">
+            <a href="todhod_day.jsp">
+                <div class="eachCard crop">
+                    <img class="center-block" src="todhod.png" alt="todhod.jpg">
+                    <h4 class="fontheader"><b>TOD/HOD DETAILS DAY</b></h4> 
+                </div>
+            </a>
+        </div>
         
-<!--         <div class="card"> -->
-<!--             <a href="todhod.jsp"> -->
-<!--                 <div class="eachCard crop"> -->
-<!--                     <img class="center-block" src="todhod.png" alt="todhodday.jpg"> -->
-<!--                     <h4 class="fontheader"><b>TOD/HOD DETAILS NIGHT</b></h4>  -->
-<!--                 </div> -->
-<!--             </a> -->
-<!--         </div> -->
+        <div class="card">
+            <a href="todhod.jsp">
+                <div class="eachCard crop">
+                    <img class="center-block" src="todhod.png" alt="todhodday.jpg">
+                    <h4 class="fontheader"><b>TOD/HOD DETAILS NIGHT</b></h4> 
+                </div>
+            </a>
+        </div>
         
 <!--         <br> -->
 <!--         <div class="card"> -->
