@@ -3,7 +3,7 @@
 <%@page import="com.google.gdata.data.spreadsheet.Cell"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.Timestamp"%>
-<%@page import="..//java//net//javatutorial//entity//TodHodDetails.java"%>
+<%@page import="net.javatutorial.entity.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="loginCSS.jsp"%>
 <%@page import="java.util.*"%>
