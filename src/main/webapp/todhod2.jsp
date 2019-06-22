@@ -80,12 +80,7 @@
                     String dutysite = cec.getValue("dutysite");
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("standbyremark");
-                    %>
-                    <%=enternricfin.toString()%>
-                    <%=idNo.toString()%>
-                    <%=enternricfin.equalsIgnoreCase(idNo)%>
-                    <%=site.length()==0%>
-                    <%
+                    
                     if(!StringUtils.isEmpty(site) && !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
@@ -113,13 +108,20 @@
 	                            }
 	                    	}
 	                    	if(site.length()==0  && !StringUtils.isEmpty(idNo)){
+	                    		%>
+	                            <%=enternricfin.toString()%>
+	                            <%=idNo.toString()%>
+	                            <%
+	                    	
 	                    		//if search by nric/fin only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
 	                            if(dutysite != null && !dutysite.isEmpty() && !dutysite.toUpperCase().contains("OC") && !dutysite.toUpperCase().contains("AL")
 	                                    && !dutysite.toUpperCase().contains("MC") && !dutysite.toUpperCase().contains("HC")
 	                                    && !dutysite.toUpperCase().contains("RD") && !dutysite.toUpperCase().contains("PH")
 	                                    && !dutysite.toUpperCase().contains("UL") && enternricfin.equalsIgnoreCase(idNo)){
-	
+	                            	%>
+		                            <%= enternricfin.equalsIgnoreCase(idNo)%>
+		                            <%
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
