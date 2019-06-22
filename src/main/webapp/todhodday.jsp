@@ -59,9 +59,6 @@
         SpreadsheetService service2 = new SpreadsheetService("Sheet1");
         try {
         	List<TodHodPair> todHodPairs = new ArrayList<TodHodPair>();
-        	%>
-            CAME HERE
-            <% 
             String sheetUrl
                     = //1TwURCxMStzOp_jFMisNFF01PswassfcM-J4Ma90o23A (test)
                     //1i_3_wI3ClPXE_nX4biN3oNrqxMgyswPuzklAx8mwivY  (real)
@@ -82,7 +79,7 @@
                 CustomElementCollection cec = le.getCustomElements();
                 
                 if (cec != null){
-                    String enternricfin = cec.getValue("securityofficernricfin").trim();
+                    String enternricfin = cec.getValue("securityofficernricfinnumber").trim();
                     //System.out.println("THE PROBLEM IS HERE: " + enternricfin);
                     String shift = cec.getValue("shift");
                     //System.out.println("THE PROBLEM IS HERE: " + shift);
