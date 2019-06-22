@@ -59,7 +59,9 @@
         SpreadsheetService service2 = new SpreadsheetService("Sheet1");
         try {
         	List<TodHodPair> todHodPairs = new ArrayList<TodHodPair>();
-        
+        	%>
+            CAME HERE
+            <% 
             String sheetUrl
                     = //1TwURCxMStzOp_jFMisNFF01PswassfcM-J4Ma90o23A (test)
                     //1i_3_wI3ClPXE_nX4biN3oNrqxMgyswPuzklAx8mwivY  (real)
@@ -97,11 +99,7 @@
                     String dutysite = cec.getValue("todhoddutysites");
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("standbyremark");
-                    %>
-                    <%=shift.toString() %>
-                    <%=securityofficername.toString() %>
-                    <%=dutysite.toString() %>
-                    <%    
+                       
                     if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
