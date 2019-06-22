@@ -1,6 +1,5 @@
 
 <%@page import="org.apache.commons.lang3.StringUtils"%>
-<%@page import="com.google.api.client.repackaged.org.apache.commons.codec.binary.StringUtils"%>
 <%@page import="com.google.gdata.data.spreadsheet.CellEntry"%>
 <%@page import="com.google.gdata.data.spreadsheet.Cell"%>
 <%@page import="java.text.SimpleDateFormat"%>
