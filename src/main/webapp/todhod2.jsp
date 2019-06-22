@@ -80,7 +80,12 @@
                     String dutysite = cec.getValue("dutysite");
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("standbyremark");
-					
+                    
+					%>
+					<%=enternricfin%>
+					<%=idNo%>
+					<%=responseObj.toString()%>
+					<%
                     if(!StringUtils.isEmpty(site) && !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
@@ -114,20 +119,12 @@
 	                                    && !dutysite.toUpperCase().contains("MC") && !dutysite.toUpperCase().contains("HC")
 	                                    && !dutysite.toUpperCase().contains("RD") && !dutysite.toUpperCase().contains("PH")
 	                                    && !dutysite.toUpperCase().contains("UL") && enternricfin.equalsIgnoreCase(idNo)){
-	                            	
-	                            	%>
-	                            	<%=enternricfin %>
-	                                <%=idNo %>
-	                                <% 
+	
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
-	                                %>
-	                                
-	                                <%=todDetails.toString() %>
-	                                <% 
 	                                allTodDetails.add(todDetails);
 	                                }
 	
