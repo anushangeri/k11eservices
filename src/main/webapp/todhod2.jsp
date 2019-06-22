@@ -114,12 +114,20 @@
 	                                    && !dutysite.toUpperCase().contains("MC") && !dutysite.toUpperCase().contains("HC")
 	                                    && !dutysite.toUpperCase().contains("RD") && !dutysite.toUpperCase().contains("PH")
 	                                    && !dutysite.toUpperCase().contains("UL") && enternricfin.equalsIgnoreCase(idNo)){
-	
+	                            	
+	                            	%>
+	                            	<%=enternricfin %>
+	                                <%=idNo %>
+	                                <% 
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
+	                                %>
+	                                
+	                                <%=todDetails.toString() %>
+	                                <% 
 	                                allTodDetails.add(todDetails);
 	                                }
 	
