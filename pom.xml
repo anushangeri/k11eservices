@@ -60,8 +60,8 @@
 		    <scope>provided</scope>
 		</dependency>
 		<dependency>
-		    <groupId>jstl</groupId>
-		    <artifactId>jstl</artifactId>
+		    <groupId>jstl-api</groupId>
+		    <artifactId>jstl-api</artifactId>
 		    <version>1.2</version>
 		    <scope>provided</scope>
 		</dependency>
