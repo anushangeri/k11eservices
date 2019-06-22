@@ -26,7 +26,6 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
 </head>
 
 <body>
@@ -306,17 +305,21 @@
                                     iterator.remove();
                                 }
                             }
-                            //add into session, all the tod hod pair
-                            todHodPairs.add(new TodHodPair(enternricfin, todShift, timestampAsStr, securityofficername.toUpperCase(),
-                            		todDateAsStr, todTimeAsStr, ((hodDateAsStr.isEmpty()) ? "Invalid Data" : hodDateAsStr),
-                            		((hodTimeAsStr.isEmpty()) ? "Invalid Data" : hodTimeAsStr), dutysite, standbyremark));
+                            
                         }
                     }
+                  
+                    
         
                  }
+                  //add into session, all the tod hod pair
+                    todHodPairs.add(new TodHodPair(enternricfin, todShift, timestampAsStr, securityofficername.toUpperCase(),
+                    		todDateAsStr, todTimeAsStr, ((hodDateAsStr.isEmpty()) ? "Invalid Data" : hodDateAsStr),
+                    		((hodTimeAsStr.isEmpty()) ? "Invalid Data" : hodTimeAsStr), dutysite, standbyremark));
                 } //for (TodHodDetails eachTodDetail : allTodDetails)
+                session.setAttribute("todHodPairs", todHodPairs);
              }	// if (!allTodDetails.isEmpty())
-            session.setAttribute("todHodPairs", todHodPairs);
+            
           } catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -329,9 +332,9 @@
         <div style="display: block; width: 100%">>
             <center>
 	            <display:table name="sessionScope.todHodPairs" pagesize="20"
-	                           export="true" sort="list" uid="one" class="table">
+	                           export="true" sort="list" class="table">
 	                <display:column property="enternricfin" title="NRIC/FIN"
-	                                sortable="true" headerClass="sortable" class="black white-text"/>
+	                                sortable="true" headerClass="sortable" />
 	                <display:column property="securityofficername" title="Name"
 	                                sortable="true" headerClass="sortable" />
 	                <display:column property="shift" title="Shift"
