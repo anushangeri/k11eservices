@@ -97,7 +97,11 @@
                     String dutysite = cec.getValue("todhoddutysites");
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("standbyremark");
-                    
+                    %>
+                    <%=shift.toString() %>
+                    <%=securityofficername.toString() %>
+                    <%=dutysite.toString() %>
+                    <%    
                     if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
