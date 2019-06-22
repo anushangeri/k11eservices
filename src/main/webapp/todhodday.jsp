@@ -168,7 +168,7 @@
                 SimpleDateFormat datetime24Format = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
                 for (TodHodDetails eachTodDetail : allTodDetails) {
                     
-                    if( eachTodDetail.getShift().equals("Night") && !eachTodDetail.getDateAsStr().isEmpty()
+                    if( eachTodDetail.getShift().equals("Day") && !eachTodDetail.getDateAsStr().isEmpty()
                             && eachTodDetail.getDateAsStr() != null && !eachTodDetail.getTimeAsStr().isEmpty()
                             && eachTodDetail.getTimeAsStr() != null){
                     
