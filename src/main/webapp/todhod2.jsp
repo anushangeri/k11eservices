@@ -81,7 +81,7 @@
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("standbyremark");
                     
-                    if(!StringUtils.isEmpty(site) && !StringUtils.isEmpty(idNo) ){
+                    if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
@@ -107,7 +107,7 @@
 	                                }
 	                            }
 	                    	}
-	                    	if(site.length()==0  && !StringUtils.isEmpty(idNo)){
+	                    	if(StringUtils.isEmpty(site)   && !StringUtils.isEmpty(idNo)){
 	                    		%>
 	                            <%=enternricfin.toString()%>
 	                            <%=idNo.toString()%>
