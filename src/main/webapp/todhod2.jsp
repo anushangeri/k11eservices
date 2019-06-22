@@ -25,9 +25,6 @@
 
 <html>
 <head>
-    	<!-- Bootstrap Date-Picker Plugin -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 
 <body>
@@ -109,7 +106,7 @@
 	                                    && !dutysite.toUpperCase().contains("MC") && !dutysite.toUpperCase().contains("HC")
 	                                    && !dutysite.toUpperCase().contains("RD") && !dutysite.toUpperCase().contains("PH")
 	                                    && !dutysite.toUpperCase().contains("UL") && dutysite.equalsIgnoreCase(site)){
-	
+									
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
@@ -120,7 +117,7 @@
 	                                	}
 	                                }
 	                                	
-	                                }
+	                                
 	
 	                                if (areyoutodhod.toUpperCase().contains("HOD")) {
 	                                    TodHodDetails hodDetails = new TodHodDetails(enternricfin, shift, timestamp,
@@ -143,6 +140,11 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
+	                                %>
+	                                <%=todDetails.getDate() %>
+	                                <%=fromDt %>
+	                                <%=toDt %>
+	                                <% 
 		                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
 	                                		allTodDetails.add(todDetails);
 	                                	}
@@ -186,12 +188,12 @@
 	                    	}
                     	}
                         
-                    }	
+                    }
+        
              }// for (ListEntry le : lf.getEntries())
          		
           //find the HOD pair using nric, site, shift and entry day must be on the day off or the next day
             if (!allTodDetails.isEmpty()) {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
                 SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss aa");
                 SimpleDateFormat datetimeFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
                 SimpleDateFormat datetime24Format = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");

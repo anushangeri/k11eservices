@@ -84,6 +84,7 @@
 		      <select class="form-control" name="shift">
 			    <option>Day</option>
 			    <option>Night</option>
+			    <option>None</option>
 			  </select>
 		    </div>
 		    <button type="submit" class="btn btn-primary">Search NRIC/FIN</button>
