@@ -57,7 +57,6 @@
 		    <groupId>displaytag</groupId>
 		    <artifactId>displaytag</artifactId>
 		    <version>1.2</version>
-		    <scope>provided</scope>
 		</dependency>
 		<dependency>
 		    <groupId>jstl</groupId>
@@ -68,6 +67,21 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
 		    <version>3.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-collections</groupId>
+		    <artifactId>commons-collections</artifactId>
+		    <version>2.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>displaytag</groupId>
+		    <artifactId>displaytag-export-poi</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>displaytag</groupId>
+		    <artifactId>displaytag-portlet</artifactId>
+		    <version>1.2</version>
 		</dependency>
   </dependencies>
   <build>
