@@ -326,14 +326,12 @@
     %>
 
 
-        <div id='tab1' class="tab_content" style="display: block; width: 100%">
-            <h3>Display tag Pagination and Sorting Example</h3>
-            <p>This is FIRST TABLE </p>
+        <div style="display: block; width: 100%">>
             <center>
-	            <display:table name="sessionScope.todHodPairs" pagesize="50"
-	                           export="true" sort="list" uid="one">
+	            <display:table name="sessionScope.todHodPairs" pagesize="20"
+	                           export="true" sort="list" uid="one" class="table">
 	                <display:column property="enternricfin" title="NRIC/FIN"
-	                                sortable="true" headerClass="sortable" />
+	                                sortable="true" headerClass="sortable" class="black white-text"/>
 	                <display:column property="securityofficername" title="Name"
 	                                sortable="true" headerClass="sortable" />
 	                <display:column property="shift" title="Shift"
