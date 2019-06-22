@@ -46,7 +46,7 @@ public class TodHodSearchServlet extends HttpServlet {
 		request.setAttribute("responseObj", responseObj);
 		RequestDispatcher rd = request.getRequestDispatcher("todhodsearch.jsp");
 		if (shift.equalsIgnoreCase("Day")){
-			rd = request.getRequestDispatcher("todhod.jsp");
+			rd = request.getRequestDispatcher("todhodday.jsp");
 		}
 		else{
 			rd = request.getRequestDispatcher("todhod2.jsp");
