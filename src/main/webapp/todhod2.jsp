@@ -81,11 +81,6 @@
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("standbyremark");
                     
-					%>
-					<%=enternricfin%>
-					<%=idNo%>
-					<%=responseObj.toString()%>
-					<%
                     if(!StringUtils.isEmpty(site) && !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
@@ -125,6 +120,9 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
+	                                %>
+	                                <%=todDetails.toString()%>
+	                                <%
 	                                allTodDetails.add(todDetails);
 	                                }
 	
