@@ -56,16 +56,6 @@
 
             // Get Feed of Spreadsheet url
             ListFeed lf = service.getFeed(url, ListFeed.class);
-
-            //for PLRD filter out work permit holders for day shift only
-            String sheetUrl2
-                    = "https://spreadsheets.google.com/feeds/list/1nWxKl4gPu2ycrQ3OTbONOYyrerpxsUfs-WBcieRukcw/1/public/values";
-
-            // Use this String as url
-            URL url2 = new URL(sheetUrl2);
-
-            // Get Feed of Spreadsheet url
-            ListFeed lf2 = service2.getFeed(url2, ListFeed.class);
             
             //Iterate over feed to get cell value
             ArrayList<TodHodDetails> allTodDetails = new ArrayList<TodHodDetails>();
