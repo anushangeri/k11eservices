@@ -34,7 +34,7 @@ public class TodHodSearchServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		SimpleDateFormat formatter1=new SimpleDateFormat("MM/DD/YYYY");  
+		 
 		
 		String site = request.getParameter("site");
 		String idNo = request.getParameter("idNo");

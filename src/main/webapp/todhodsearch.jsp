@@ -41,12 +41,13 @@
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="shift">Select Shift Type: </label>
-		      <select class="form-control" id="shift">
+		      <select class="form-control" name="shift">
 			    <option>Day</option>
 			    <option>Night</option>
 			  </select>
 		    </div>
 		    <button type="submit" class="btn btn-primary">Search NRIC/FIN</button>
+		    </div>
 		</form>
     </body>
 </html>
