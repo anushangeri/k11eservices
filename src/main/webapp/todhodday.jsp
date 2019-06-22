@@ -112,7 +112,10 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
-		                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
+	                                %>
+	                                <%=todDetails.toString() %>
+	                                <%    
+	                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
 	                                		allTodDetails.add(todDetails);
 	                                	}
 	                                }
