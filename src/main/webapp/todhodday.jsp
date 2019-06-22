@@ -98,7 +98,7 @@
                     //System.out.println("THE PROBLEM IS HERE: " + areyoutodhod);
                     String dutysite = cec.getValue("todhoddutysites");
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
-                    String standbyremark = cec.getValue("standbyremark");
+                    String standbyremark = cec.getValue("reportingofficername");
                        
                     if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
