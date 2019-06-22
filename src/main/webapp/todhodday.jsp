@@ -111,9 +111,6 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
-	                                %>
-	                                <%=todDetails.toString() %>
-	                                <%    
 	                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
 	                                		allTodDetails.add(todDetails);
 	                                	}
@@ -368,7 +365,7 @@
     %>
 
 
-        <div style="display: block; width: 100%">>
+        <div style="display: block; width: 100%">
             <center>
 	            <display:table name="sessionScope.todHodPairs" pagesize="20"
 	                           export="true" sort="list" class="table">
