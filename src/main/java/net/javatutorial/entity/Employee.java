@@ -35,6 +35,12 @@ public class Employee {
     private String last_modified_by;
     
     
+	public Employee(String firstName, String lastName, String idNo) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.idNo = idNo;
+	}
 	public Employee(String employeeId, String firstName, String lastName, String gender, String maritalStatus, Date dob,
 			int age, String nationality, String pob, String identification, String idType, String idNo, String religion,
 			String race, String mobileNo, String email, String emergencyName, String emergencyRlp, String emergencyNo,

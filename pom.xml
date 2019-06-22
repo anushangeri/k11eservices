@@ -53,6 +53,18 @@
 		    <artifactId>datatables</artifactId>
 		    <version>1.9.4-2</version>
 		</dependency>
+		<dependency>
+		    <groupId>displaytag</groupId>
+		    <artifactId>displaytag</artifactId>
+		    <version>1.2</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>jstl</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+		    <scope>provided</scope>
+		</dependency>
   </dependencies>
   <build>
     <finalName>webappRunnerSample</finalName>
