@@ -61,5 +61,4 @@
 		<servlet-name>UEmployeeTblServlet</servlet-name>
 		<url-pattern>/updateEmpTbl</url-pattern>
 	</servlet-mapping>
-
 </web-app>
