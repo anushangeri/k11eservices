@@ -17,7 +17,7 @@
 <%@page import="com.google.gdata.data.spreadsheet.ListFeed"%>
 <%@page import="com.google.gdata.util.ServiceException"%>
 <%@ taglib prefix="display" uri="http://displaytag.sf.net" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
