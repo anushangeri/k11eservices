@@ -27,10 +27,29 @@
     <head>
         <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
         <script>
-	        $.fn.datepicker.defaults.format = "mm/dd/yyyy";
-	        $('.datepicker').datepicker({
-	            startDate: '-3d'
-	        });
+        	$(document).ready(function(){
+		      var date_input=$('input[name="from"]'); //our date input has the name "date"
+		      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		      var options={
+		        format: 'mm/dd/yyyy',
+		        container: container,
+		        todayHighlight: true,
+		        autoclose: true,
+		      };
+		      date_input.datepicker(options);
+		    })
+		    
+		    $(document).ready(function(){
+		      var date_input=$('input[name="to"]'); //our date input has the name "date"
+		      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		      var options={
+		        format: 'mm/dd/yyyy',
+		        container: container,
+		        todayHighlight: true,
+		        autoclose: true,
+		      };
+		      date_input.datepicker(options);
+		    })
         </script>
 	</head>
 
@@ -47,11 +66,11 @@
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="from">From: </label>
-		      <input class="datepicker" name="from" data-date-format="mm/dd/yyyy">
+		      <input class="form-control" id="date" name="from" placeholder="MM/DD/YYYY" type="text"/>
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="to">To: </label>
-		      <input class="datepicker" name="to" data-date-format="mm/dd/yyyy">
+		      <input class="form-control" id="date" name="to" placeholder="MM/DD/YYYY" type="text"/>
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="idNo">NRIC/FIN: </label>
