@@ -73,24 +73,24 @@
                                     <thead>
                                         <tr>
                                             <th><center><b>Timestamp (mm/dd/yyyy 24HH:mm:ss)</b></center></th>
-                                    <th><center><b>Security Officer Name</b></center></th>
-                                    <th><center><b>NRIC/FIN</b></center></th>
-                                    <th colspan="3"><center><b>TOD</b></center></th>
-                                    <th colspan="3"><center><b>HOD</b></center></th>
-                                    <th><center><b>Duty Site</b></center></th>
-                                    <th><center><b>Stand by Remark</b></center></th>
-                                    <th><center><b>Working Hours</b></center></th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="3"></th>
-                                        <th><center><b>Date (mm/dd/yyyy)</b></center></th>
-                                    <th><center><b>Time</b></center></th>
-                                    <th><center><b>Shift</b></center></th>
-                                    <th><center><b>Date (mm/dd/yyyy)</b></center></th>
-                                    <th><center><b>Time</b></center></th>
-                                    <th><center><b>Shift</b></center></th>
-                                    <th colspan="3"></th>
-                                    </tr>
+		                                    <th><center><b>Security Officer Name</b></center></th>
+		                                    <th><center><b>NRIC/FIN</b></center></th>
+		                                    <th colspan="3"><center><b>TOD</b></center></th>
+		                                    <th colspan="3"><center><b>HOD</b></center></th>
+		                                    <th><center><b>Duty Site</b></center></th>
+		                                    <th><center><b>Stand by Remark</b></center></th>
+		                                    <th><center><b>Working Hours</b></center></th>
+		                                </tr>
+		                                <tr>
+		                                    <th colspan="3"></th>
+		                                    <th><center><b>Date (mm/dd/yyyy)</b></center></th>
+		                                    <th><center><b>Time</b></center></th>
+		                                    <th><center><b>Shift</b></center></th>
+		                                    <th><center><b>Date (mm/dd/yyyy)</b></center></th>
+		                                    <th><center><b>Time</b></center></th>
+		                                    <th><center><b>Shift</b></center></th>
+		                                    <th colspan="3"></th>
+		                                 </tr>
 
                                     </thead>
                                     <tbody>
@@ -163,8 +163,8 @@
                                                 
 
                                             }
-                                            System.out.println("size of tod: " + allTodDetails.size());
-                                            System.out.println("size of hod: " + allHodDetails.size());
+                                            //System.out.println("size of tod: " + allTodDetails.size());
+                                            //System.out.println("size of hod: " + allHodDetails.size());
                                             //loop through each allTodDetails
                                             //find the HOD pair using nric, site, shift and entry day must be on the day off or the next day
                                             if (!allTodDetails.isEmpty()) {

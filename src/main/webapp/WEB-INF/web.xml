@@ -40,6 +40,13 @@
 		<servlet-name>UEmployeeTblServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
 	</servlet>
+		<servlet>
+		<description>
+		</description>
+		<display-name>TodHodSearchServlet</display-name>
+		<servlet-name>TodHodSearchServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.TodHodSearchServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
@@ -60,5 +67,9 @@
 	<servlet-mapping>
 		<servlet-name>UEmployeeTblServlet</servlet-name>
 		<url-pattern>/updateEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TodHodSearchServlet</servlet-name>
+		<url-pattern>/todHodSearch</url-pattern>
 	</servlet-mapping>
 </web-app>

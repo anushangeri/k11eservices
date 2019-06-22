@@ -55,7 +55,7 @@
         </div>
         <br>
         <div class="card">
-            <a href="todhod2.jsp">
+            <a href="todhodsearch.jsp">
                 <div class="eachCard crop">
                     <img class="center-block" src="todhod.png" alt="todhodday.jpg">
                     <h4 class="fontheader"><b>TOD/HOD DETAILS NIGHT</b></h4> 
