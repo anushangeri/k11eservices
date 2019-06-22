@@ -31,11 +31,29 @@
 
 	<%
 		ArrayList<String> responseObj = (ArrayList<String>) request.getAttribute("responseObj");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		Date fromDt = null;
+		Date toDt = null;
 		String site = "";
 		String idNo = "";
+		String from = "";
+		String to = "";
 		if (responseObj != null) {
 			site = responseObj.get(0);
 			idNo = responseObj.get(1);
+			from = responseObj.get(2);
+			to = responseObj.get(3);
+	        try {
+	        	if(from.length() != 0 && !StringUtils.isEmpty(from)){
+	        		fromDt = dateFormat.parse(from);
+	        	}
+	        	if(to.length() != 0 && !StringUtils.isEmpty(to)){
+	        		toDt = dateFormat.parse(to);
+	        	}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
         SpreadsheetService service = new SpreadsheetService("Form Responses 1");
         SpreadsheetService service2 = new SpreadsheetService("Sheet1");
@@ -94,7 +112,11 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
-	                                allTodDetails.add(todDetails);
+	                                	if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
+	                                		allTodDetails.add(todDetails);
+	                                	}
+	                                }
+	                                	
 	                                }
 	
 	                                if (areyoutodhod.toUpperCase().contains("HOD")) {
@@ -118,7 +140,9 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
-	                                allTodDetails.add(todDetails);
+		                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
+	                                		allTodDetails.add(todDetails);
+	                                	}
 	                                }
 	
 	                                if (areyoutodhod.toUpperCase().contains("HOD")) {
@@ -143,7 +167,9 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
-	                                allTodDetails.add(todDetails);
+		                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
+	                                		allTodDetails.add(todDetails);
+	                                	}
 	                                }
 	
 	                                if (areyoutodhod.toUpperCase().contains("HOD")) {

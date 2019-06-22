@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.format.DateTimeFormatter;
 
 import net.javatutorial.DAO.EmployeesManagerDAO;
@@ -34,15 +35,17 @@ public class TodHodSearchServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
-		
 		String site = request.getParameter("site");
 		String idNo = request.getParameter("idNo");
 		String shift = request.getParameter("shift");
+		String from = request.getParameter("from");
+		String to = request.getParameter("to");
 		
 		ArrayList<String> responseObj = new ArrayList<String>();
 		responseObj.add(site);
 		responseObj.add(idNo);
+		responseObj.add(from);
+		responseObj.add(to);
 		request.setAttribute("responseObj", responseObj);
 		RequestDispatcher rd = request.getRequestDispatcher("todhodsearch.jsp");
 		if (shift.equalsIgnoreCase("Day")){

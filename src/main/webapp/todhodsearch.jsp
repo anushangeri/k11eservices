@@ -26,6 +26,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+        <script>
+	        $.fn.datepicker.defaults.format = "mm/dd/yyyy";
+	        $('.datepicker').datepicker({
+	            startDate: '-3d'
+	        });
+        </script>
 	</head>
 
 	<body>
@@ -34,6 +40,18 @@
 		    <div class="form-group col-md-6">
 		      <label for="site">Site: </label>
 		      <input type="text" class="form-control" name="site" placeholder="Enter Site Name">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="idNo">NRIC/FIN: </label>
+		      <input type="text" class="form-control" name="idNo" placeholder="Enter NRIC/FIN">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="from">From: </label>
+		      <input class="datepicker" name="from" data-date-format="mm/dd/yyyy">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="to">To: </label>
+		      <input class="datepicker" name="to" data-date-format="mm/dd/yyyy">
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="idNo">NRIC/FIN: </label>
