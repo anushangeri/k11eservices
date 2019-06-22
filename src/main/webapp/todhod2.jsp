@@ -84,6 +84,7 @@
                     <%=enternricfin.toString()%>
                     <%=idNo.toString()%>
                     <%=enternricfin.equalsIgnoreCase(idNo)%>
+                    <%=site.length()==0%>
                     <%
                     if(!StringUtils.isEmpty(site) && !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
@@ -111,7 +112,7 @@
 	                                }
 	                            }
 	                    	}
-	                    	if(StringUtils.isEmpty(site)  && !StringUtils.isEmpty(idNo)){
+	                    	if(site.length()==0  && !StringUtils.isEmpty(idNo)){
 	                    		//if search by nric/fin only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
 	                            if(dutysite != null && !dutysite.isEmpty() && !dutysite.toUpperCase().contains("OC") && !dutysite.toUpperCase().contains("AL")
