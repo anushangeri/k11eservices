@@ -1,4 +1,3 @@
-
 <%@page import="com.google.gdata.data.spreadsheet.CellEntry"%>
 <%@page import="com.google.gdata.data.spreadsheet.Cell"%>
 <%@page import="java.text.SimpleDateFormat"%>
