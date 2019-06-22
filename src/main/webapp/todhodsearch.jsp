@@ -75,10 +75,6 @@
 		      <input class="form-control" id="date" name="to" placeholder="MM/DD/YYYY" type="text"/>
 		    </div>
 		    <div class="form-group col-md-6">
-		      <label for="idNo">NRIC/FIN: </label>
-		      <input type="text" class="form-control" name="idNo" placeholder="Enter NRIC/FIN">
-		    </div>
-		    <div class="form-group col-md-6">
 		      <label for="shift">Select Shift Type: </label>
 		      <select class="form-control" name="shift">
 			    <option>Day</option>
