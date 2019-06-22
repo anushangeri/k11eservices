@@ -308,14 +308,15 @@
                             
                         }
                     }
-                  
-                    
-        
-                 }
                   //add into session, all the tod hod pair
                     todHodPairs.add(new TodHodPair(enternricfin, todShift, timestampAsStr, securityofficername.toUpperCase(),
                     		todDateAsStr, todTimeAsStr, ((hodDateAsStr.isEmpty()) ? "Invalid Data" : hodDateAsStr),
                     		((hodTimeAsStr.isEmpty()) ? "Invalid Data" : hodTimeAsStr), dutysite, standbyremark));
+                    
+        
+                 }
+                    
+                  
                 } //for (TodHodDetails eachTodDetail : allTodDetails)
                 session.setAttribute("todHodPairs", todHodPairs);
              }	// if (!allTodDetails.isEmpty())
