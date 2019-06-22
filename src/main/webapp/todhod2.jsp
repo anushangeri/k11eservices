@@ -161,7 +161,10 @@
                         
                     }	
              }// for (ListEntry le : lf.getEntries())
-          		
+%>
+<%=allTodDetails.size() %>
+<%=allHodDetails.size() %>
+<%          		
           //find the HOD pair using nric, site, shift and entry day must be on the day off or the next day
             if (!allTodDetails.isEmpty()) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
