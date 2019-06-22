@@ -108,11 +108,6 @@
 	                            }
 	                    	}
 	                    	if(StringUtils.isEmpty(site)   && !StringUtils.isEmpty(idNo)){
-	                    		%>
-	                            <%=enternricfin.toString()%>
-	                            <%=idNo.toString()%>
-	                            <%
-	                    	
 	                    		//if search by nric/fin only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
 	                            if(dutysite != null && !dutysite.isEmpty() && !dutysite.toUpperCase().contains("OC") && !dutysite.toUpperCase().contains("AL")
@@ -168,10 +163,7 @@
                         
                     }	
              }// for (ListEntry le : lf.getEntries())
-%>
-<%=allTodDetails.size() %>
-<%=allHodDetails.size() %>
-<%          		
+         		
           //find the HOD pair using nric, site, shift and entry day must be on the day off or the next day
             if (!allTodDetails.isEmpty()) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
