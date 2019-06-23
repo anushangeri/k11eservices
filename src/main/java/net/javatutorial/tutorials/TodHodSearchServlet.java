@@ -52,7 +52,7 @@ public class TodHodSearchServlet extends HttpServlet {
 			rd = request.getRequestDispatcher("todhodday.jsp");
 		}
 		else{
-			rd = request.getRequestDispatcher("todhod2.jsp");
+			rd = request.getRequestDispatcher("todhodnight.jsp");
 		}
         rd.forward(request, response);
 	}

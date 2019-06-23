@@ -265,21 +265,36 @@
                                                                 //getting HOD time to check if HOD time is within 12 hours from TOD
                                                                 //Date hodTimeFromTSAsDate = timeFormat.parse(eachHodDetail.getTimeAsStr());
                                                     
-                                                                //if day shift, hod should be PM and date should be on the day off
-//                                                                if (cal.get(Calendar.AM_PM) == Calendar.PM && todShift.equals("Day") && hodDateFromTSAsDate.compareTo(todDateFromTSAsDate) == 0) {
-//                                                                    //System.out.println(hodDateFromTSAsDate + " Day " + todDateFromTSAsDate);
-//                                                                    hodDateAsStr = eachHodDetail.getDateAsStr();
-//                                                                    hodTimeAsStr = eachHodDetail.getTimeAsStr();
-//                                                                    hodShift = eachHodDetail.getShift();
-//                                                                    standbyremark = eachHodDetail.getStandbyremark();
-//                                                                    
-//                                                                    Long diff = hodTimeFromTSAsDate.getTime() - todTimeFromTSAsDate.getTime() - 5400000;
-//                                                                    workingHours = diff / (60 * 60 * 1000) % 24;
-//                                                                    if(workingHours > 12){
-//                                                                       isMoreThan12Hr = true; 
-//                                                                    }
-//                                                                    iterator.remove();
-//                                                                }
+                                                                 //if day shift, hod should be PM and date should be on the day off
+//                                                                 if (cal.get(Calendar.AM_PM) == Calendar.PM && todShift.equals("Day") && hodDateFromTSAsDate.compareTo(todDateFromTSAsDate) == 0
+//                                                                         && !eachHodDetail.getDateAsStr().isEmpty() && eachHodDetail.getDateAsStr() != null) {
+//                                                                     //System.out.println(hodDateFromTSAsDate + " Day " + todDateFromTSAsDate);
+//                                                                     hodDateAsStr = eachHodDetail.getDateAsStr();
+//                                                                     hodTimeAsStr = eachHodDetail.getTimeAsStr();
+                                                                    
+//                                                                     //getting HOD time to check if HOD time is within 12 hours from TOD
+//                                                                     //Date hodTimeFromTSAsDate = timeFormat.parse(eachHodDetail.getTimeAsStr());
+//                                                                     String hodDateTime = hodDateAsStr + " " + hodTimeAsStr;
+//                                                                     Date hoddateTime = datetimeFormat.parse(hodDateTime);
+//                                                                     //System.out.println("hoddateTime " + hoddateTime);
+//                                                                     String hodDateTime24 = datetime24Format.format(hoddateTime);
+//                                                                     //System.out.println("hodDateTime24 " + hodDateTime24);
+//                                                                     Date hoddateTime24 = datetime24Format.parse(hodDateTime24);
+                                                                    
+//                                                                     hodShift = eachHodDetail.getShift();
+//                                                                     standbyremark = eachHodDetail.getStandbyremark();
+                                                                    
+// //                                                                    Long diff = hodTimeFromTSAsDate.getTime() - todTimeFromTSAsDate.getTime() - 5400000;
+// //                                                                    workingHours = diff / (60 * 60 * 1000) % 24;
+//                                                                     //in milliseconds
+//                                                                     long diff = hoddateTime24.getTime() - toddateTime24.getTime();
+//                                                                     workingHours = diff / (60 * 60 * 1000) % 24;
+                                                                    
+//                                                                     if(workingHours > 12){
+//                                                                        isMoreThan12Hr = true; 
+//                                                                     }
+//                                                                     iterator.remove();
+//                                                                 }
                                                                 //if night shift, hod should be AM and date should be the day after
                                                                 if (cal.get(Calendar.AM_PM) == Calendar.AM && todShift.equals("Night") && (hodDateFromTSAsDate.compareTo(theDayAfterAsDate) == 0)
                                                                         && !eachHodDetail.getDateAsStr().isEmpty() && eachHodDetail.getDateAsStr() != null) {

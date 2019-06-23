@@ -44,21 +44,21 @@
 <!--                 </div> -->
 <!--             </a> -->
 <!--         </div> -->
-        <br>
-        <div class="card">
-            <a href="todhod_day.jsp">
-                <div class="eachCard crop">
-                    <img class="center-block" src="todhod.png" alt="todhod.jpg">
-                    <h4 class="fontheader"><b>TOD/HOD DETAILS DAY</b></h4> 
-                </div>
-            </a>
-        </div>
+<!--         <br> -->
+<!--         <div class="card"> -->
+<!--             <a href="todhod_day.jsp"> -->
+<!--                 <div class="eachCard crop"> -->
+<!--                     <img class="center-block" src="todhod.png" alt="todhod.jpg"> -->
+<!--                     <h4 class="fontheader"><b>TOD/HOD DETAILS DAY</b></h4>  -->
+<!--                 </div> -->
+<!--             </a> -->
+<!--         </div> -->
         <br>
         <div class="card">
             <a href="todhodsearch.jsp">
                 <div class="eachCard crop">
                     <img class="center-block" src="todhod.png" alt="todhodday.jpg">
-                    <h4 class="fontheader"><b>TOD/HOD DETAILS NIGHT</b></h4> 
+                    <h4 class="fontheader"><b>VIEW TOD/HOD DETAILS</b></h4> 
                 </div>
             </a>
         </div>

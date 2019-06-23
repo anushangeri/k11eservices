@@ -64,7 +64,7 @@
                     = //1TwURCxMStzOp_jFMisNFF01PswassfcM-J4Ma90o23A (test)
                     //1i_3_wI3ClPXE_nX4biN3oNrqxMgyswPuzklAx8mwivY  (real)
                     //1nuQlSMmThaj3YxBktjn771wvzZflDwmS746STcsUcJI (real v2)
-                    "https://spreadsheets.google.com/feeds/list/1nuQlSMmThaj3YxBktjn771wvzZflDwmS746STcsUcJI/1/public/values";
+                    "https://spreadsheets.google.com/feeds/list/1R52wxkOdPdnQZZnk2T6FCETARXX1pzfmaGZZ8gqm1rU/1/public/values";
 
             // Use this String as url
             URL url = new URL(sheetUrl);
@@ -80,7 +80,7 @@
                 CustomElementCollection cec = le.getCustomElements();
                 
                 if (cec != null){
-                    String enternricfin = cec.getValue("securityofficernricfin").trim();
+                	String enternricfin = cec.getValue("securityofficernricfinnumber").trim();
                     //System.out.println("THE PROBLEM IS HERE: " + enternricfin);
                     String shift = cec.getValue("shift");
                     //System.out.println("THE PROBLEM IS HERE: " + shift);
@@ -94,9 +94,9 @@
                     //System.out.println("THE PROBLEM IS HERE: " + time);
                     String areyoutodhod = cec.getValue("areyoutodorhod");
                     //System.out.println("THE PROBLEM IS HERE: " + areyoutodhod);
-                    String dutysite = cec.getValue("dutysite");
+                    String dutysite = cec.getValue("todhoddutysites");
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
-                    String standbyremark = cec.getValue("standbyremark");
+                    String standbyremark = cec.getValue("reportingofficername");
                     
                     if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo) ){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
