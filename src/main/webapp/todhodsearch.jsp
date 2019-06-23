@@ -69,11 +69,11 @@
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="from">From: </label>
-		      <input class="form-control" id="date" name="from" placeholder="MM/DD/YYYY" type="text"/>
+		      <input class="form-control" id="date" name="from" placeholder="MM/DD/YYYY" type="text" required/>
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="to">To: </label>
-		      <input class="form-control" id="date" name="to" placeholder="MM/DD/YYYY" type="text"/>
+		      <input class="form-control" id="date" name="to" placeholder="MM/DD/YYYY" type="text"  required/>
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="shift">Select Shift Type: </label>
