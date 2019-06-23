@@ -97,7 +97,7 @@
                     //System.out.println("THE PROBLEM IS HERE: " + dutysite);
                     String standbyremark = cec.getValue("reportingofficername");
                        
-                    if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo) ){
+                    if(!StringUtils.isEmpty(site) || !StringUtils.isEmpty(idNo)){
 	                    	if(!StringUtils.isEmpty(site)  && StringUtils.isEmpty(idNo)){
 	                    		//if search by site only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
@@ -178,35 +178,35 @@
 	                                }
 	                            }
 	                    	}
-	                    	else{
-	                    		//if search by date (minimum requirement)
-	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
-	                            if(dutysite != null && !dutysite.isEmpty() && !dutysite.toUpperCase().contains("OC") && !dutysite.toUpperCase().contains("AL")
-	                                    && !dutysite.toUpperCase().contains("MC") && !dutysite.toUpperCase().contains("HC")
-	                                    && !dutysite.toUpperCase().contains("RD") && !dutysite.toUpperCase().contains("PH")
-	                                    && !dutysite.toUpperCase().contains("UL")){
+	                    	
+                    	}
+	                    else{
+	                		//if search by date (minimum requirement)
+	                		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
+	                        if(dutysite != null && !dutysite.isEmpty() && !dutysite.toUpperCase().contains("OC") && !dutysite.toUpperCase().contains("AL")
+	                                && !dutysite.toUpperCase().contains("MC") && !dutysite.toUpperCase().contains("HC")
+	                                && !dutysite.toUpperCase().contains("RD") && !dutysite.toUpperCase().contains("PH")
+	                                && !dutysite.toUpperCase().contains("UL")){
 	
-	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
-	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
+	                            if (areyoutodhod.toUpperCase().contains("TOD")) {
+	                            TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
+	                                    securityofficername, date, time, areyoutodhod,
+	                                    dutysite, standbyremark);
+	                            todDetails.setTimestamp(timestamp);
+	                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
+	                            		allTodDetails.add(todDetails);
+	                            	}
+	                            }
+	
+	                            if (areyoutodhod.toUpperCase().contains("HOD")) {
+	                                TodHodDetails hodDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
-	                                todDetails.setTimestamp(timestamp);
-		                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
-	                                		allTodDetails.add(todDetails);
-	                                	}
-	                                }
-	
-	                                if (areyoutodhod.toUpperCase().contains("HOD")) {
-	                                    TodHodDetails hodDetails = new TodHodDetails(enternricfin, shift, timestamp,
-	                                            securityofficername, date, time, areyoutodhod,
-	                                            dutysite, standbyremark);
-	                                    hodDetails.setTimestamp(timestamp);
-	                                    allHodDetails.add(hodDetails);
-	                                }
+	                                hodDetails.setTimestamp(timestamp);
+	                                allHodDetails.add(hodDetails);
 	                            }
-	                    	}
-                    	}
-                        
+	                        }
+	                	}
                     }	
              }// for (ListEntry le : lf.getEntries())
          		
