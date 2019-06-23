@@ -379,6 +379,6 @@
 	            </display:table>
             </center>
         </div>
-       
+        <center><a href="todhodsearch.jsp" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Back</a></center>
     </body>
 </html>

@@ -365,7 +365,7 @@
     %>
 
 
-        <div style="display: block; width: 100%">
+        <div style="display: block; width: 80%">
             <center>
 	            <display:table name="sessionScope.todHodPairs" pagesize="20"
 	                           export="true" sort="list" class="table">
@@ -390,6 +390,6 @@
 	            </display:table>
             </center>
         </div>
-       
+       <center><a href="todhodsearch.jsp" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Back</a></center>
     </body>
 </html>
