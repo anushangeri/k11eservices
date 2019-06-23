@@ -155,6 +155,13 @@ input{
     height: 200px;
     overflow: hidden;
 }
+#todhodtablediv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
 /*for printing lable*/
 @media print {
 table.eptable {
