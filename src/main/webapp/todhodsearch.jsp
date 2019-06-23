@@ -57,11 +57,42 @@
 	</head>
 
 	<body>
+	<%
+	ArrayList<String> dutySites = new ArrayList<String>();
+	SpreadsheetService service = new SpreadsheetService("K11CLICKS: DROPDOWN EXCEL");
+	 try {
+     	//Dropdown for marital status START
+         String dutySitesUrl
+                 = "https://spreadsheets.google.com/feeds/list/116L_MDacE0331uQDZLRQD4UKpKXfHgWKcMFeD0ne324/9/public/values";
+         // Use this String as url
+         URL dutySitesurl = new URL(dutySitesUrl);
+
+         // Get Feed of Spreadsheet url
+         ListFeed dutySiteslf = service.getFeed(dutySitesurl, ListFeed.class);
+        
+         for (ListEntry le : dutySiteslf.getEntries()) {
+             CustomElementCollection cec = le.getCustomElements();
+             dutySites.add(cec.getValue("dutysites").trim());
+         }
+       //Dropdown for marital status END
+	 } catch (Exception e) {
+     	%>
+			<h1><%=e %></h1>
+			<%
+     }
+	%>
 		<form action="todHodSearch" method="post">
 		  <div class="form-row">
 		    <div class="form-group col-md-6">
 		      <label for="site">Site: </label>
-		      <input type="text" class="form-control" name="site" placeholder="Enter Site Name">
+		      <select name="site" class="form-control">
+		      	<%
+				for(int i=0; i < dutySites.size(); i++)
+				{
+				%>
+				<option value="<%=dutySites.get(i)%>"> <%=dutySites.get(i)%></option>
+				<% } %>
+		      </select>
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="idNo">NRIC/FIN: </label>
@@ -78,7 +109,7 @@
 		    <div class="form-group col-md-6">
 		      <label for="shift">Select Shift Type: </label>
 		      <select class="form-control" name="shift">
-			    <option>Day</option>
+			    <option selected="selected">Day</option>
 			    <option>Night</option>
 			  </select>
 		    </div>
