@@ -354,8 +354,7 @@
     %>
 
 
-        <div style="display: block; width: 100%">>
-            <center>
+        <div style="display: block; width: 100%" id="todhodtablediv">
 	            <display:table name="sessionScope.todHodPairs" pagesize="20"
 	                           export="true" sort="list" class="table">
 	                <display:column property="enternricfin" title="NRIC/FIN"
@@ -377,8 +376,9 @@
 	                <display:column property="standbyremark" title="Stand by Remark"
 	                                sortable="true" headerClass="sortable" />
 	            </display:table>
-            </center>
         </div>
+        <br>
+       	<br>
         <center><a href="todhodsearch.jsp" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Back</a></center>
     </body>
 </html>
