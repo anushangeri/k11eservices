@@ -6,7 +6,9 @@
 	version="3.1">
 	
 	<display-name>Simple Servlet Application</display-name>
-
+	<welcome-file-list>
+     	<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 	<servlet>
 		<servlet-name>simpleServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.SimpleServlet</servlet-class>
@@ -40,12 +42,19 @@
 		<servlet-name>UEmployeeTblServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
 	</servlet>
-		<servlet>
+	<servlet>
 		<description>
 		</description>
 		<display-name>TodHodSearchServlet</display-name>
 		<servlet-name>TodHodSearchServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.TodHodSearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>sembcorptest</display-name>
+		<servlet-name>sembcorptest</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.sembcorptest</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -71,5 +80,9 @@
 	<servlet-mapping>
 		<servlet-name>TodHodSearchServlet</servlet-name>
 		<url-pattern>/todHodSearch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>sembcorptest</servlet-name>
+		<url-pattern>/sembcorptest</url-pattern>
 	</servlet-mapping>
 </web-app>

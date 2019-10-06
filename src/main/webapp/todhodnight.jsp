@@ -46,9 +46,11 @@
 	        try {
 	        	if(from.length() != 0 && !StringUtils.isEmpty(from)){
 	        		fromDt = dateFormat.parse(from);
+	        		System.out.println("fromDt aft format: " + fromDt);
 	        	}
 	        	if(to.length() != 0 && !StringUtils.isEmpty(to)){
 	        		toDt = dateFormat.parse(to);
+	        		System.out.println("toDt aft format: " + toDt);
 	        	}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -201,7 +203,7 @@
                     }
         
              }// for (ListEntry le : lf.getEntries())
-         		
+         	//System.out.println(allTodDetails.toString());	
           //find the HOD pair using nric, site, shift and entry day must be on the day off or the next day
             if (!allTodDetails.isEmpty()) {
                 SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss aa");

@@ -43,6 +43,8 @@
 			idNo = responseObj.get(1);
 			from = responseObj.get(2);
 			to = responseObj.get(3);
+// 			System.out.println("fromDt before format: " + from);
+// 			System.out.println("toDt before format: " + to);
 	        try {
 	        	if(from.length() != 0 && !StringUtils.isEmpty(from)){
 	        		fromDt = dateFormat.parse(from);
@@ -135,6 +137,7 @@
 	                                        securityofficername, date, time, areyoutodhod,
 	                                        dutysite, standbyremark);
 	                                todDetails.setTimestamp(timestamp);
+// 	                                System.out.println("comparing: " + todDetails.getDate().compareTo(fromDt));
 		                                if((todDetails.getDate().compareTo(fromDt) >= 0 && todDetails.getDate().compareTo(toDt) <= 0)){
 	                                		allTodDetails.add(todDetails);
 	                                	}
