@@ -117,7 +117,6 @@
   </dependencies>
   <build>
     <finalName>webappRunnerSample</finalName>
-    <defaultGoal>clean install</defaultGoal>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -168,7 +167,7 @@
         </plugin>
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
+            <version>3.3</version>
             <configuration>
                 <fork>true</fork>
                 <executable>C:\Program Files\Java\jdk1.8.0_161\bin\javac.exe</executable>
