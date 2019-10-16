@@ -55,7 +55,7 @@
     %>
     <div class="container body-content">
         <div class="page-header">
-            <label class="heading">sembcorp test</label>
+            <label class="heading">SembCorpK11 Services</label>
             <br>
             <b>How to use:</b> Click on Name for Employee Details.
             <br>

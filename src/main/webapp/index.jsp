@@ -17,6 +17,15 @@
 <!--                 </div> -->
 <!--             </a> -->
 <!--         </div> -->
+	<div class="card">
+            <a href="sembcorpms.jsp">
+                <div class="eachCard crop">
+                    <img class="center-block" src="employeeparticulars.png" alt="employeeparticulars.jpg">
+                    <h4 class="fontheader"><b>SEMB CORP TEST</b></h4> 
+                </div>
+            </a>
+        </div>
+        <br>
 		<div class="card">
             <a href="addEmp.jsp">
                 <div class="eachCard crop">
