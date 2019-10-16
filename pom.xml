@@ -9,6 +9,10 @@
   <name>webappRunnerSample Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+<properties>
+    <java.version>1.8.0_161</java.version>
+</properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
