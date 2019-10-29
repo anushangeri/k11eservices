@@ -131,7 +131,7 @@
 	                    	if(StringUtils.isEmpty(site)   && !StringUtils.isEmpty(idNo)){
 	                    		//if search by nric/fin only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
-	                            if(idNo != null && !idNo.isEmpty() && idNo.contains(enternricfin)){
+	                            if(idNo != null && !idNo.isEmpty() && idNo.contains(enternricfin.toUpperCase())){
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
@@ -155,7 +155,7 @@
 	                    	if(!StringUtils.isEmpty(site)  && !StringUtils.isEmpty(idNo)){
 	                    		//if search by both
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
-	                            if(dutysite != null && !dutysite.isEmpty() && idNo.contains(enternricfin) && dutysite.equals(site)){
+	                            if(dutysite != null && !dutysite.isEmpty() && idNo.contains(enternricfin.toUpperCase()) && dutysite.equals(site)){
 	
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,

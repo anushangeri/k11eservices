@@ -41,6 +41,14 @@ public class TodHodSearchServlet extends HttpServlet {
 		String from = request.getParameter("from");
 		String to = request.getParameter("to");
 		
+//		to make all UPPERCASE for comparing later
+		if(!StringUtils.isEmpty(idNo)){
+			idNo = idNo.trim();
+			if(!StringUtils.isEmpty(idNo)){
+				idNo = idNo.toUpperCase();
+			}
+		}
+		
 		ArrayList<String> responseObj = new ArrayList<String>();
 		responseObj.add(site);
 		responseObj.add(idNo);

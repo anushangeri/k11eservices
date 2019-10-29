@@ -92,6 +92,7 @@
 			<%
      }
 	%>
+	<center>
 		<form action="todHodSearch" method="post">
 		  <div class="form-row">
 		    <div class="form-group col-md-6">
@@ -145,5 +146,6 @@
 		    <button type="submit" class="btn btn-primary">Search NRIC/FIN</button>
 		    </div>
 		</form>
+		</center>
     </body>
 </html>
