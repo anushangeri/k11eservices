@@ -128,11 +128,14 @@ body {
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="todhodsearch.jsp">TOD/HOD Details</a></li>
-						<li><form action="logout" method="post">
-								<button type="submit" class="btn btn-light" id="logout">Logout</button>
-						</form>
-						</li>
 					</ul>
+					<ul class="nav navbar-nav" style="float: right">
+		            	<li><form action="logout" method="post">
+									<button type="submit" class="btn btn-light">Logout</button>
+							</form>
+							
+						</li>
+		          	</ul>
 				</div>
 				<%} %>
 				<!-- access control for K11 Admin -->
@@ -144,12 +147,14 @@ body {
 						<li><a href="employeeparticulars.jsp">Employee Particulars</a></li>
 						<li><a href="payslip.jsp">Generate Payslip</a></li>
 						<li><a href="todhodsearch.jsp">TOD/HOD Details</a></li>
-						<li>
-							<form action="logout" method="post">
+					</ul>
+					<ul class="nav navbar-nav" style="float: right">
+		            	<li><form action="logout" method="post">
 									<button type="submit" class="btn btn-light">Logout</button>
 							</form>
+							
 						</li>
-					</ul>
+		          	</ul>
 				</div>
 				<%} %>
 		<%} %>
