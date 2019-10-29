@@ -68,6 +68,8 @@
 		nricfin = (String) session.getAttribute("nricfin");
 	}
 	%>
+	<%=session.getAttribute("usertype")  %>
+	<%=session.getAttribute("nricfin")  %>
 	<%
 	ArrayList<String> dutySites = new ArrayList<String>();
 	SpreadsheetService service = new SpreadsheetService("K11CLICKS: DROPDOWN EXCEL");
