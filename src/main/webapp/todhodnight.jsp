@@ -66,7 +66,7 @@
                     = //1TwURCxMStzOp_jFMisNFF01PswassfcM-J4Ma90o23A (test)
                     //1i_3_wI3ClPXE_nX4biN3oNrqxMgyswPuzklAx8mwivY  (real)
                     //1nuQlSMmThaj3YxBktjn771wvzZflDwmS746STcsUcJI (real v2)
-                    "https://spreadsheets.google.com/feeds/list/1R52wxkOdPdnQZZnk2T6FCETARXX1pzfmaGZZ8gqm1rU/1/public/values";
+                    "https://spreadsheets.google.com/feeds/list/1SCtQDA0BESQ51VLCm4IKq_XKbDBMkPwhcRCXgb7TNVA/2/public/values";
 
             // Use this String as url
             URL url = new URL(sheetUrl);
@@ -130,7 +130,7 @@
 	                    	if(StringUtils.isEmpty(site)   && !StringUtils.isEmpty(idNo)){
 	                    		//if search by nric/fin only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
-	                            if(idNo != null && !idNo.isEmpty() && enternricfin.equals(idNo)){
+	                            if(idNo != null && !idNo.isEmpty() && idNo.contains(enternricfin)){
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,
 	                                        securityofficername, date, time, areyoutodhod,
@@ -153,7 +153,7 @@
 	                    	if(!StringUtils.isEmpty(site)  && !StringUtils.isEmpty(idNo)){
 	                    		//if search by both
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
-	                            if(dutysite != null && !dutysite.isEmpty() && enternricfin.equals(idNo) && dutysite.equals(site)){
+	                            if(dutysite != null && !dutysite.isEmpty() && idNo.contains(enternricfin) && dutysite.equals(site)){
 	
 	                                if (areyoutodhod.toUpperCase().contains("TOD")) {
 	                                TodHodDetails todDetails = new TodHodDetails(enternricfin, shift, timestamp,

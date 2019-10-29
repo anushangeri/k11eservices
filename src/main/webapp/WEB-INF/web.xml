@@ -56,6 +56,20 @@
 		<servlet-name>sembcorptest</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.sembcorptest</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginVerifyServlet</display-name>
+		<servlet-name>LoginVerifyServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.LoginVerifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.LogoutServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
@@ -84,5 +98,13 @@
 	<servlet-mapping>
 		<servlet-name>sembcorptest</servlet-name>
 		<url-pattern>/sembcorptest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginVerifyServlet</servlet-name>
+		<url-pattern>/loginVerify</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
 </web-app>
