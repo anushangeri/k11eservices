@@ -40,7 +40,7 @@ public class GoogleSheetsLiveTest {
 
     // this id can be replaced with your spreadsheet id
     // otherwise be advised that multiple people may run this test and update the public spreadsheet
-    private static final String SPREADSHEET_ID = "1VBrjNMEJTVQkcccyOEiit5pAfvbnGmQ6WjgMcnCxR-I";
+    private static final String SPREADSHEET_ID = "1pKtYG7K4Tx3pq0rIs7j--LFT1__yaAPYujqhgs87zrw";
    
     public static void setup() throws GeneralSecurityException, IOException {
     	System.out.println("sheetsService in here");
@@ -86,9 +86,11 @@ public class GoogleSheetsLiveTest {
 //                // Print columns A and E, which correspond to indices 0 and 4.
 //                System.out.printf("%s, %s\n", row.get(0), row.get(4));
 //            }
-    	String content ="just now";
+    	String content ="just now edi]tted";
+    	String content2 ="just now edi]tted2";
         List<Object> data1 = new ArrayList<Object>();
         data1.add (content);
+        data1.add (content2);
         System.out.println("data1" + data1.toString());
         List<List<Object>> data = new ArrayList<List<Object>>();
         data.add (data1);
@@ -96,7 +98,7 @@ public class GoogleSheetsLiveTest {
         valueRange.setValues(data);
         System.out.println("valueRange" + valueRange.toString());
         AppendValuesResponse result = sheetsService.spreadsheets().values().
-        		append(SPREADSHEET_ID, "A1", valueRange)
+        		append(SPREADSHEET_ID, "F1", valueRange)
                 .setValueInputOption("RAW")
                 .execute();
         System.out.println("%d cells appended." + result.getUpdates().getUpdatedCells());

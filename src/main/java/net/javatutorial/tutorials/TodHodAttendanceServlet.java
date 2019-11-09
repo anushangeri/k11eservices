@@ -19,6 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.format.DateTimeFormatter;
 
+import com.google.api.services.sheets.v4.Sheets;
+import com.google.gdata.client.spreadsheet.SpreadsheetService;
+
 import net.javatutorial.DAO.EmployeesManagerDAO;
 import net.javatutorial.DAO.EmployeesTblDAO;
 
@@ -32,7 +35,9 @@ import java.util.Date;
  */
 public class TodHodAttendanceServlet extends HttpServlet {
 	private static final long serialVersionUID = -4751096228274971485L;
-
+	private static final String APPLICATION_NAME = "Google Sheets Example";
+	private static Sheets sheetsService;
+    private static String SPREADSHEET_ID = "1pKtYG7K4Tx3pq0rIs7j--LFT1__yaAPYujqhgs87zrw";
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String site = request.getParameter("site");
@@ -46,12 +51,20 @@ public class TodHodAttendanceServlet extends HttpServlet {
 				idNo = idNo.toUpperCase();
 			}
 		}
-		
-		ArrayList<String> responseObj = new ArrayList<String>();
-		responseObj.add(site);
-		responseObj.add(idNo);
-		responseObj.add(smth);
-		request.setAttribute("responseObj", responseObj);
+		SpreadsheetService service = new SpreadsheetService("Form Responses 1");
+		 try {
+		        String id = "1pKtYG7K4Tx3pq0rIs7j--LFT1__yaAPYujqhgs87zrw";
+		        GoogleSheetsLiveTest test = new GoogleSheetsLiveTest();
+		        test.whenWriteSheet_thenReadSheetOk();
+		           
+		    } catch (Exception e) {
+		        // handle exception
+		    }
+//		ArrayList<String> responseObj = new ArrayList<String>();
+//		responseObj.add(site);
+//		responseObj.add(idNo);
+//		responseObj.add(smth);
+//		request.setAttribute("responseObj", responseObj);
 		RequestDispatcher rd = null;
 		rd = request.getRequestDispatcher("todhodattendance.jsp");
         rd.forward(request, response);
