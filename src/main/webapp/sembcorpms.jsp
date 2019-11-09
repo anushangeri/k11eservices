@@ -33,14 +33,25 @@
 		if ( !(session.getAttribute("nricfin") == null)) {
 			nricfin = (String) session.getAttribute("nricfin");
 		}
+		String site = request.getParameter("site");
 	%>
 <center> 
 	<form action="sembcorptest" method="post">
 		<div class="form-row">
 			<div class="form-group col-md-6">
-				<label for="site">Site: </label> <input class="form-control"
+			 <%if (!StringUtils.isEmpty(site)){
+		    	%>
+		    		 <input type="text" id="site" name="site" value=<%=site%>>
+		    	<%
+		    } 
+		    else{//in case session empty
+		    	%>
+		    		<label for="site">Site: </label> <input class="form-control"
 					id="site" name="site" placeholder="Enter Site" type="text" required />
-			</div>
+		    	<%	
+		    	}
+		    %>
+		   </div>
 			<div class="form-group col-md-6">
 				<label for="smth">Smth: </label> <input class="form-control"
 					id="smth" name="smth" placeholder="Fill smth" type="text" required />
@@ -48,7 +59,7 @@
 			<div class="form-group col-md-6">
 		    <%if (!StringUtils.isEmpty(nricfin)){
 		    	%>
-		    		 <input type="hidden" id="idNo" name="idNo" value=<%=nricfin%>>
+		    		 <input type="text" id="idNo" name="idNo" value=<%=nricfin%>>
 		    	<%
 		    } 
 		    else{//in case session empty
