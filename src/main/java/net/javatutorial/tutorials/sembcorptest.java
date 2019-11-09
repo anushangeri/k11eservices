@@ -72,18 +72,18 @@ public class sembcorptest extends HttpServlet {
 //		}
 			    
 			    
-//		String site = request.getParameter("site");
-//		String idNo = request.getParameter("idNo");
-//		String shift = request.getParameter("shift");
+		String site = request.getParameter("site");
+		String idNo = request.getParameter("idNo");
+		String smth = request.getParameter("smth");
 //		String from = request.getParameter("from");
 //		String to = request.getParameter("to");
-//		
-//		ArrayList<String> responseObj = new ArrayList<String>();
-//		responseObj.add(site);
-//		responseObj.add(idNo);
-//		responseObj.add(from);
+		
+		ArrayList<String> responseObj = new ArrayList<String>();
+		responseObj.add(site);
+		responseObj.add(idNo);
+		responseObj.add(smth);
 //		responseObj.add(to);
-//		request.setAttribute("responseObj", responseObj);
+		request.setAttribute("responseObj", responseObj);
 		
         
 		RequestDispatcher rd = null;
