@@ -70,6 +70,13 @@
 		<servlet-name>LogoutServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.LogoutServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>TodHodAttendanceServlet</display-name>
+		<servlet-name>TodHodAttendanceServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.TodHodAttendanceServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
@@ -106,5 +113,9 @@
 	<servlet-mapping>
 		<servlet-name>LogoutServlet</servlet-name>
 		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>TodHodAttendanceServlet</servlet-name>
+		<url-pattern>/todhodattendance</url-pattern>
 	</servlet-mapping>
 </web-app>
