@@ -50,6 +50,22 @@
               </form>
           </td>
 	    </tr>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td>Visitor Management System (VMS)</td>
+	      <td><form action="createVmsTbl" method="post">
+                  <button class="btn" type="submit">Create</button>
+              </form>
+          </td>
+	      <td><form action="updateEmpTbl" method="post">
+                  <button class="btn" type="submit">Update</button>
+              </form>
+          </td>
+	      <td><form action="deleteEmpTbl" method="post">
+                  <button class="btn" type="submit">Delete</button>
+              </form>
+          </td>
+	    </tr>
 	  </tbody>
 	</table>
 </body>

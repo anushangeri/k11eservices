@@ -40,7 +40,7 @@ public class GoogleSheetsLiveTest {
 
     // this id can be replaced with your spreadsheet id
     // otherwise be advised that multiple people may run this test and update the public spreadsheet
-    private static final String SPREADSHEET_ID = "1pKtYG7K4Tx3pq0rIs7j--LFT1__yaAPYujqhgs87zrw";
+    private static final String SPREADSHEET_ID = "1VBrjNMEJTVQkcccyOEiit5pAfvbnGmQ6WjgMcnCxR-I";
    
     public static void setup() throws GeneralSecurityException, IOException {
     	System.out.println("sheetsService in here");
@@ -87,7 +87,7 @@ public class GoogleSheetsLiveTest {
 //                System.out.printf("%s, %s\n", row.get(0), row.get(4));
 //            }
     	String content ="just now edi]tted";
-    	String content2 ="just now edi]tted2";
+    	String content2 ="just now edi]tted";
         List<Object> data1 = new ArrayList<Object>();
         data1.add (content);
         data1.add (content2);

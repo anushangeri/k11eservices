@@ -34,18 +34,6 @@
 					</a>
 				</div>
 				<br>
-				<div class="card">
-					<a href="todhodattendance.jsp">
-						<div class="eachCard crop">
-							<img class="center-block" src="employeeparticulars.png"
-								alt="employeeparticulars.jpg">
-							<h4 class="fontheader">
-								<b>TOD/HOD ATTENDANCE SUBMISSION</b>
-							</h4>
-						</div>
-					</a>
-				</div>
-				<br>
 				<%} %>
 				<!-- access control for K11 Admin -->
 				<%if (usertype.equals("K11ADMIN")) {%>
