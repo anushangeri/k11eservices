@@ -138,7 +138,7 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AddVisitorRecordServlet</servlet-name>
-		<url-pattern>/"addVisitor"</url-pattern>
+		<url-pattern>/addVisitor</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
