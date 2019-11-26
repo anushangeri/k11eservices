@@ -17,17 +17,17 @@ public class VMSTblDAO {
 			Statement stmt = connection.createStatement();
 //	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
 	        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS VMS (\r\n" + 
-	        		"   VMS_ID   VARCHAR (100)              NOT NULL,\r\n" + 
-	        		"   FIRST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   LAST_NAME VARCHAR (100)      NULL,\r\n" +  
-	        		"   ID_NO VARCHAR (100)     NULL, \r\n" + 
+	        		"   VMS_ID VARCHAR (100)  NOT NULL,\r\n" + 
+	        		"   FIRST_NAME VARCHAR (100)  NOT NULL,\r\n" + 
+	        		"   LAST_NAME VARCHAR (100)  NULL,\r\n" +  
+	        		"   ID_NO VARCHAR (100)   NULL, \r\n" + 
 	        		"   MOBILE_NO  VARCHAR (100) NOT NULL,   \r\n" + 
 	        		"   VEHICLE_NO  VARCHAR (100)  NULL,\r\n" + 
 	        		"   HOST_NAME  VARCHAR (100) NOT NULL, \r\n" +  
 	        		"   HOST_CONTACT  VARCHAR (100) NOT NULL,\r\n" + 
 	        		"   VISTOR_CARD_ID  VARCHAR (100) NOT NULL,\r\n" + 
 	        		"   TIME_IN_DT TIMESTAMP     NOT NULL,\r\n" + 
-	        		"   TIME_OUT_DT TIMESTAMP   NULL, \r\n" + 
+	        		"   TIME_OUT_DT TIMESTAMP   NULL \r\n" + 
 	        		");");
 //	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 //	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
