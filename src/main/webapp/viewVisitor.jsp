@@ -26,7 +26,7 @@
 </script>
 </head>
 <body>
-<%session.getAttribute("vList").toString(); %>
+<%=session.getAttribute("vList").toString()%>
 	<div class="container body-content">
 		<div class="page-header">
 			<label class="heading">Visitor Management System</label> <br> <b>How
