@@ -30,15 +30,18 @@
 			</a>
 		</div>
 		<br>
+		<!-- using form tag here because need to send button click straight to servlet -->
 		<div class="card">
-			<a href="/viewVisitor">
+		<form action="viewVisitor" method="post">
+			<button type="submit">
 				<div class="eachCard crop">
 					<img class="center-block" src="viewallvisitors.png" alt="viewallvisitors.png">
 					<h4 class="fontheader">
 						<b>VIEW ALL VISITOR RECORDS</b>
 					</h4>
 				</div>
-			</a>
+			</button>
+			</form>
 		</div>
 	</center>
 </body>

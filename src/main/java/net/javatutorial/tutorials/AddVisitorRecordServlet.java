@@ -57,9 +57,9 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		
 		String message = VMSManagerDAO.addVisitor(v);
 		
-		String responseObj = message + " " + firstName + vmsId;
+		String responseObj = message + " " + firstName + " " + vmsId;
 		request.setAttribute("responseObj", responseObj);
-        RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("vms.jsp");
         rd.forward(request, response);
 	}
 	@Override
