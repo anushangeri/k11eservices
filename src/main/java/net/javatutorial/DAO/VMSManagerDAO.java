@@ -81,13 +81,16 @@ public class VMSManagerDAO {
         ArrayList<Visitor> vList = new ArrayList<Visitor>();
         try {
         	connection = Main.getConnection();
-            String sql = "SELECT * FROM VMS ORDER BY TIME_IN_DT DESC;";
+            String sql = "SELECT VMS_ID, FIRST_NAME,\r\n" + 
+            		"              LAST_NAME, ID_NO, MOBILE_NO, \r\n" + 
+            		"              VEHICLE_NO, HOST_NAME,\r\n" + 
+            		"              HOST_CONTACT, VISTOR_CARD_ID,\r\n" + 
+            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS ORDER BY TIME_IN_DT DESC;";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
             if (rs.next()) {
-            	v = new Visitor(rs.getString(0), 
-            			rs.getString(1),
+            	v = new Visitor(rs.getString(1), 
             			rs.getString(2),
             			rs.getString(3),
             			rs.getString(4),
@@ -95,8 +98,9 @@ public class VMSManagerDAO {
             			rs.getString(6),
             			rs.getString(7),
             			rs.getString(8),
-            			rs.getTimestamp(9),
-            			rs.getTimestamp(10));
+            			rs.getString(9),
+            			rs.getTimestamp(10),
+            			rs.getTimestamp(11));
                 vList.add(v);
             }
         } catch (Exception e) {
