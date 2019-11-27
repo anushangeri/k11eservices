@@ -27,6 +27,14 @@
 </head>
 <body>
 <%=session.getAttribute("vList").toString()%>
+<%
+	        String responseObj = (String) request.getAttribute("responseObj");
+	        if (responseObj != null) {
+	            %>
+	            <label class="heading"><%=responseObj%></label>
+	            <%
+	        }
+  %>
 	<div class="container body-content">
 		<div class="page-header">
 			<label class="heading">Visitor Management System</label> <br> <b>How
