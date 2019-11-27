@@ -9,6 +9,7 @@
 <%@page import="com.google.gdata.data.spreadsheet.ListEntry"%>
 <%@page import="com.google.gdata.data.spreadsheet.ListFeed"%>
 <%@page import="com.google.gdata.util.ServiceException"%>
+<%@page import="net.javatutorial.entity.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -20,58 +21,82 @@
 	src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('#escalation').DataTable();
+$(document).ready(function () {
+	$('#dtBasicExample').DataTable();
+	$('.dataTables_length').addClass('bs-select');
 	});
 </script>
 </head>
 <body>
-<%=session.getAttribute("vList").toString()%>
-<%
-	        String responseObj = (String) request.getAttribute("responseObj");
-	        if (responseObj != null) {
-	            %>
-	            <label class="heading"><%=responseObj%></label>
-	            <%
-	        }
-  %>
+
+	<%
+		ArrayList<Visitor> vList = (ArrayList<Visitor>) session.getAttribute("vList");
+		String responseObj = (String) request.getAttribute("responseObj");
+		if (responseObj != null) {
+	%>
+	<label class="heading"><%=responseObj%></label>
+	<%
+		}
+	%>
 	<div class="container body-content">
 		<div class="page-header">
 			<label class="heading">Visitor Management System</label> <br> <b>How
 				to use:</b> Filter and View all Visitor Records. <br> <br>
 			<center>
-				<div style="display: block; width: 80%" id="todhodtablediv">
-					<display:table name="sessionScope.vList" pagesize="20"
-						export="true" sort="list" class="table">
-						<display:column property="vmsId" title="S/N" sortable="true"
-							headerClass="sortable" />
-						<display:column property="firstName" title="First Name" sortable="true"
-							headerClass="sortable" />
-						<display:column property="lastName" title="Last Name" sortable="true"
-							headerClass="sortable" />
-						<display:column property="idNo" title="NRIC/FIN" sortable="true"
-							headerClass="sortable" />
-						<display:column property="mobileNo" title="Visitor Contact Number"
-							sortable="true" headerClass="sortable" />
-						<display:column property="vehicleNo" title="Vehicle Number"
-							sortable="true" headerClass="sortable" />
-						<display:column property="hostName" title="Host Name"
-							sortable="true" headerClass="sortable" />
-						<display:column property="hostNo" title="Host Contact Number"
-							sortable="true" headerClass="sortable" />
-						<display:column property="visitorCardId" title="Visitor Pass ID"
-							sortable="true" headerClass="sortable" />
-						<display:column property="timeInDt" title="Time In"
-							sortable="true" headerClass="sortable" />
-						<display:column property="timeOutDt" title="Time Out"
-							sortable="true" headerClass="sortable" />
-					</display:table>
-				</div>
-				<br> <br>
+				<table id="dtBasicExample"
+					class="table table-striped table-bordered table-sm" cellspacing="0"
+					width="100%">
+					<thead>
+						<tr>
+							<th class="th-sm">S/N</th>
+							<th class="th-sm">First Name</th>
+							<th class="th-sm">Last Name</th>
+							<th class="th-sm">NRIC/FIN</th>
+							<th class="th-sm">Visitor Contact Number</th>
+							<th class="th-sm">Vehicle Number</th>
+							<th class="th-sm">Host Name</th>
+							<th class="th-sm">Host Contact Number</th>
+							<th class="th-sm">Visitor Pass ID</th>
+							<th class="th-sm">Time In</th>
+							<th class="th-sm">Time Out</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							if (!vList.isEmpty()) {
+								Iterator<Visitor> vListIter = vList.iterator();
+								while (vListIter.hasNext()) {
+									Visitor v = vListIter.next();
+							%>
+									<tr>
+										<td><%=v.getVmsId()%></td>
+										<td><%=v.getFirstName()%></td>
+										<td><%=v.getLastName()%></td>
+										<td><%=v.getIdNo()%></td>
+										<td><%=v.getMobileNo()%></td>
+										<td><%=v.getVehicleNo()%></td>
+										<td><%=v.getHostName()%></td>
+										<td><%=v.getHostNo()%></td>
+										<td><%=v.getVisitorCardId()%></td>
+										<td><%=v.getTimeInDt()%></td>
+										<td><%=v.getTimeOutDt()%></td>
+									</tr>
+						<%
+								}
+						%>
+
+						<%
+							}
+						%>
+					</tbody>
+				</table>
+				<br>
 				<center>
 					<a href="vms.jsp" class="btn btn-warning btn-lg active"
 						role="button" aria-pressed="true">Back</a>
 				</center>
+				<tbody></tbody>
+				<table></table>
 			</center>
 		</div>
 	</div>

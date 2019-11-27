@@ -45,7 +45,7 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 		if(vList == null) {
 			responseObj = "No visitor records.";
 		}
-		request.setAttribute("responseObj", vList.toString());
+		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("viewVisitor.jsp");
         rd.forward(request, response);
 	}

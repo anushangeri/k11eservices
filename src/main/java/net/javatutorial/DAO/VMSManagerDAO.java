@@ -89,7 +89,7 @@ public class VMSManagerDAO {
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {
             	v = new Visitor(rs.getString(1), 
             			rs.getString(2),
             			rs.getString(3),
