@@ -2,9 +2,11 @@ package net.javatutorial.DAO;
 
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import net.javatutorial.entity.Employee;
 import net.javatutorial.entity.Visitor;
@@ -13,18 +15,20 @@ import net.javatutorial.tutorials.Main;
 public class VMSManagerDAO {
 	
 	public static String addVisitor(Visitor v){
-		Connection connection;
+		Connection connection = null;
+		ResultSet rs = null;
+		Statement stmt = null;
 		String message = "";
 		try {
 			connection = Main.getConnection();
-			Statement stmt = connection.createStatement();
+			stmt = connection.createStatement();
 
 	        stmt.executeUpdate("INSERT INTO VMS "
 	        		+  "(VMS_ID, FIRST_NAME, LAST_NAME, ID_NO, MOBILE_NO, VEHICLE_NO, HOST_NAME, HOST_CONTACT, VISTOR_CARD_ID, TIME_IN_DT)" + 
 	        		"   VALUES ('" +v.getVmsId()+ "','" +v.getFirstName()+ "','" +v.getLastName()+ "','" +v.getIdNo()+ "','" +v.getMobileNo()+ "','"
 	        		+v.getVehicleNo()+ "','" +v.getHostName()+ "','" +v.getHostNo()+ "','" +v.getVisitorCardId()+ "','" +v.getTimeInDt()+ 
 	        		"')");
-	        ResultSet rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS");
+	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS");
 	        while (rs.next()) {
 	        	message = "Read from DB: " + rs.getTimestamp("tick");
 	        }
@@ -37,17 +41,22 @@ public class VMSManagerDAO {
 			//e.printStackTrace();
 			message = "" + e;
 		}
+		finally {
+        	Main.close(connection, stmt, rs);
+        }
 		message = "Successful";
 		return message;
 	}
 	public static int getNextVal(){
-		Connection connection;
+		Connection connection = null;
+		ResultSet rs = null;
+		Statement stmt = null;
 		int result = 0;
 		try {
 			connection = Main.getConnection();
-			Statement stmt = connection.createStatement();
+			stmt = connection.createStatement();
 //	        stmt.executeUpdate("SELECT count(*) FROM EMPLOYEES;");
-	        ResultSet rs = stmt.executeQuery("SELECT count(LAST_INSERT_ID()) FROM VMS;");
+	        rs = stmt.executeQuery("SELECT count(LAST_INSERT_ID()) FROM VMS;");
 	        while (rs.next()) {
                 result = rs.getInt(1) + 1;
             }
@@ -58,6 +67,43 @@ public class VMSManagerDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		finally {
+        	Main.close(connection, stmt, rs);
+        }
 		return result;
 	}
+	
+	public static ArrayList<Visitor> retrieveAll() {
+        PreparedStatement pstmt = null;
+        Connection connection = null;
+        ResultSet rs = null;
+        Visitor v = null;
+        ArrayList<Visitor> vList = new ArrayList<Visitor>();
+        try {
+        	connection = Main.getConnection();
+            String sql = "SELECT * FROM VMS ORDER BY TIME_IN_DT DESC;";
+            pstmt = connection.prepareStatement(sql);
+
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+            	v = new Visitor(rs.getString(0), 
+            			rs.getString(1),
+            			rs.getString(2),
+            			rs.getString(3),
+            			rs.getString(4),
+            			rs.getString(5),
+            			rs.getString(6),
+            			rs.getString(7),
+            			rs.getString(8),
+            			rs.getTimestamp(9),
+            			rs.getTimestamp(10));
+                vList.add(v);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        	Main.close(connection, pstmt, rs);
+        }
+        return vList;
+    }
 }

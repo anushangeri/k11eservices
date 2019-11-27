@@ -3,6 +3,8 @@ package net.javatutorial.tutorials;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
     
@@ -31,5 +33,38 @@ public class Main {
 //    	String dbUrl = System.getenv("JDBC_DATABASE_URL");
 //        return DriverManager.getConnection(dbUrl);
     }
-
+    
+    /**
+     * close the given connection, statement and resultset
+     *
+     * @param conn the connection object to be closed
+     * @param stmt the statement object to be closed
+     * @param rs the resultset object to be closed
+     */
+    public static void close(Connection conn, Statement stmt, ResultSet rs) {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.WARNING,
+                    "Unable to close ResultSet", ex);
+        }
+        try {
+            if (stmt != null) {
+                stmt.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.WARNING,
+                    "Unable to close Statement", ex);
+        }
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.WARNING,
+                    "Unable to close Connection", ex);
+        }
+    }
 }

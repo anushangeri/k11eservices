@@ -69,7 +69,18 @@
 						</div>
 					</a>
 				</div>
-		
+				<br>
+				<div class="card">
+					<a href="vms.jsp">
+						<div class="eachCard crop">
+							<img class="center-block" src="VMS_icon.png"
+								alt="VMS_icon.png">
+							<h4 class="fontheader">
+								<b>VISITOR MANAGEMENT SYSTEM</b>
+							</h4>
+						</div>
+					</a>
+				</div>		
 		
 				<!--         <div class="card"> -->
 				<!--             <a href="generatePayslip.jsp"> -->
