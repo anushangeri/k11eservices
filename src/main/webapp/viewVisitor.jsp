@@ -104,7 +104,7 @@ type="text/javascript"></Script>
 					<thead>
 						<tr>
 							<th class="th-sm">S/N</th>
-							<th class="th-sm">First Name</th>
+							<th class="th-sm">First</th>
 							<th class="th-sm">Last Name</th>
 							<th class="th-sm">NRIC/FIN</th>
 							<th class="th-sm">Visitor Contact Number</th>
