@@ -28,27 +28,59 @@
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet">
-      <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" 
 
+href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />     
+<link rel="stylesheet" 
 
+href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" />     
+<Script src="https://code.jquery.com/jquery-1.12.3.js" 
 
-
-      
-	<script src="extensions/export/bootstrap-table-export.js"></script>
+type="text/javascript"></Script>     
+<Script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" 
+type="text/javascript"></Script>     
+<Script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js" 
+type="text/javascript"></Script>     
+<Script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js" 
+type="text/javascript"></Script>     
+<Script src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js" 
+type="text/javascript"></Script>
 	
-	<script type="text/javascript">
-	$(document).ready(function() {
-	    var table = $('#example').DataTable( {
-	        lengthChange: false,
-	        buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
-	    } );
-	 
-	    table.buttons().container()
-	        .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
-	} );
-	</script>
+<script>
+        $(document).ready(function () {
+            $(document).ready(function () {
+                $('table').DataTable({                    
+                    dom: 'Blfrtip',
+                    buttons: [{
+                        text: 'Export To Excel',                       
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            modifier: {
+                                selected: true
+                            },
+                            columns: [0, 1, 2, 3],
+                            format: {
+                                header: function (data, columnIdx) {
+                                    return data;
+                                },
+                                body: function (data, column, row) {
+                                    // Strip $ from salary column to make it numeric
+                                    debugger;
+                                    return column === 4 ? "" : data;
+                                }
+                            }
+                        },
+                        footer: false,
+                        customize: function (xlsx) {
+                            var sheet = xlsx.xl.worksheets['sheet1.xml'];
+                            //$('c[r=A1] t', sheet).text( 'Custom text' );
+                            //$('row c[r^="C"]', sheet).attr('s', '2');
+                        }
+                    }]
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -126,7 +158,9 @@
 
 
 
-<table id="example" class="table table-striped table-bordered" style="width:100%">
+<table id="example" class="display" 
+
+cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Name</th>
