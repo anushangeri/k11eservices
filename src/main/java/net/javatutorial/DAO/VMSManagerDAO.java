@@ -56,9 +56,9 @@ public class VMSManagerDAO {
 			connection = Main.getConnection();
 			stmt = connection.createStatement();
 //	        stmt.executeUpdate("SELECT count(*) FROM EMPLOYEES;");
-	        rs = stmt.executeQuery("SELECT count(LAST_INSERT_ID()) FROM VMS;");
+	        rs = stmt.executeQuery("SELECT MAX(VMS_ID) FROM VMS;");
 	        while (rs.next()) {
-                result = rs.getInt(1) + 1;
+                result = Integer.parseInt(rs.getString(1)) + 1;
             }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -109,5 +109,25 @@ public class VMSManagerDAO {
         	Main.close(connection, pstmt, rs);
         }
         return vList;
+    }
+	
+	public static String deleteAll() {
+        PreparedStatement pstmt = null;
+        Connection connection = null;
+        ResultSet rs = null;
+        String message = "success";
+        try {
+        	connection = Main.getConnection();
+            String sql = "DELETE FROM VMS;";
+            pstmt = connection.prepareStatement(sql);
+
+            rs = pstmt.executeQuery();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        	Main.close(connection, pstmt, rs);
+        }
+        return message;
     }
 }

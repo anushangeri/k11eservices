@@ -98,7 +98,14 @@
 		<servlet-name>ViewVisitorRecordServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.ViewVisitorRecordServlet</servlet-class>
 	</servlet>
-	
+	<servlet>
+		<description />
+
+		<display-name>DeleteAllVisitorRecordServlet</display-name>
+		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteAllVisitorRecordServlet</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
@@ -151,5 +158,8 @@
 		<servlet-name>ViewVisitorRecordServlet</servlet-name>
 		<url-pattern>/viewVisitor</url-pattern>
 	</servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
+		<url-pattern>/deleteAllVisitor</url-pattern>
+	</servlet-mapping>
 </web-app>
