@@ -49,7 +49,7 @@ type="text/javascript"></Script>
 <script>
         $(document).ready(function () {
             $(document).ready(function () {
-                $('example').DataTable({                    
+                $('table').DataTable({                    
                     dom: 'Blfrtip',
                     buttons: [{
                         text: 'Export To Excel',                       
