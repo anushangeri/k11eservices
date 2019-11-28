@@ -58,22 +58,20 @@ $(document).ready(function () {
 			<label class="heading">Visitor Management System</label> <br> <b>How
 				to use:</b> Filter and View all Visitor Records. <br> <br>
 			<center>
-				<table data-toggle="table"
-					class="table table-striped table-bordered table-sm" cellspacing="0"
-					width="80%">
+				<table data-toggle="table">
 					<thead>
 						<tr>
-							<th class="th-sm">S/N</th>
-							<th class="th-sm">First Name</th>
-							<th class="th-sm">Last Name</th>
-							<th class="th-sm">NRIC/FIN</th>
-							<th class="th-sm">Visitor Contact Number</th>
-							<th class="th-sm">Vehicle Number</th>
-							<th class="th-sm">Host Name</th>
-							<th class="th-sm">Host Contact Number</th>
-							<th class="th-sm">Visitor Pass ID</th>
-							<th class="th-sm">Time In</th>
-							<th class="th-sm">Time Out</th>
+							<th>S/N</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>NRIC/FIN</th>
+							<th>Visitor Contact Number</th>
+							<th>Vehicle Number</th>
+							<th>Host Name</th>
+							<th>Host Contact Number</th>
+							<th>Visitor Pass ID</th>
+							<th>Time In</th>
+							<th>Time Out</th>
 						</tr>
 					</thead>
 					<tbody>
