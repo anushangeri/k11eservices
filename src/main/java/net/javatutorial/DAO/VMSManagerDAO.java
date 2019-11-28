@@ -57,12 +57,15 @@ public class VMSManagerDAO {
 			stmt = connection.createStatement();
 //	        stmt.executeUpdate("SELECT count(*) FROM EMPLOYEES;");
 	        rs = stmt.executeQuery("SELECT MAX(VMS_ID) FROM VMS;");
-	        while (rs.next()) {
-	        	if(!rs.getString(1).isEmpty()) {
-	        		result = Integer.parseInt(rs.getString(1)) + 1;
-	        	}
-                
-            }
+	        if(rs != null) {
+	        	while (rs.next()) {
+		        	if(rs.getString(1) != null && !rs.getString(1).isEmpty()) {
+		        		result = Integer.parseInt(rs.getString(1)) + 1;
+		        	}
+	                
+	            }
+	        }
+	        
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
