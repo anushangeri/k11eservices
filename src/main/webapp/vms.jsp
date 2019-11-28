@@ -33,9 +33,9 @@
 		<!-- using form tag here because need to send button click straight to servlet -->
 		<div class="card">
 		<form action="viewVisitor" method="post">
-			<button type="submit" class="unstyled-button">
+			<button type="submit" class="btn btn-link">
 				<div class="eachCard crop">
-					<img class="center-block" src="viewallvisitors.png" alt="viewallvisitors.png">
+					<img class="center-block" src="VMS_icon.png" alt="VMS_icon.png">
 					<h4 class="fontheader">
 						<b>VIEW ALL VISITOR RECORDS</b>
 					</h4>

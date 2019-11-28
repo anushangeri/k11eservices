@@ -65,11 +65,7 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
 bottom: .5em;
 }
-.unstyled-button {
-  border: none;
-  padding: 0;
-  background: none;
-}
+
 table.everytable thead{
     padding-top: 12px;
     padding-bottom: 12px;
