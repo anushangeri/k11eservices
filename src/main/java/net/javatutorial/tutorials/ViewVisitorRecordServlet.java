@@ -40,12 +40,13 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		ArrayList<Visitor> vList = VMSManagerDAO.retrieveAll();
-		String responseObj = "Success";
+		ArrayList<String> responseObj = new ArrayList<String>();
+		String message = "Success";
 		session.setAttribute("vList", vList);
 		if(vList == null) {
-			responseObj = "No visitor records.";
+			message = "No visitor records.";
 		}
-		request.setAttribute("responseObj", responseObj);
+		request.setAttribute("responseObj", responseObj.add(message));
         RequestDispatcher rd = request.getRequestDispatcher("viewVisitor.jsp");
         rd.forward(request, response);
 	}
