@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
@@ -39,8 +40,8 @@ public class DeleteAllVisitorRecordServlet extends HttpServlet {
 		
 		String message = VMSManagerDAO.deleteAll();
 		
-		String responseObj = message;
-		request.setAttribute("responseObj", responseObj);
+		ArrayList<String> responseObj = new ArrayList<String>();
+		request.setAttribute("responseObj", responseObj.add(message));
         RequestDispatcher rd = request.getRequestDispatcher("vms.jsp");
         rd.forward(request, response);
 	}
