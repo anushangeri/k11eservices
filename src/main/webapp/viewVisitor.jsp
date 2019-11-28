@@ -12,35 +12,22 @@
 <%@page import="net.javatutorial.entity.*"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<link rel="stylesheet"
-	href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
-<style type="text/css"></style>
-	    <!--  jQuery -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-		
-		<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-		<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-		
-		<!-- Bootstrap Date-Picker Plugin -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
-		
-<script type="text/javascript"
-	src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
-  
-<script type="text/javascript">
-$(document).ready(function () {
-	$('#dtBasicExample').DataTable();
-	$('.dataTables_length').addClass('bs-select');
-	});
-</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js"></script>
+
+  <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"></script>
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -58,20 +45,22 @@ $(document).ready(function () {
 			<label class="heading">Visitor Management System</label> <br> <b>How
 				to use:</b> Filter and View all Visitor Records. <br> <br>
 			<center>
-				<table data-toggle="table">
+				<table  id="example"
+					class="table table-striped table-bordered table-sm sortable" cellspacing="0"
+					width="100%">
 					<thead>
 						<tr>
-							<th>S/N</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>NRIC/FIN</th>
-							<th>Visitor Contact Number</th>
-							<th>Vehicle Number</th>
-							<th>Host Name</th>
-							<th>Host Contact Number</th>
-							<th>Visitor Pass ID</th>
-							<th>Time In</th>
-							<th>Time Out</th>
+							<th class="th-sm">S/N</th>
+							<th class="th-sm">First Name</th>
+							<th class="th-sm">Last Name</th>
+							<th class="th-sm">NRIC/FIN</th>
+							<th class="th-sm">Visitor Contact Number</th>
+							<th class="th-sm">Vehicle Number</th>
+							<th class="th-sm">Host Name</th>
+							<th class="th-sm">Host Contact Number</th>
+							<th class="th-sm">Visitor Pass ID</th>
+							<th class="th-sm">Time In</th>
+							<th class="th-sm">Time Out</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -103,16 +92,13 @@ $(document).ready(function () {
 						%>
 					</tbody>
 				</table>
-				<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
-  
 				<br>
 				<center>
 					<a href="vms.jsp" class="btn btn-warning btn-lg active"
 						role="button" aria-pressed="true">Back</a>
 				</center>
+				<tbody></tbody>
+				<table></table>
 			</center>
 		</div>
 	</div>
