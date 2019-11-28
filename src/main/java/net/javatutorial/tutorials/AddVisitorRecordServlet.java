@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
@@ -57,8 +58,8 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		
 		String message = VMSManagerDAO.addVisitor(v);
 		
-		String responseObj = message + " " + firstName + " " + vmsId;
-		request.setAttribute("responseObj", responseObj);
+		ArrayList<String> responseObj = new ArrayList<String>();
+		request.setAttribute("responseObj", responseObj.add(message + " " + firstName));
         RequestDispatcher rd = request.getRequestDispatcher("vms.jsp");
         rd.forward(request, response);
 	}
