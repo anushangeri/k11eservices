@@ -99,10 +99,10 @@
 
 	<%
 		ArrayList<Visitor> vList = (ArrayList<Visitor>) session.getAttribute("vList");
-		String responseObj = (String) request.getAttribute("responseObj");
+		ArrayList<String> responseObj = (ArrayList<String>) request.getAttribute("responseObj");
 		if (responseObj != null) {
 	%>
-	<label class="heading"><%=responseObj%></label>
+	<label class="heading"><%=responseObj.toString()%></label>
 	<%
 		}
 	%>
@@ -164,9 +164,7 @@
 						role="button" aria-pressed="true">Back</a>
 
 					<form action="deleteAllVisitor" method="post">
-							<button type="submit" class="btn btn-link">
-								Delete All
-							</button>
+						<button type="submit" class="btn btn-link">Delete All</button>
 					</form>
 				</center>
 			</center>
