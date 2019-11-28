@@ -51,14 +51,17 @@ public class VMSManagerDAO {
 		Connection connection = null;
 		ResultSet rs = null;
 		Statement stmt = null;
-		int result = 0;
+		int result = 1;
 		try {
 			connection = Main.getConnection();
 			stmt = connection.createStatement();
 //	        stmt.executeUpdate("SELECT count(*) FROM EMPLOYEES;");
 	        rs = stmt.executeQuery("SELECT MAX(VMS_ID) FROM VMS;");
 	        while (rs.next()) {
-                result = Integer.parseInt(rs.getString(1)) + 1;
+	        	if(!rs.getString(1).isEmpty()) {
+	        		result = Integer.parseInt(rs.getString(1)) + 1;
+	        	}
+                
             }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
