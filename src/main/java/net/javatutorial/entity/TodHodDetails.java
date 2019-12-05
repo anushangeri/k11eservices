@@ -6,8 +6,11 @@
 package net.javatutorial.entity;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class TodHodDetails {
     private String enternricfin;
@@ -21,7 +24,9 @@ public class TodHodDetails {
     private String areyoutodhod;
     private String dutysite;
     private String standbyremark;
-
+    
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    
     public TodHodDetails(String enternricfin, String shift, String timestampAsStr, String securityofficername, String dateAsStr, String timeAsStr, String areyoutodhod, String dutysite, String standbyremark) {
         this.enternricfin = enternricfin;
         this.shift = shift;
@@ -95,6 +100,7 @@ public class TodHodDetails {
     }
 
     public void setDateAsStr(String dateAsStr) {
+    
         this.dateAsStr = dateAsStr;
     }
 
