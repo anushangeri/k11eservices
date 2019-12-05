@@ -237,7 +237,7 @@
    	         for (ListEntry le : dutySiteslf.getEntries()) {
    	        	 CustomElementCollection cec = le.getCustomElements();
    	             String eachSite = cec.getValue("dutysites");
-   	             String siteCountStr = cec.getValue("daycount");
+   	             String siteCountStr = cec.getValue("nightcount");
    	             int siteCount = 0;
    	             int todSiteCount = 0;
    	             String status = "";
@@ -465,7 +465,7 @@
         </div>
         <br>
        	<br>
-       		<div class="table-responsive">
+       	<div class="table-responsive">
             <div class="table-responsive">        
                 <table id="escalation" class="table table-striped table-bordered everytable" cellspacing="0" width="100%">
                     <thead>
