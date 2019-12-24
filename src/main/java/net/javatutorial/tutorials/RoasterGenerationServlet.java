@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -62,6 +63,13 @@ public class RoasterGenerationServlet extends HttpServlet {
 		ArrayList<String> sites = new ArrayList<String>();
 		Map<String, Integer> unSortedSoSiteDay = new HashMap<String, Integer>();
 		Map<String, ArrayList<String>> sortSoSiteDay = new HashMap<String, ArrayList<String>>();
+		Map<String, ArrayList<String>> soLeave = new HashMap<String, ArrayList<String>>();
+		Map<String, ArrayList<String>> roasterDay = new HashMap<String, ArrayList<String>>();
+		
+		//get number of days of current Month
+		Calendar c = Calendar.getInstance();
+		int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+		
 		try {
 			//FOR THE SHEET 1: PAST ROASTER
             String sheetUrl
@@ -131,14 +139,16 @@ public class RoasterGenerationServlet extends HttpServlet {
 	        for (ListEntry eachR : lf2.getEntries()) {
 	            CustomElementCollection allE = eachR.getCustomElements();
 	            if (allE != null){
+	            	//the SHORT NAME
 	            	String officerName = allE.getValue(leaveProjHeaderList.get(2));
 	            	if(officerName != null && !officerName.isEmpty()) {
 		            	int countSite = 0;
 		            	//Step 5: For each officer, find the top 3 sites in Sheet 1 for Day Shift
 		            	//iterating each row is each site
 		            	for (ListEntry le : lf.getEntries()) {
-		            		int countSoSite = 0;
+		            		int countSoSiteDay = 0;
 		                    CustomElementCollection cec = le.getCustomElements();
+		                    //COUNT DAY SHIFT
 		                    if (cec != null){
 		                    	//count for the all the day shift
 		                    	int dayCol = 1;
@@ -147,7 +157,7 @@ public class RoasterGenerationServlet extends HttpServlet {
 		                    		String so = cec.getValue(pastRoasterHeaderList.get(dayCol));
 			                    	if(!so.isEmpty()) {
 			                    		if(so.equalsIgnoreCase(officerName)) {
-			                    			countSoSite++;
+			                    			countSoSiteDay++;
 			                    		}
 			                    	}
 			                    	dayCol= dayCol+2;
@@ -156,7 +166,7 @@ public class RoasterGenerationServlet extends HttpServlet {
 	                    	//after the entire row has been counted, put into Map
 	                    	if(countSite < sites.size()) {
 	                    		String eachSite = sites.get(countSite);
-	                    		unSortedSoSiteDay.put(eachSite, countSoSite);
+	                    		unSortedSoSiteDay.put(eachSite, countSoSiteDay);
 	                    		countSite++;
 	                    	}
 		                }
@@ -179,7 +189,7 @@ public class RoasterGenerationServlet extends HttpServlet {
 		                for (Map.Entry<String, Integer> aa : list) { 
 		                	sortSitesDay.put(aa.getKey(), aa.getValue()); 
 		                } 
-		            	//get the top 3 sites
+		            	//get the top 3 sites for Day shift
 		            	Set<String> sitesSet = sortSitesDay.keySet();
 		            	List<String> sitesSetList = new ArrayList<String>(sitesSet);
 		            	ArrayList<String> top3Site = new ArrayList<String>();
@@ -189,9 +199,94 @@ public class RoasterGenerationServlet extends HttpServlet {
 		            		}
 		            	}
 		            	sortSoSiteDay.put(officerName, top3Site);
+		            	
+		            	//Step 6: Read the same excel (Sheet 2) for each officer, get the leave dates
+		            	//looping through the dates
+		            	ArrayList<String> leaves = new ArrayList<String>();
+		            	for(int i = 4; i < leaveProjHeaderList.size(); ++i) {
+		            		//check each even column or odd column for "RD" or "AL"
+		            		String eachCol = allE.getValue(leaveProjHeaderList.get(i));
+		            		//String eachOddCol = allE.getValue(leaveProjHeaderList.get(i+1));
+		            		//i = even number check for RD/AL
+		            		if(eachCol.equals("RD") || eachCol.equals("AL") || eachCol.equals("UL") || eachCol.equals("OC")) {
+		            			leaves.add("RD");
+		            			leaves.add("RD");
+		            		}
+//		            		//if the even col doesnt have RD/AL check the odd col to make sure too
+//		            		else if(eachOddCol.equals("RD") || eachOddCol.equals("AL")){
+//		            			leaves.add("RD");
+//		            			leaves.add("RD");
+//		            		}
+		            		else {
+		            			leaves.add("1");
+		            			leaves.add("1");
+		            		}
+//		            		++i;
+		            	} //for(int i = 4; i < leaveProjHeaderList.size(); i++)
+		            	//add officer name and leaves to hashmap for later
+		            	soLeave.put(officerName, leaves);
 	            	}
 	            }
+	        }//for (ListEntry eachR : lf2.getEntries()) //each officer
+	        
+	        //Step 7: Display all the day shift
+	        //logic: for each site, find the officer with priority #1, if officer on leave, find the next one with priority #1, then #2, then #3. else leave empty.
+	        //also check if officer working that day
+	        ArrayList<String> eachSiteRoaster = new ArrayList<String>(monthMaxDays);
+	        Iterator sortSoSiteDayIter = sortSoSiteDay.entrySet().iterator();
+	        Iterator soLeaveIter = soLeave.entrySet().iterator();
+	        boolean siteCompleted = false;
+	        boolean moveToNextSO = false;
+	        for(String eachSite: sites) {
+	        	System.out.println("eachSite" + eachSite);
+	        	int dayCol = 0;
+	        	int top3 = 0;
+	        	siteCompleted = false;
+	        	moveToNextSO = false;
+	        	while (!siteCompleted && top3 != 3) {
+	        		System.out.println("siteCompleted" + siteCompleted);
+	        		System.out.println("eachSiteRoaster.size(): " + eachSiteRoaster.size());
+	        		while (sortSoSiteDayIter.hasNext()  && !siteCompleted) {
+		 	            Map.Entry pairSoSite = (Map.Entry)sortSoSiteDayIter.next();
+		 	            String eachSO = (String) pairSoSite.getKey();
+		 	            ArrayList<String> top3Sites = (ArrayList<String>) pairSoSite.getValue();
+		 	            System.out.println("eachSO" + eachSO);
+		 	            String top3Site = top3Sites.get(top3);
+		 	            if(eachSite.equals(top3Site)) {
+		 	            	//found an SO with this site as top priority
+		 	            	//loop throught the leaves
+		 	            	while(soLeaveIter.hasNext() && !moveToNextSO && !siteCompleted) {
+		 	            		Map.Entry pairSoLeave = (Map.Entry)sortSoSiteDayIter.next();
+				 	            String eSO = (String) pairSoLeave.getKey();
+				 	            ArrayList<String> leaves = (ArrayList<String>) pairSoLeave.getValue();
+		 	            		if(eachSO.equals(eSO)) {
+		 	            			System.out.println("dayCol" + dayCol);
+		 	            			String eachDay = leaves.get(dayCol);
+		 	            			System.out.println("eachDay" + eachDay);
+		 	            			if(!eachDay.equals("RD")) {
+		 	            				eachSiteRoaster.set(dayCol, eachSO);
+		 	            				if(dayCol == monthMaxDays) {
+		 	            					siteCompleted = true;
+		 	            					roasterDay.put(eachSite, eachSiteRoaster);
+		 	            				}
+		 	            				dayCol = dayCol + 2;
+		 	            				
+		 	            				
+		 	            			}
+		 	            			else {
+		 	            				moveToNextSO = true;
+		 	            			}
+		 	            		}
+		 	            	}
+		 	            }
+		 	            
+		 	        }
+	        		top3++;
+	        		System.out.println("top3: " + top3);
+	        	}
 	        }
+	        System.out.println(roasterDay.toString());
+	        
         }catch (Exception e) {
 			e.printStackTrace();
 		}
