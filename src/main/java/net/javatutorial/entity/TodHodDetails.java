@@ -71,7 +71,7 @@ public class TodHodDetails {
             Date parsedDate = dateFormat.parse(timestampAsStr);
             timestamp = new java.sql.Timestamp(parsedDate.getTime());
         } catch(Exception e) { //this generic but you can control another types of exception
-            System.out.println("SHANGERI TIMESTAMP CONVERSION FAILED IN TO.TODHODDETAILS: " + e);
+            System.out.println("SHANGERI TIMESTAMP CONVERSION FAILED IN getTimestamp TO.TODHODDETAILS: " + e);
         }
         return timestamp;
     }
@@ -83,7 +83,7 @@ public class TodHodDetails {
             Timestamp timestampp = new java.sql.Timestamp(parsedDate.getTime());
             this.timestamp = timestampp;
         } catch(Exception e) { //this generic but you can control another types of exception
-            System.out.println("SHANGERI TIMESTAMP CONVERSION FAILED IN TO.TODHODDETAILS: " + e);
+            System.out.println("SHANGERI TIMESTAMP CONVERSION FAILED IN setTimestamp TO.TODHODDETAILS: " + e);
         }
     }
 

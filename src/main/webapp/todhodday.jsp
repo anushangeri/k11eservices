@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="loginCSS.jsp"%>
 <%@page import="java.util.*"%>
+<%@page import="java.time.*"%>
 <%@page import="java.io.IOException"%>
 <%@page import="java.net.URL"%>
 <%@page import="java.util.ArrayList"%>
@@ -34,14 +35,15 @@
 		ArrayList<String> dutyRoasterMsg = new ArrayList<String>();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date currentDt = new Date();
-		Calendar calendar = Calendar.getInstance();
+		//Calendar calendar = Calendar.getInstance();
+		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8:00"));
 		calendar.setTime(currentDt);
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
 		calendar.set(Calendar.MINUTE, 0);
 		calendar.set(Calendar.SECOND, 0);
 		calendar.set(Calendar.MILLISECOND, 0);
 		currentDt = calendar.getTime();
-		
+
 		Date fromDt = null;
 		Date toDt = null;
 		String site = "";
