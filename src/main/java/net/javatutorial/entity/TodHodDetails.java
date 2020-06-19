@@ -110,6 +110,7 @@ public class TodHodDetails {
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
             date = dateFormat.parse(dateAsStr);
         } catch(Exception e) { //this generic but you can control another types of exception
+        	//if date in invalid, take the date from the timestamp
         	try {
        		 String timestampDateStr = getTimestampAsStr().split(" ")[0];
        		 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -130,6 +131,7 @@ public class TodHodDetails {
             this.date = date;
         } catch(Exception e) { //this generic but you can control another types of exception
         	try {
+        		//if date in invalid, take the date from the timestamp
         		 String timestampDateStr = getTimestampAsStr().split(" ")[0];
         		 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
                  date = dateFormat.parse(timestampDateStr);
