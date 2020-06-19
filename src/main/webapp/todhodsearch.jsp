@@ -62,6 +62,7 @@
 	String usertype ="";
 	if ( !(session.getAttribute("usertype") == null)) {
 			usertype = (String) session.getAttribute("usertype");
+			//System.out.println("todhodsearch line 65: " + usertype );
 	}
 	String nricfin = "";
 	if ( !(session.getAttribute("nricfin") == null)) {

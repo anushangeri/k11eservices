@@ -149,6 +149,7 @@
 	                            }
 	                    	}
 	                    	if(StringUtils.isEmpty(site)   && !StringUtils.isEmpty(idNo)){
+	                    		//System.out.println("todday: enter in 152: " + site + " " + idNo);
 	                    		//if search by nric/fin only
 	                    		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
 	                            if(idNo != null && !idNo.isEmpty() && idNo.contains(enternricfin.toUpperCase())){
@@ -201,6 +202,7 @@
 	                    else{
 	                		//if search by date (minimum requirement)
 	                		//OC - On Course, MC - Medical Leave, AL - Annual Leave, HC - Hospital Leave
+	                		//System.out.println("todday: enter in 205: " + site + " " + idNo);
 	                        if(fromDt != null && !fromDt.toString().isEmpty()){
 	
 	                            if (areyoutodhod.toUpperCase().contains("TOD")) {

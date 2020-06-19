@@ -110,7 +110,14 @@ public class TodHodDetails {
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
             date = dateFormat.parse(dateAsStr);
         } catch(Exception e) { //this generic but you can control another types of exception
-            System.out.println("SHANGERI DATE CONVERSION FAILED IN TO.TODHODDETAILS: " + e);
+        	try {
+       		 String timestampDateStr = getTimestampAsStr().split(" ")[0];
+       		 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+                date = dateFormat.parse(timestampDateStr);
+	       	}
+	       	catch(Exception f){
+	       		System.out.println("SHANGERI DATE CONVERSION FAILED IN TO.TODHODDETAILS Date getDate(): " + e + " for: " + getSecurityofficername() +  getTimestamp());
+	       	}
         }
         return date;
     }
@@ -122,7 +129,15 @@ public class TodHodDetails {
             date = dateFormat.parse(dateAsStr);
             this.date = date;
         } catch(Exception e) { //this generic but you can control another types of exception
-            System.out.println("SHANGERI DATE CONVERSION FAILED IN TO.TODHODDETAILS: " + e);
+        	try {
+        		 String timestampDateStr = getTimestampAsStr().split(" ")[0];
+        		 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+                 date = dateFormat.parse(timestampDateStr);
+                 this.date = date;
+        	}
+        	catch(Exception f){
+        		System.out.println("SHANGERI DATE CONVERSION FAILED IN TO.TODHODDETAILS setDate: " + e + " for: " + getSecurityofficername() +  getTimestamp());
+        	}
         }
         
     }

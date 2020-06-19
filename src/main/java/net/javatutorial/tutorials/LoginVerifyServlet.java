@@ -67,6 +67,7 @@ public class LoginVerifyServlet extends HttpServlet {
 		}
 				
 		boolean loginsuccessful = false;
+		//System.out.println("login verify line 70: " + idNo );
 		
 		SpreadsheetService service = new SpreadsheetService("Form Responses 1");
 		if(!StringUtils.isEmpty(idNo) && !StringUtils.isEmpty(dtOfBirthStr)) {
