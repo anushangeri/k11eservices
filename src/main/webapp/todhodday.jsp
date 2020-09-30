@@ -73,7 +73,7 @@
 				e.printStackTrace();
 			}
 		}
-        SpreadsheetService service = new SpreadsheetService("Form Responses 1");
+        SpreadsheetService service = new SpreadsheetService("Sheet2");
         SpreadsheetService service2 = new SpreadsheetService("K11CLICKS: DROPDOWN EXCEL");
         try {
         	List<TodHodPair> todHodPairs = new ArrayList<TodHodPair>();
@@ -81,7 +81,7 @@
                     = //1TwURCxMStzOp_jFMisNFF01PswassfcM-J4Ma90o23A (test)
                     //1i_3_wI3ClPXE_nX4biN3oNrqxMgyswPuzklAx8mwivY  (real)
                     //1nuQlSMmThaj3YxBktjn771wvzZflDwmS746STcsUcJI (real v2)
-                    "https://spreadsheets.google.com/feeds/list/1g1LKTNm7txvbcB9qD4NQuiZXtbjhmQRAcFtJLjc_6j4/2/public/values";
+                    "https://spreadsheets.google.com/feeds/list/1q0U9aXMCnlB4cuA6hHD3eTvikr2kJNKLRm8fYFbneZs/1/public/values";
 
             // Use this String as url
             URL url = new URL(sheetUrl);

@@ -68,6 +68,10 @@
 	if ( !(session.getAttribute("nricfin") == null)) {
 		nricfin = (String) session.getAttribute("nricfin");
 	}
+	//clear session when user press back
+	if(session.getAttribute("todHodPairs") != null){
+		session.removeAttribute("todHodPairs");
+	}
 	%>
 	<%
 	ArrayList<String> dutySites = new ArrayList<String>();
