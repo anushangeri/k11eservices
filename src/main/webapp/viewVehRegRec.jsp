@@ -8,6 +8,7 @@
 <%@page import="com.google.gdata.data.spreadsheet.ListEntry"%>
 <%@page import="com.google.gdata.data.spreadsheet.ListFeed"%>
 <%@page import="com.google.gdata.util.ServiceException"%>
+<%@page import="com.google.gdata.data.spreadsheet.CellEntry"%>
 
 <!DOCTYPE html>
 <html>
@@ -45,7 +46,7 @@
 //                }
 //            }
             String sheetUrl
-                    = "https://spreadsheets.google.com/feeds/list/1rr0X99WE0CFibWw-Vj98m49cMSFdXZW0MK6yIiP394k/1/public/values";
+                    = "https://spreadsheets.google.com/feeds/list/1G1_dixT-72c_N0lb_0DtAVhwKyRGN5Iz6_5A20_Mw3A/1/public/values";
 
             // Use this String as url
             URL url = new URL(sheetUrl);
@@ -84,23 +85,27 @@
 
                                         <%
                                             //Iterate over feed to get cell value
+                                            ListEntry t = new ListEntry();
                                             for (ListEntry le : lf.getEntries()) {
                                                 CustomElementCollection cec = le.getCustomElements();
                                                 if ( !(session.getAttribute("siteUser") == null)) {
                                             		String siteUserSession = (String) session.getAttribute("siteUser");
                                             		String siteUser = cec.getValue("siteuser");
-                                            		if (siteUserSession.equalsIgnoreCase(siteUser)){
-                                            		 //Pass column name to access it's cell values
+                                            		// if (siteUserSession.equalsIgnoreCase(siteUser)){
+                                            		//Pass column name to access it's cell values
                                                     String timestamp = cec.getValue("timestamp");
                                                     String vehiclenumber = cec.getValue("vehiclenumber");
                                                     String cardecal = cec.getValue("cardecal");
                                                     String staffname = cec.getValue("staffname");
                                                     String staffnricfindriver = cec.getValue("staffnricfindriver");
-                                                    String drivercompanysiteuser = cec.getValue("drivercompanysiteuser)");
+                                                    String drivercompanysiteuser = cec.getValue("staffdesignationdriver");
                                                     String contactnohpnodriver = cec.getValue("contactnohpnodriver");
                                                     String staffinchargenamecontactno = cec.getValue("staffinchargenamecontactno");
                                                     String emailstaff = cec.getValue("emailstaff");
                                                     String securityofficername = cec.getValue("securityofficername");
+                                                    
+                                                    CellEntry newEntry = new CellEntry(2, 2, "test");
+                                                    service.insert(url, newEntry);
  												 %>
 		                                            <tr>
 		                                                 <td><center><%=	timestamp	%></center></td>
@@ -114,11 +119,10 @@
 														 <td><center><%=	staffinchargenamecontactno	%></center></td>
 														 <td><center><%=	emailstaff	%></center></td>
 														 <td><center><%=	securityofficername	%></center></td>
-
 		                                            </tr>
 
                                     <%
-                                            		}//if (siteUserSession.equalsIgnoreCase(siteUser))
+                                            		//}//if (siteUserSession.equalsIgnoreCase(siteUser))
                                                 }//if ( !(session.getAttribute("siteUser") == null)) 
                                           }//for
                                     %>
