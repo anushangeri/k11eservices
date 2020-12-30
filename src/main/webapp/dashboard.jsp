@@ -71,7 +71,7 @@
 				</div>
 				<br>
 				<div class="card">
-					<a href="vms.jsp">
+					<a href="/vms">
 						<div class="eachCard crop">
 							<img class="center-block" src="VMS_icon.png"
 								alt="VMS_icon.png">
