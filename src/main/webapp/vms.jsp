@@ -8,9 +8,10 @@
 
 <link rel="stylesheet" href="css/styles.css">
 
-		<jsp:forward page="/viewVisitor" />
 </head>
 <body>
+<jsp:forward page="viewVisitor" >
+</jsp:forward>
 	<%
 		ArrayList<String> responseObj = (ArrayList<String>) request.getAttribute("responseObj");
 		if (responseObj != null) {
