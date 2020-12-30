@@ -157,7 +157,7 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label for="timein">Time In: </label> <input type="datetime-local"
-								class="form-control" name="timein"
+								class="form-control" name="timeInDt"
 								required>
 						</div>
 						<div class="form-group col-md-6">

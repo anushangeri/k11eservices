@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.joda.time.format.DateTimeFormatter;
 
 import net.javatutorial.DAO.EmployeesManagerDAO;
@@ -37,9 +38,6 @@ public class AddVisitorRecordServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
-		
-		
 		int nextVal = VMSManagerDAO.getNextVal();
 		
 		String vmsId = "" + nextVal;
@@ -51,8 +49,13 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		String hostName = request.getParameter("hostName");
 		String hostNo = request.getParameter("hostNo");
 		String visitorCardId = request.getParameter("visitorCardId");
-		Timestamp timeInDt = new Timestamp(System.currentTimeMillis());
-		
+		String timeIn = request.getParameter("timeInDt");
+		// make sure the seconds are set before parsing because Chrome won't send the seconds part
+		// https://stackoverflow.com/questions/27827614/conversion-from-datetime-local-to-java-sql-timestamp
+		if (StringUtils.countMatches(timeIn, ":") == 1) {
+			timeIn += ":00";
+		}
+		Timestamp timeInDt = Timestamp.valueOf(timeIn.replace("T"," "));
 		Visitor v = new Visitor( vmsId,  firstName,  lastName,  idNo,  mobileNo,  vehicleNo,
 			 hostName,  hostNo,  visitorCardId,  timeInDt);
 		
