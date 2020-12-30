@@ -31,7 +31,7 @@
 		</div>
 		<br>
 		<!-- using form tag here because need to send button click straight to servlet -->
-		<form action="viewVisitor" method="post">
+		<form action="c" method="post">
 			<div class="card">
 				<button type="submit" class="btn btn-link">
 					<div class="eachCard crop">
@@ -44,6 +44,8 @@
 				</button>
 			</div>
 		</form>
+		<jsp:include page="/viewVisitor" />
 	</center>
+	
 </body>
 </html>
