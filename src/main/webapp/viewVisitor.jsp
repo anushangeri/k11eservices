@@ -14,32 +14,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
-
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
 	type="text/javascript"></script>
-
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
 	type="text/javascript"></script>
-
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js"
 	type="text/javascript"></script>
-
 <script
 	src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"
 	type="text/javascript"></script>
-
 <link
 	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
 	rel="stylesheet">
-
 <link rel="stylesheet"
 	href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
 <link rel="stylesheet"

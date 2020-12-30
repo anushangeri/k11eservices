@@ -13,7 +13,7 @@
 		ArrayList<String> responseObj = (ArrayList<String>) request.getAttribute("responseObj");
 		if (responseObj != null) {
 	%>
-	<label class="heading"><%=responseObj.toString()%></label>
+			<label class="heading"><%=responseObj.toString()%></label>
 	<%
 		}
 	%>
