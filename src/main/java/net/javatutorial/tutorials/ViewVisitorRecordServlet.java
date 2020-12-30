@@ -37,7 +37,7 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 	private static final long serialVersionUID = -4751096228274971485L;
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		ArrayList<Visitor> vList = VMSManagerDAO.retrieveAll();
 		ArrayList<String> responseObj = new ArrayList<String>();
