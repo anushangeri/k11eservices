@@ -39,7 +39,7 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Visitor> vList = VMSManagerDAO.retrieveAll();
-		String message = "";
+		String message = "List of visitor records.";
 		request.setAttribute("vList", vList);
 		if(vList == null) {
 			message = "No visitor records.";
