@@ -64,8 +64,8 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		ArrayList<String> responseObj = new ArrayList<String>();
 		responseObj.add(message + " " + firstName);
 		request.setAttribute("responseObj", responseObj);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/vms");
-        rd.forward(request, response);
+//        RequestDispatcher rd = request.getRequestDispatcher("/vms");
+		response.sendRedirect("/vms");
 	}
 	@Override
 	public void init() throws ServletException {
