@@ -39,14 +39,12 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Visitor> vList = VMSManagerDAO.retrieveAll();
-		ArrayList<String> responseObj = new ArrayList<String>();
 		String message = "";
 		request.setAttribute("vList", vList);
 		if(vList == null) {
 			message = "No visitor records.";
 		}
-		responseObj.add(message);
-		request.setAttribute("responseObj", responseObj);
+		request.setAttribute("message", message);
         RequestDispatcher rd = request.getRequestDispatcher("vms.jsp");
         rd.forward(request, response);
 	}

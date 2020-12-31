@@ -60,10 +60,10 @@
 	<center>
 	<%
 		ArrayList<Visitor> vList = (ArrayList<Visitor>) request.getAttribute("vList");
-		ArrayList<String> responseObj = (ArrayList<String>) request.getAttribute("responseObj");
-		if (responseObj != null) {
+		String message = (String) request.getAttribute("message");
+		if (message != null && !StringUtils.isEmpty(message)) {
 	%>
-		<label class="heading"><%=responseObj%></label>
+		<label class="heading"><%=message%></label>
 		<% 
 			if (vList != null) {
 		%>
@@ -111,8 +111,9 @@
 										}
 										else{
 									%>
-										<td><a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
-											role="button" aria-pressed="true">Update</a></td>
+										<td><form action="deleteAllVisitor" method="post">
+											<button type="submit" class="btn btn-warning btn-lg active">Update</button>
+										</form></td>
 									<%
 										}
 									%>
