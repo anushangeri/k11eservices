@@ -141,9 +141,12 @@
 				<a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
 				role="button" aria-pressed="true">Add Visitor Record</a>
 				
-				<form action="deleteAllVisitor" method="post">
+				<a href="deleteAllVisitor" class="btn btn-warning btn-lg active"
+				role="button" aria-pressed="true">Delete Visitor Record</a>
+				
+				<!--  <form action="deleteAllVisitor" method="post">
 					<button type="submit" class="btn btn-warning btn-lg active">Delete All</button>
-				</form>
+				</form>-->
 			</center>
 		</div>
 	<br>

@@ -40,9 +40,7 @@ public class DeleteAllVisitorRecordServlet extends HttpServlet {
 		
 		String message = VMSManagerDAO.deleteAll();
 		
-		ArrayList<String> responseObj = new ArrayList<String>();
-		responseObj.add(message);
-		request.setAttribute("responseObj", responseObj);
+		request.setAttribute("message", message);
         RequestDispatcher rd = request.getRequestDispatcher("vms.jsp");
         rd.forward(request, response);
 	}
