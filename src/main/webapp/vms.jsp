@@ -70,7 +70,7 @@
 		</div>
 		<br>
 	<%
-		ArrayList<Visitor> vList = (ArrayList<Visitor>) session.getAttribute("vList");
+		ArrayList<Visitor> vList = (ArrayList<Visitor>) request.getAttribute("vList");
 		ArrayList<String> responseObj = (ArrayList<String>) request.getAttribute("responseObj");
 		if (responseObj != null) {
 	%>
