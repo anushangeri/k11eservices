@@ -111,9 +111,8 @@
 										}
 										else{
 									%>
-										<td><form action="deleteAllVisitor" method="post">
-											<button type="submit" class="btn btn-warning btn-lg active">Update</button>
-										</form></td>
+										<td><a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
+											role="button" aria-pressed="true">Update</a></td>
 									<%
 										}
 									%>
