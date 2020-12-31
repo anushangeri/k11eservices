@@ -59,15 +59,8 @@
 <body>
 	<center>
 		<br>
-		<div class="card">
-			<a href="addVisitor.jsp">
-				<div class="eachCard crop">
-					<h4 class="fontheader">
-						<b>ADD VISITOR RECORD</b>
-					</h4>
-				</div>
-			</a>
-		</div>
+		<a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
+			role="button" aria-pressed="true">ADD VISITOR RECORD</a>
 		<br>
 	<%
 		ArrayList<Visitor> vList = (ArrayList<Visitor>) request.getAttribute("vList");
@@ -78,63 +71,66 @@
 	<%
 		}
 	%>
-		<table id="example"
-			class="table table-striped table-bordered table-sm sortable"
-			cellspacing="0" width="100%">
-			<thead>
-				<tr>
-					<th class="th-sm">S/N</th>
-					<th class="th-sm">First Name</th>
-					<th class="th-sm">Last Name</th>
-					<th class="th-sm">NRIC/FIN</th>
-					<th class="th-sm">Visitor Contact Number</th>
-					<th class="th-sm">Vehicle Number</th>
-					<th class="th-sm">Host Name</th>
-					<th class="th-sm">Host Contact Number</th>
-					<th class="th-sm">Visitor Pass ID</th>
-					<th class="th-sm">Time In</th>
-					<th class="th-sm">Time Out</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-					if (!vList.isEmpty()) {
-						Iterator<Visitor> vListIter = vList.iterator();
-						while (vListIter.hasNext()) {
-							Visitor v = vListIter.next();
-				%>
-				<tr>
-					<td><%=v.getVmsId()%></td>
-					<td><%=v.getFirstName()%></td>
-					<td><%=v.getLastName()%></td>
-					<td><%=v.getIdNo()%></td>
-					<td><%=v.getMobileNo()%></td>
-					<td><%=v.getVehicleNo()%></td>
-					<td><%=v.getHostName()%></td>
-					<td><%=v.getHostNo()%></td>
-					<td><%=v.getVisitorCardId()%></td>
-					<td><%=v.getTimeInDt()%></td>
-					<td><%=v.getTimeOutDt()%></td>
-				</tr>
-				<%
-					}
-				%>
-
-				<%
-					}
-				%>
-			</tbody>
-		</table>
-		<br>
+		<div class="container body-content">
+			<table id="example"
+				class="table table-striped table-bordered table-sm sortable"
+				cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th class="th-sm">S/N</th>
+						<th class="th-sm">First Name</th>
+						<th class="th-sm">Last Name</th>
+						<th class="th-sm">NRIC/FIN</th>
+						<th class="th-sm">Visitor Contact Number</th>
+						<th class="th-sm">Vehicle Number</th>
+						<th class="th-sm">Host Name</th>
+						<th class="th-sm">Host Contact Number</th>
+						<th class="th-sm">Visitor Pass ID</th>
+						<th class="th-sm">Time In</th>
+						<th class="th-sm">Time Out</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						if (!vList.isEmpty()) {
+							Iterator<Visitor> vListIter = vList.iterator();
+							while (vListIter.hasNext()) {
+								Visitor v = vListIter.next();
+					%>
+					<tr>
+						<td><%=v.getVmsId()%></td>
+						<td><%=v.getFirstName()%></td>
+						<td><%=v.getLastName()%></td>
+						<td><%=v.getIdNo()%></td>
+						<td><%=v.getMobileNo()%></td>
+						<td><%=v.getVehicleNo()%></td>
+						<td><%=v.getHostName()%></td>
+						<td><%=v.getHostNo()%></td>
+						<td><%=v.getVisitorCardId()%></td>
+						<td><%=v.getTimeInDt()%></td>
+						<td><%=v.getTimeOutDt()%></td>
+					</tr>
+					<%
+						}
+					%>
+	
+					<%
+						}
+					%>
+				</tbody>
+			</table>
+			<center>
+				<a href="dashboard.jsp" class="btn btn-warning btn-lg active"
+					role="button" aria-pressed="true">Back</a>
+		
+				<form action="deleteAllVisitor" method="post">
+					<button type="submit" class="btn btn-warning btn-lg active">Delete All</button>
+				</form>
+			</center>
+		</div>
+	<br>
 	</center>
 	
-	<center>
-		<a href="dashboard.jsp" class="btn btn-warning btn-lg active"
-			role="button" aria-pressed="true">Back</a>
 
-		<form action="deleteAllVisitor" method="post">
-			<button type="submit" class="btn btn-link">Delete All</button>
-		</form>
-	</center>
 </body>
 </html>
