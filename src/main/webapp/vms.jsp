@@ -65,7 +65,7 @@
 	%>
 		<label class="heading"><%=message%></label>
 		<% 
-			if (vList != null || vList.size() > 0) {
+			if (vList != null && vList.size() > 0) {
 		%>
 			<div class="container body-content">
 				<table id="example"
