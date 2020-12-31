@@ -93,24 +93,34 @@
 								while (vListIter.hasNext()) {
 									Visitor v = vListIter.next();
 						%>
-						<tr>
-							<td><%=v.getVmsId()%></td>
-							<td><%=v.getFirstName()%></td>
-							<td><%=v.getLastName()%></td>
-							<td><%=v.getIdNo()%></td>
-							<td><%=v.getMobileNo()%></td>
-							<td><%=v.getVehicleNo()%></td>
-							<td><%=v.getHostName()%></td>
-							<td><%=v.getHostNo()%></td>
-							<td><%=v.getVisitorCardId()%></td>
-							<td><%=v.getTimeInDt()%></td>
-							<!-- TO DO: if timeout is null - send to update servlet to update with system time -->
-							<td><%=v.getTimeOutDt()%></td>
-						</tr>
-						<%
-							}
-						%>
-		
+								<tr>
+									<td><%=v.getVmsId()%></td>
+									<td><%=v.getFirstName()%></td>
+									<td><%=v.getLastName()%></td>
+									<td><%=v.getIdNo()%></td>
+									<td><%=v.getMobileNo()%></td>
+									<td><%=v.getVehicleNo()%></td>
+									<td><%=v.getHostName()%></td>
+									<td><%=v.getHostNo()%></td>
+									<td><%=v.getVisitorCardId()%></td>
+									<td><%=v.getTimeInDt()%></td>
+									<!-- TO DO: if timeout is null - send to update servlet to update with system time -->
+									<% if (v.getTimeOutDt() != null) { %>
+										<td><%=v.getTimeOutDt()%></td>
+									<%
+										}
+										else{
+									%>
+										<td><a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
+											role="button" aria-pressed="true">Update</a></td>
+									<%
+										}
+									%>
+								</tr>
+							<%
+								}
+							%>
+			
 						<%
 							}
 						%>
