@@ -121,7 +121,7 @@ public class VMSManagerDAO {
         PreparedStatement pstmt = null;
         Connection connection = null;
         ResultSet rs = null;
-        String message = "success";
+        String message = "All records deleted - No visitor records available";
         try {
         	connection = Main.getConnection();
             String sql = "DELETE FROM VMS;";
