@@ -15,41 +15,19 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
-	type="text/javascript"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
-	type="text/javascript"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js"
-	type="text/javascript"></script>
-<script
-	src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"
-	type="text/javascript"></script>
-<link
-	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
-<link rel="stylesheet"
-	href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" />
-<Script src="https://code.jquery.com/jquery-1.12.3.js"
-	type="text/javascript"></Script>
-<Script
-	src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"
-	type="text/javascript"></Script>
-<Script
-	src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"
-	type="text/javascript"></Script>
-<Script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"
-	type="text/javascript"></Script>
-<Script
-	src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"
-	type="text/javascript"></Script>
+<link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js" type="text/javascript"></script>
+<script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js" type="text/javascript"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-1.12.3.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -68,18 +46,11 @@
 							header : function(data, columnIdx) {
 								return data;
 							},
-						//                                 body: function (data, column, row) {
-						//                                     // Strip $ from salary column to make it numeric
-						//                                     debugger;
-						//                                     return column === 4 ? "" : data;
-						//                                 }
 						}
 					},
 					footer : false,
 					customize : function(xlsx) {
 						var sheet = xlsx.xl.worksheets['sheet1.xml'];
-						//$('c[r=A1] t', sheet).text( 'Custom text' );
-						//$('row c[r^="C"]', sheet).attr('s', '2');
 					}
 				} ]
 			});

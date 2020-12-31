@@ -38,11 +38,10 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
 		ArrayList<Visitor> vList = VMSManagerDAO.retrieveAll();
 		ArrayList<String> responseObj = new ArrayList<String>();
 		String message = "Success";
-		session.setAttribute("vList", vList);
+		request.setAttribute("vList", vList);
 		if(vList == null) {
 			message = "No visitor records.";
 		}
