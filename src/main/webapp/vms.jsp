@@ -122,12 +122,14 @@
 	<%
 		}
 	%>
+	</div>
+		<div class="container body-content">
 			<center>
 				<a href="dashboard.jsp" class="btn btn-warning btn-lg active"
 					role="button" aria-pressed="true">Back</a>
 		
 				<a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
-				role="button" aria-pressed="true">ADD VISITOR RECORD</a>
+				role="button" aria-pressed="true">Add Visitor Record</a>
 				
 				<form action="deleteAllVisitor" method="post">
 					<button type="submit" class="btn btn-warning btn-lg active">Delete All</button>
