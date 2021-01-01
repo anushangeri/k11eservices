@@ -113,10 +113,10 @@
 									<%
 										}
 										else{
-											request.setAttribute("vmsId", v.getVmsId());
 									%>
-										<td><a href="/updateVisitor" class="btn btn-warning btn-lg active"
-											role="button" aria-pressed="true"><%=v.getVmsId() %></a></td>
+										<td><form method="GET" action = "updateVisitor">
+											<input type="hidden" id="vmsId" name="vmsId" value="<%=v.getVmsId()%>">
+											<input type="submit" name="Submit" value="Submit">
 									<%
 										}
 									%>
