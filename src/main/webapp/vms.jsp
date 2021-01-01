@@ -144,9 +144,6 @@
 				<a href="deleteAllVisitor" class="btn btn-warning btn-lg active"
 				role="button" aria-pressed="true">Delete Visitor Record</a>
 				
-				<!--  <form action="deleteAllVisitor" method="post">
-					<button type="submit" class="btn btn-warning btn-lg active">Delete All</button>
-				</form>-->
 			</center>
 		</div>
 	<br>
