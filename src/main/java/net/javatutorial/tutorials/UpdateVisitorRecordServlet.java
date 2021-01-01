@@ -37,7 +37,7 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 	private static final long serialVersionUID = -4751096228274971485L;
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String vmsId = (String) request.getParameter("vmsId");
 		Visitor v = null;
 		String message = "VMS ID of visitor is unavailable, please add visitor record.";
@@ -47,7 +47,7 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 			message = VMSManagerDAO.updateVisitorTimeOut(v);
 			
 		}
-		request.setAttribute("UPDATE", message + vmsId);
+		request.setAttribute("message", message);
 		// Redirect to view visitor servlet to query all the visitors again.
 		response.sendRedirect("/vms");
 	}

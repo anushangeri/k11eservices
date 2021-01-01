@@ -114,9 +114,9 @@
 										}
 										else{
 									%>
-										<td><form method="GET" action ="/updateVisitor">
+										<td><form method="POST" action ="/updateVisitor">
 											<input type="hidden" id="vmsId" name="vmsId" value="<%=v.getVmsId()%>">
-											<input type="submit" name="Submit" value="Submit"></form></td>
+											<input type="submit" name="Submit" value="Update"></form></td>
 									<%
 										}
 									%>
