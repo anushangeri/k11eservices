@@ -47,7 +47,7 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 			message = VMSManagerDAO.updateVisitorTimeOut(v);
 			
 		}
-		request.setAttribute("UPDATE", message + vmsId);
+		request.setAttribute("UPDATE", request.getAttribute("vmsId"));
 		// Redirect to view visitor servlet to query all the visitors again.
 		response.sendRedirect("/vms");
 	}

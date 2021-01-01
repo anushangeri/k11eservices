@@ -116,7 +116,7 @@
 											request.setAttribute("vmsId", v.getVmsId());
 									%>
 										<td><a href="/updateVisitor" class="btn btn-warning btn-lg active"
-											role="button" aria-pressed="true">Update</a></td>
+											role="button" aria-pressed="true"><%=v.getVmsId() %></a></td>
 									<%
 										}
 									%>
