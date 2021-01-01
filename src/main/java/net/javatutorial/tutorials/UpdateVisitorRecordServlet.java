@@ -38,7 +38,7 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String vmsId = request.getParameter("vmsId");
+		String vmsId = (String) request.getAttribute("vmsId");
 		Visitor v = null;
 		String message = "VMS ID of visitor is unavailable, please add visitor record.";
 		if(vmsId != null && !StringUtils.isEmpty(vmsId)) {
