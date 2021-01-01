@@ -114,7 +114,7 @@
 										}
 										else{
 									%>
-										<td><a href="/updateVisitor" class="btn btn-warning btn-lg active"
+										<td><a href="/updateVisitor?vmsId=" + <%=v.getVmsId() %> class="btn btn-warning btn-lg active"
 											role="button" aria-pressed="true">Update</a></td>
 									<%
 										}
