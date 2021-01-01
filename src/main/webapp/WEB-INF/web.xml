@@ -105,7 +105,7 @@
 		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.DeleteAllVisitorRecordServlet</servlet-class>
 	</servlet>
-		<servlet>
+	<servlet>
 		<description />
 
 		<display-name>UpdateVisitorRecordServlet</display-name>
