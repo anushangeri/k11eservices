@@ -38,7 +38,7 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String vmsId = request.getParameter("vmsId").trim();
+		String vmsId = request.getParameter("vmsId");
 		Visitor v = null;
 		Timestamp currTimestamp = new Timestamp(System.currentTimeMillis());
 		String message = "VMS ID of visitor is unavailable, please add visitor record.";
@@ -50,7 +50,7 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 			message = VMSManagerDAO.updateVisitorTimeOut(v);
 			
 		}
-		request.setAttribute("message", message);
+		request.setAttribute("UPDATE", message + vmsId);
 		// Redirect to view visitor servlet to query all the visitors again.
 		response.sendRedirect("/vms");
 	}

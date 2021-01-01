@@ -61,12 +61,15 @@
 	<%
 		ArrayList<Visitor> vList = (ArrayList<Visitor>) request.getAttribute("vList");
 		String message = (String) request.getAttribute("message");
+		String UPDATE = (String) request.getAttribute("UPDATE");
+		
 		if (message != null && !StringUtils.isEmpty(message)) {
 	%>
 		<label class="heading"><%=message%></label>
 		<% 
 			if (vList != null && vList.size() > 0) {
 		%>
+		<label class="heading"><%=UPDATE%></label>
 			<div class="container body-content">
 				<table id="example"
 					class="table table-striped table-bordered table-sm sortable"
