@@ -58,7 +58,7 @@ public class VMSManagerDAO {
 
 	        stmt.executeUpdate("UPDATE VMS "
 	        		+  "FIRST_NAME = " + v.getLastName() +
-	        		"   WHERE VMS_ID = " + v.getVmsId());
+	        		"   WHERE VMS_ID = '" + v.getVmsId() + "';");
 	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID =" + v.getVmsId() +";");
 	        while (rs.next()) {
 	        	message = "Read from DB: " + rs.getTimestamp("tick");
@@ -159,7 +159,7 @@ public class VMSManagerDAO {
             		"              LAST_NAME, ID_NO, MOBILE_NO, \r\n" + 
             		"              VEHICLE_NO, HOST_NAME,\r\n" + 
             		"              HOST_CONTACT, VISTOR_CARD_ID,\r\n" + 
-            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS WHERE VMS_ID =" + vmsId + "ORDER BY TIME_IN_DT DESC;";
+            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS WHERE VMS_ID ='" + vmsId + "' ORDER BY TIME_IN_DT DESC;";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
