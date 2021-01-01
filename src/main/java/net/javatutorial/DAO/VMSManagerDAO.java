@@ -57,7 +57,7 @@ public class VMSManagerDAO {
 			stmt = connection.createStatement();
 
 	        stmt.executeUpdate("UPDATE VMS "
-	        		+  "TIME_OUT_DT = " + v.getTimeOutDt() +
+	        		+  "FIRST_NAME = " + v.getLastName() +
 	        		"   WHERE VMS_ID = " + v.getVmsId());
 	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID =" + v.getVmsId() +";");
 	        while (rs.next()) {
