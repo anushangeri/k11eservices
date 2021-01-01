@@ -105,6 +105,13 @@
 		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.DeleteAllVisitorRecordServlet</servlet-class>
 	</servlet>
+		<servlet>
+		<description />
+
+		<display-name>UpdateVisitorRecordServlet</display-name>
+		<servlet-name>UpdateVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVisitorRecordServlet</servlet-class>
+	</servlet>
 	<servlet>
 		<description />
 
@@ -164,6 +171,10 @@
 	<servlet-mapping>
 		<servlet-name>ViewVisitorRecordServlet</servlet-name>
 		<url-pattern>/vms</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>UpdateVisitorRecordServlet</servlet-name>
+		<url-pattern>/updateVisitor</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
