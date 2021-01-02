@@ -21,15 +21,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.format.DateTimeFormatter;
 
-import net.javatutorial.DAO.EmployeesManagerDAO;
-import net.javatutorial.DAO.EmployeesTblDAO;
 import net.javatutorial.DAO.VMSManagerDAO;
 import net.javatutorial.entity.Visitor;
-
-import java.util.Calendar;
-import java.util.Locale;
-import static java.util.Calendar.*;
-import java.util.Date;
 
 /**
  * Servlet implementation class AddEmployeeServlet

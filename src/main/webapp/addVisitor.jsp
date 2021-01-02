@@ -6,7 +6,7 @@
 <%@page import="java.sql.Timestamp"%>
 <%@page import="net.javatutorial.entity.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="loginCSS.jsp"%>
+<%@include file="loginVMSCSS.jsp"%>
 <%@page import="java.util.*"%>
 <%@page import="java.time.*"%>
 <%@page import="java.io.IOException"%>
@@ -162,6 +162,7 @@
 						</div>
 						<button type="submit" class="btn btn-primary btn-lg active">Submit
 							Record</button>
+							
 						<a href="/vms" class="btn btn-warning btn-lg active"
 							role="button" aria-pressed="true">Back</a>
 					</div>
