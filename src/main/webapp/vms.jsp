@@ -137,14 +137,27 @@
 	</div>
 		<div class="container body-content">
 			<center>
-				<a href="dashboard.jsp" class="btn btn-warning btn-lg active"
+				<a href="vmsCheckNRIC.jsp" class="btn btn-warning btn-lg active"
 					role="button" aria-pressed="true">Back</a>
 		
 				<a href="addVisitor.jsp" class="btn btn-warning btn-lg active"
 				role="button" aria-pressed="true">Add Visitor Record</a>
 				
-				<a href="deleteAllVisitor" class="btn btn-warning btn-lg active"
-				role="button" aria-pressed="true">Delete Visitor Record</a>
+				<!-- Delete all record function is for K11 Admin only -->
+				<%if (request.getSession(false).getAttribute("usertype") != null) {
+					String userInput = (String) request.getSession(false).getAttribute("usertype");
+					if (userInput == "K11ADMIN"){ %>
+						<a href="deleteAllVisitor" class="btn btn-warning btn-lg active"
+						role="button" aria-pressed="true">Delete Visitor Record</a>
+					<%	
+					}
+					
+				%>
+				<% 
+				}
+				%>
+				
+				
 				
 			</center>
 		</div>
