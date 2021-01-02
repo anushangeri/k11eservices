@@ -162,7 +162,7 @@
 						</div>
 						<button type="submit" class="btn btn-primary btn-lg active">Submit
 							Record</button>
-							
+						<br>	
 						<a href="/vms" class="btn btn-warning btn-lg active"
 							role="button" aria-pressed="true">Back</a>
 					</div>
