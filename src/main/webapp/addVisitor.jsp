@@ -160,7 +160,7 @@
 								oninput="this.value = this.value.toUpperCase()"
 								value=<%=visitorCardId%> required>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit
+						<button type="submit" class="btn btn-primary btn-lg active">Submit
 							Record</button>
 						<a href="/vms" class="btn btn-warning btn-lg active"
 							role="button" aria-pressed="true">Back</a>
