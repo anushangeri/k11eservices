@@ -50,18 +50,6 @@
 			<label class="heading">Visitor Management System</label> <br> <b>How
 				to use:</b> Please enter Visitor Details. <br> <br>
 			<center>
-				<h3>Step 1: Enter NRIC</h3>
-				<form id="form" onsubmit="return false;">
-					<div class="form-row">
-						<div class="form-group col-md-6">
-							<label for="idNo">IC Number: </label> <input type="text"
-								class="form-control" name="idNo" id="userInput"
-								placeholder="SxxxxxxxJ" minlength="9" maxlength="9" required>
-						</div>
-						<button type="submit" class="btn btn-primary"
-							onclick="othername();">Check NRIC</button>
-					</div>
-				</form>
 				<%
 					String userInput = "SxxxxxxxJ";
 
@@ -74,8 +62,8 @@
 					String hostNo = "";
 					String visitorCardId = "";
 
-					if (request.getParameter("userInput") != null) {
-						userInput = (String) request.getParameter("userInput").trim().toUpperCase();
+					if (session.getAttribute("userInput") != null) {
+						userInput = (String) session.getAttribute("userInput");
 					}
 					SpreadsheetService k11VMS = new SpreadsheetService("K11 VMS");
 					try {
@@ -115,7 +103,6 @@
 					}
 				%>
 				<br>
-				<h3>Step 2: Enter visitor details</h3>
 				<form action="addVisitor" method="post">
 					<div class="form-row">
 						<div class="form-row">
