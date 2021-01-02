@@ -150,7 +150,6 @@
 						<a href="deleteAllVisitor" class="btn btn-warning btn-lg active"
 						role="button" aria-pressed="true">Delete Visitor Record</a>
 						
-						<br>
 						<a href="managedatabase.jsp" class="btn btn-warning btn-lg active"
 						role="button" aria-pressed="true">Manage Visitor Database</a>
 					<%	
