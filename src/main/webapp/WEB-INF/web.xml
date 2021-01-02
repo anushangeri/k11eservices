@@ -94,6 +94,13 @@
 	<servlet>
 		<description />
 
+		<display-name>VMSCheckNRICServlet</display-name>
+		<servlet-name>VMSCheckNRICServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.VMSCheckNRICServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
 		<display-name>ViewVisitorRecordServlet</display-name>
 		<servlet-name>ViewVisitorRecordServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.ViewVisitorRecordServlet</servlet-class>
@@ -167,6 +174,10 @@
 	<servlet-mapping>
 		<servlet-name>AddVisitorRecordServlet</servlet-name>
 		<url-pattern>/addVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VMSCheckNRICServlet</servlet-name>
+		<url-pattern>/vmsCheckNRIC</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ViewVisitorRecordServlet</servlet-name>
