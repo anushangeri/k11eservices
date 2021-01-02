@@ -82,8 +82,9 @@ public class VMSCheckNRICServlet extends HttpServlet {
 			responseObj.add("NRIC/FIN is invalid. Please try again: " + idNo);
 			request.setAttribute("responseObj", responseObj);
 			rd = request.getRequestDispatcher("vmsCheckNRIC.jsp");
+			rd.forward(request, response);
 		}
-        rd.forward(request, response);
+        
 	}
 	@Override
 	public void init() throws ServletException {
