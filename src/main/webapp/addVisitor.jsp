@@ -62,8 +62,8 @@
 					String hostNo = "";
 					String visitorCardId = "";
 
-					if (session.getAttribute("userInput") != null) {
-						userInput = (String) session.getAttribute("userInput");
+					if (request.getSession(false).getAttribute("usertype") != null) {
+						userInput = (String) request.getSession(false).getAttribute("usertype");
 					}
 					SpreadsheetService k11VMS = new SpreadsheetService("K11 VMS");
 					try {
