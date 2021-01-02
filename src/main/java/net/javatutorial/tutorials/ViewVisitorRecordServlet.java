@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.format.DateTimeFormatter;
 
 import net.javatutorial.DAO.EmployeesManagerDAO;
@@ -38,12 +39,28 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Visitor> vList = VMSManagerDAO.retrieveAll();
-		String message = "List of visitor records";
-		request.setAttribute("vList", vList);
-		if(vList == null || vList.size() == 0) {
-			message = "No visitor records available";
+		String idNo = (String) request.getSession(false).getAttribute("usertype");
+		String message = "No visitor records available";
+		ArrayList<Visitor> vList = null;
+		if(!StringUtils.isEmpty(idNo)) {
+			if(idNo.toUpperCase().equals("K11ADMIN")) {
+				vList = VMSManagerDAO.retrieveAll();
+				message = "List of visitor records";
+				request.setAttribute("vList", vList);
+				if(vList == null || vList.size() == 0) {
+					message = "No visitor records available";
+				}
+			}
+			else{
+				vList = VMSManagerDAO.retrieveByNRIC(idNo);
+				message = "List of visitor records for " + idNo;
+				request.setAttribute("vList", vList);
+				if(vList == null || vList.size() == 0) {
+					message = "No visitor records available for " + idNo;
+				}
+			}
 		}
+		
 		request.setAttribute("message", message);
         RequestDispatcher rd = request.getRequestDispatcher("vms.jsp");
         rd.forward(request, response);

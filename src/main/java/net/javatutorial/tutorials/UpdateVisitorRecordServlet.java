@@ -43,7 +43,8 @@ public class UpdateVisitorRecordServlet extends HttpServlet {
 		String message = "VMS ID of visitor is unavailable, please add visitor record.";
 		if(vmsId != null && !StringUtils.isEmpty(vmsId)) {
 			//retrieve Visitor object
-			v = VMSManagerDAO.retrieveVisitor(vmsId);
+			v = VMSManagerDAO.retrieveByVmsId(vmsId);
+			//update Visitor object with current system time as time out
 			message = VMSManagerDAO.updateVisitorTimeOut(v);
 			
 		}

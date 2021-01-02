@@ -148,7 +148,7 @@ public class VMSManagerDAO {
         return vList;
     }
 	
-	public static ArrayList<Visitor> retrieveByNRIC() {
+	public static ArrayList<Visitor> retrieveByNRIC(String idNo) {
         PreparedStatement pstmt = null;
         Connection connection = null;
         ResultSet rs = null;
@@ -160,7 +160,7 @@ public class VMSManagerDAO {
             		"              LAST_NAME, ID_NO, MOBILE_NO, \r\n" + 
             		"              VEHICLE_NO, HOST_NAME,\r\n" + 
             		"              HOST_CONTACT, VISTOR_CARD_ID,\r\n" + 
-            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS ORDER BY TIME_IN_DT DESC;";
+            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS WHERE ID_NO ='" + idNo + "' ORDER BY TIME_IN_DT DESC;";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
@@ -186,7 +186,7 @@ public class VMSManagerDAO {
         return vList;
     }
 	
-	public static Visitor retrieveVisitor(String vmsId) {
+	public static Visitor retrieveByVmsId(String vmsId) {
         PreparedStatement pstmt = null;
         Connection connection = null;
         ResultSet rs = null;
