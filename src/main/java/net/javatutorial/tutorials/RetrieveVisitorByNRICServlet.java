@@ -47,8 +47,9 @@ public class RetrieveVisitorByNRICServlet extends HttpServlet {
 		if(!StringUtils.isEmpty(idNo)) {
 			if(!idNo.toUpperCase().equals("K11ADMIN")) {
 				vList = VMSManagerDAO.retrieveByNRIC(idNo);
-				v = vList.get(0);
-				
+				if(vList != null && vList.size() > 0) {
+					v = vList.get(0);
+				}
 				if(v == null) {
 					SpreadsheetService k11VMS = new SpreadsheetService("K11 VMS");
 					try {

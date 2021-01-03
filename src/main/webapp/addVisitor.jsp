@@ -56,44 +56,44 @@
 								<label for="firstName">First Name: </label> <input type="text"
 									class="form-control" name="firstName"
 									oninput="this.value = this.value.toUpperCase()"
-									value=<%=((v == null) ? "" : v.getFirstName())%> required>
+									value="<%=((v == null) ? "" : v.getFirstName())%>" required>
 							</div>
 							<div class="form-group col-md-6">
 								<label for="lastName">Last Name: </label> <input type="text"
 									class="form-control" name="lastName"
 									oninput="this.value = this.value.toUpperCase()"
-									value=<%=((v == null) ? "" : v.getLastName())%> required>
+									value="<%=((v == null) ? "" : v.getLastName())%>" required>
 							</div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="idNo">IC Number: </label> <input type="text"
 								class="form-control" name="idNo"
 								oninput="this.value = this.value.toUpperCase()"
-								value=<%=((v == null) ? "" : v.getIdNo())%> minlength="8" maxlength="9" required>
+								value="<%=((v == null) ? "" : v.getIdNo())%>" maxlength="9" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="mobileNo">Mobile: </label> <input type="text"
 								class="form-control" name="mobileNo"
 								oninput="this.value = this.value.toUpperCase()"
-								value=<%=((v == null) ? "" : v.getMobileNo())%> required>
+								value="<%=((v == null) ? "" : v.getMobileNo())%>" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="vehicleNo">Vehicle Number: </label> <input
 								type="text" class="form-control" name="vehicleNo"
 								oninput="this.value = this.value.toUpperCase()"
-								value=<%=((v == null) ? "" : v.getVehicleNo())%> required>
+								value="<%=((v == null) ? "" : v.getVehicleNo())%>" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="hostName">Host Name: </label> <input type="text"
 								class="form-control" name="hostName"
 								oninput="this.value = this.value.toUpperCase()"
-								value=<%=((v == null) ? "" : v.getHostName())%> required>
+								value="<%=((v == null) ? "" : v.getHostName())%>" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="hostNo">Host Number: </label> <input type="text"
 								class="form-control" name="hostNo"
 								oninput="this.value = this.value.toUpperCase()"
-								value=<%=((v == null) ? "" : v.getHostNo())%> required>
+								value="<%=((v == null) ? "" : v.getHostNo())%>" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="timein">Time In: </label> <input
@@ -104,7 +104,7 @@
 							<label for="visitorCardId">Visitor Card ID: </label> <input
 								type="text" class="form-control" name="visitorCardId"
 								oninput="this.value = this.value.toUpperCase()"
-								value=<%=((v == null) ? "" : v.getVisitorCardId())%> required>
+								value="<%=((v == null) ? "" : v.getVisitorCardId())%>" required>
 						</div>
 						<button type="submit" class="btn btn-primary btn-lg active">Submit
 							Record</button>
