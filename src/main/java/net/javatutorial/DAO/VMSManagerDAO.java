@@ -25,7 +25,7 @@ public class VMSManagerDAO {
 	        stmt.executeUpdate("INSERT INTO VMS "
 	        		+  "(VMS_ID, FIRST_NAME, LAST_NAME, ID_NO, MOBILE_NO, VEHICLE_NO, HOST_NAME, HOST_CONTACT, VISTOR_CARD_ID, TIME_IN_DT)" + 
 	        		"   VALUES ('" +v.getVmsId()+ "','" +v.getFirstName()+ "','" +v.getLastName()+ "','" +v.getIdNo()+ "','" +v.getMobileNo()+ "','"
-	        		+v.getVehicleNo()+ "','" +v.getHostName()+ "','" +v.getHostNo()+ "','" +v.getVisitorCardId()+ "', NOW())");
+	        		+v.getVehicleNo()+ "','" +v.getHostName()+ "','" +v.getHostNo()+ "','" +v.getVisitorCardId()+ "', TO_CHAR(SYSDATE, 'MM/DD/YYYY HH12:MI:SS AM'))");
 	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS;");
 	        while (rs.next()) {
 	        	message = "Read from DB: " + rs.getTimestamp("tick");
