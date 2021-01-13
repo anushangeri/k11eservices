@@ -47,20 +47,6 @@ public class Visitor {
 		this.timeInDt = timeInDt;
 	}
 
-	public Visitor(String vmsId, String firstName, String lastName, String idNo, String mobileNo, String vehicleNo,
-			String hostName, String hostNo, String visitorCardId) {
-		super();
-		this.vmsId = vmsId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNo = idNo;
-		this.mobileNo = mobileNo;
-		this.vehicleNo = vehicleNo;
-		this.hostName = hostName;
-		this.hostNo = hostNo;
-		this.visitorCardId = visitorCardId;
-	}
-	
 	public String getVmsId() {
 		return vmsId;
 	}
