@@ -8,6 +8,7 @@
 <%@page import="com.google.gdata.data.spreadsheet.ListEntry"%>
 <%@page import="com.google.gdata.data.spreadsheet.ListFeed"%>
 <%@page import="com.google.gdata.util.ServiceException"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="net.javatutorial.entity.*"%>
 <!DOCTYPE html>
 <html>
@@ -61,6 +62,7 @@
 	<%
 		ArrayList<Visitor> vList = (ArrayList<Visitor>) request.getAttribute("vList");
 		String message = (String) request.getAttribute("message");
+		final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
 		if (message != null && !StringUtils.isEmpty(message)) {
 	%>
@@ -104,10 +106,10 @@
 									<td><%=v.getHostName()%></td>
 									<td><%=v.getHostNo()%></td>
 									<td><%=v.getVisitorCardId()%></td>
-									<td><%=v.getTimeInDt()%></td>
+									<td><%=sdf.format(v.getTimeInDt())%></td>
 									<!-- TO DO: if timeout is null - send to update servlet to update with system time -->
 									<% if (v.getTimeOutDt() != null) { %>
-										<td><%=v.getTimeOutDt()%></td>
+										<td><%=sdf.format(v.getTimeOutDt())%></td>
 									<%
 										}
 										else{
