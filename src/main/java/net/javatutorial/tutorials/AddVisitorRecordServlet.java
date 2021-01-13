@@ -47,15 +47,15 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		String hostName = request.getParameter("hostName");
 		String hostNo = request.getParameter("hostNo");
 		String visitorCardId = request.getParameter("visitorCardId");
-		String timeIn = request.getParameter("timeInDt");
-		// make sure the seconds are set before parsing because Chrome won't send the seconds part
-		// https://stackoverflow.com/questions/27827614/conversion-from-datetime-local-to-java-sql-timestamp
-		if (StringUtils.countMatches(timeIn, ":") == 1) {
-			timeIn += ":00";
-		}
-		Timestamp timeInDt = Timestamp.valueOf(timeIn.replace("T"," "));
+//		String timeIn = request.getParameter("timeInDt");
+//		// make sure the seconds are set before parsing because Chrome won't send the seconds part
+//		// https://stackoverflow.com/questions/27827614/conversion-from-datetime-local-to-java-sql-timestamp
+//		if (StringUtils.countMatches(timeIn, ":") == 1) {
+//			timeIn += ":00";
+//		}
+//		Timestamp timeInDt = Timestamp.valueOf(timeIn.replace("T"," "));
 		Visitor v = new Visitor( vmsId,  firstName,  lastName,  idNo,  mobileNo,  vehicleNo,
-			 hostName,  hostNo,  visitorCardId,  timeInDt);
+			 hostName,  hostNo,  visitorCardId);
 		
 		String message = VMSManagerDAO.addVisitor(v);
 		
