@@ -62,7 +62,7 @@
 	<%
 		ArrayList<Visitor> vList = (ArrayList<Visitor>) request.getAttribute("vList");
 		String message = (String) request.getAttribute("message");
-		final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss AM");
 		
 		if (message != null && !StringUtils.isEmpty(message)) {
 	%>
