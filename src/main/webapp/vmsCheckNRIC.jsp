@@ -18,7 +18,9 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
+    
 	<center>
+		<label><b>*Individuals are required to self-identify should they experience any COVID-19 symptoms.<b></label>
 		<form action="vmsCheckNRIC" method="post">
 			<div class="form-row">
 				<div class="form-group col-md-6">

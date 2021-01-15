@@ -47,6 +47,7 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		String hostName = request.getParameter("hostName");
 		String hostNo = request.getParameter("hostNo");
 		String visitorCardId = request.getParameter("visitorCardId");
+		String covidDec = request.getParameter("coviddeclaration");
 		String timeIn = request.getParameter("timeInDt");
 		Timestamp timeInDt = new Timestamp(System.currentTimeMillis());
 		// make sure the seconds are set before parsing because Chrome won't send the seconds part
@@ -55,7 +56,7 @@ public class AddVisitorRecordServlet extends HttpServlet {
 //			timeIn += ":00";
 //		}
 		Visitor v = new Visitor( vmsId,  firstName,  lastName,  idNo,  mobileNo,  vehicleNo,
-			 hostName,  hostNo,  visitorCardId,  timeInDt);
+			 hostName,  hostNo,  visitorCardId, covidDec,  timeInDt);
 		
 		String message = VMSManagerDAO.addVisitor(v);
 		
