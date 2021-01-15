@@ -114,7 +114,7 @@
 							• fever (feeling hot to the touch, a temperature of 37.8 degrees Celsius or higher)<br>
 							• new onset of cough (continuous, more than usual)<br>
 							• difficulty breathing<br>
-							<b>*Individuals are required to self-identify should they experience any COVID-19 symptoms.<b></label>
+							<b>*Individuals are required to self-identify should they experience any COVID-19 symptoms.</b></label>
 					</div>
 					<div class="form-row">
 						<button type="submit" class="btn btn-primary btn-lg active">Submit Record</button> 
