@@ -36,7 +36,7 @@ public class ViewVisitorRecordServlet extends HttpServlet {
 		String message = "No visitor records available";
 		ArrayList<Visitor> vList = null;
 		if(!StringUtils.isEmpty(idNo)) {
-			if(idNo.toUpperCase().equals("K11ADMIN")) {
+			if(idNo.toUpperCase().equals("K11ADMIN") || idNo.toUpperCase().equals("K11STAFF")) {
 				vList = VMSManagerDAO.retrieveAll();
 				message = "List of visitor records";
 				request.setAttribute("vList", vList);
