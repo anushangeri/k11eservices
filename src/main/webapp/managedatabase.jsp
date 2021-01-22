@@ -57,11 +57,11 @@
                   <button class="btn" type="submit">Create</button>
               </form>
           </td>
-	      <td><form action="updateEmpTbl" method="post">
+	      <td><form action="updateVmsTbl" method="post">
                   <button class="btn" type="submit">Update</button>
               </form>
           </td>
-	      <td><form action="deleteEmpTbl" method="post">
+	      <td><form action="deleteVmsTbl" method="post">
                   <button class="btn" type="submit">Delete</button>
               </form>
           </td>
