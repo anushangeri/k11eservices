@@ -87,6 +87,7 @@
 							<th class="th-sm">Host Contact Number</th>
 							<th class="th-sm">Visitor Pass ID</th>
 							<th class="th-sm">Covid Declaration?</th>
+							<th class="th-sm">Purpose of Visit</th>
 							<th class="th-sm">Time In</th>
 							<th class="th-sm">Time Out</th>
 						</tr>
@@ -109,6 +110,7 @@
 									<td><%=v.getHostNo()%></td>
 									<td><%=v.getVisitorCardId()%></td>
 									<td><%=((v.getCovidDeclare() == "null") ? "No" : v.getCovidDeclare())%></td>
+									<td><%=v.getVisitPurpose()%></td>
 									<td><%=sdf.format(v.getTimeInDt())%></td>
 									<!-- TO DO: if timeout is null - send to update servlet to update with system time -->
 									<% if (v.getTimeOutDt() != null) { %>
