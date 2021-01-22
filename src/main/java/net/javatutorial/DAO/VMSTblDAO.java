@@ -81,8 +81,8 @@ public class VMSTblDAO {
 			connection = Main.getConnection();
 			Statement stmt = connection.createStatement();
 //	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	        stmt.executeUpdate("(ALTER TABLE VMS\r\n" + 
-	        		"ADD COLUMN VISIT_PURPOSE VARCHAR (100) NOT NULL);");
+	        stmt.executeUpdate("ALTER TABLE VMS\r\n" + 
+	        		"ADD COLUMN VISIT_PURPOSE VARCHAR (100) NULL;");
 //	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 //	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 //	        while (rs.next()) {
