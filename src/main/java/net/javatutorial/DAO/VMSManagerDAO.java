@@ -55,7 +55,7 @@ public class VMSManagerDAO {
 			connection = Main.getConnection();
 			stmt = connection.createStatement();
 
-	        stmt.executeUpdate("SET time_zone = 'Singapore'; "
+	        stmt.executeUpdate("SET TIMEZONE = 'Singapore'; "
 	        		+ "UPDATE VMS "
 	        		+  "SET TIME_OUT_DT = NOW()" +
 	        		"   WHERE VMS_ID = '" + v.getVmsId() + "';");
