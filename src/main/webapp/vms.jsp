@@ -79,8 +79,8 @@
 					<thead>
 						<tr>
 							<th class="th-sm">S/N</th>
-							<th class="th-sm">First Name</th>
-							<th class="th-sm">Last Name</th>
+							<th class="th-sm">Name</th>
+							<th class="th-sm">Company Name</th>
 							<th class="th-sm">NRIC/FIN</th>
 							<th class="th-sm">Visitor Contact Number</th>
 							<th class="th-sm">Vehicle Number</th>
@@ -104,7 +104,7 @@
 								<tr>
 									<td><%=v.getVmsId()%></td>
 									<td><%=v.getName()%></td>
-									<td><%=v.getLastName()%></td>
+									<td><%=v.getCompanyName()%></td>
 									<td><%=v.getIdNo()%></td>
 									<td><%=v.getMobileNo()%></td>
 									<td><%=v.getVehicleNo()%></td>

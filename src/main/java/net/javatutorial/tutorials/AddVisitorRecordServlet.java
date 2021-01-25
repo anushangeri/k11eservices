@@ -42,7 +42,7 @@ public class AddVisitorRecordServlet extends HttpServlet {
 		
 		String vmsId = "" + nextVal;
 		String name = request.getParameter("name").trim();
-		String lastName = request.getParameter("lastName").trim();
+		String companyName = request.getParameter("companyName").trim();
 		String idNo = request.getParameter("idNo");
 		String mobileNo = request.getParameter("mobileNo");
 		String vehicleNo = request.getParameter("vehicleNo");
@@ -60,7 +60,7 @@ public class AddVisitorRecordServlet extends HttpServlet {
 //		if (StringUtils.countMatches(timeIn, ":") == 1) {
 //			timeIn += ":00";
 //		}
-		Visitor v = new Visitor( vmsId,  name,  lastName,  idNo,  mobileNo,  vehicleNo,
+		Visitor v = new Visitor( vmsId,  name,  companyName,  idNo,  mobileNo,  vehicleNo,
 			 hostName,  hostNo,  visitorCardId, covidDec, visitPurpose, temperature,  timestamp);
 		
 		String message = VMSManagerDAO.addVisitor(v);

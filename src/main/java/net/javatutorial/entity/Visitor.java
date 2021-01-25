@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 public class Visitor {
 	private String vmsId;
     private String name;
-    private String lastName;
+    private String companyName;
     private String idNo;
     private String mobileNo;
     private String vehicleNo;
@@ -19,13 +19,13 @@ public class Visitor {
     private Timestamp timeInDt;
     private Timestamp timeOutDt;
     
-	public Visitor(String vmsId, String name, String lastName, String idNo, String mobileNo, String vehicleNo,
+	public Visitor(String vmsId, String name, String companyName, String idNo, String mobileNo, String vehicleNo,
 			String hostName, String hostNo, String visitorCardId, String covidDeclare, String visitPurpose, String temperature,
 			Timestamp timeInDt, Timestamp timeOutDt) {
 		super();
 		this.vmsId = vmsId;
 		this.name = name;
-		this.lastName = lastName;
+		this.companyName = companyName;
 		this.idNo = idNo;
 		this.mobileNo = mobileNo;
 		this.vehicleNo = vehicleNo;
@@ -39,13 +39,13 @@ public class Visitor {
 		this.timeOutDt = timeOutDt;
 	}
 
-	public Visitor(String vmsId, String name, String lastName, String idNo, String mobileNo, String vehicleNo,
+	public Visitor(String vmsId, String name, String companyName, String idNo, String mobileNo, String vehicleNo,
 			String hostName, String hostNo, String visitorCardId, String covidDeclare, String visitPurpose, String temperature,
 			Timestamp timeInDt) {
 		super();
 		this.vmsId = vmsId;
 		this.name = name;
-		this.lastName = lastName;
+		this.companyName = companyName;
 		this.idNo = idNo;
 		this.mobileNo = mobileNo;
 		this.vehicleNo = vehicleNo;
@@ -74,12 +74,12 @@ public class Visitor {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getCompanyName() {
+		return companyName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	public String getIdNo() {
