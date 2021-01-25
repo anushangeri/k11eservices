@@ -183,7 +183,7 @@ public class Visitor {
 
 	@Override
 	public String toString() {
-		return "Visitor [vmsId=" + vmsId + ", name=" + name + ", lastName=" + lastName + ", idNo=" + idNo
+		return "Visitor [vmsId=" + vmsId + ", name=" + name + ", companyName=" + companyName + ", idNo=" + idNo
 				+ ", mobileNo=" + mobileNo + ", vehicleNo=" + vehicleNo + ", hostName=" + hostName + ", hostNo="
 				+ hostNo + ", visitorCardId=" + visitorCardId + ", covidDeclare=" + covidDeclare + ", visitPurpose="
 				+ visitPurpose + ", temperature=" + temperature + ", timeInDt=" + timeInDt + ", timeOutDt=" + timeOutDt
