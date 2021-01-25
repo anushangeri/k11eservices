@@ -103,7 +103,7 @@
 						%>
 								<tr>
 									<td><%=v.getVmsId()%></td>
-									<td><%=v.getFirstName()%></td>
+									<td><%=v.getName()%></td>
 									<td><%=v.getLastName()%></td>
 									<td><%=v.getIdNo()%></td>
 									<td><%=v.getMobileNo()%></td>

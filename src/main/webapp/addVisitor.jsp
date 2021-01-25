@@ -77,7 +77,7 @@
 							<label for="firstName">First Name: </label> <input type="text"
 								class="form-control" name="firstName"
 								oninput="this.value = this.value.toUpperCase()"
-								value="<%=((v == null) ? "" : v.getFirstName())%>" required>
+								value="<%=((v == null) ? "" : v.getName())%>" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="lastName">Last Name: </label> <input type="text"

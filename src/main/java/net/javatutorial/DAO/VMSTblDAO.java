@@ -83,7 +83,7 @@ public class VMSTblDAO {
 			Statement stmt = connection.createStatement();
 //	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
 	        stmt.executeUpdate("ALTER TABLE VMS\r\n" + 
-	        		"ADD COLUMN VISIT_PURPOSE VARCHAR (100) NULL;");
+	        		"RENAME COLUMN FIRST_NAME TO NAME;");
 //	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 //	        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 //	        while (rs.next()) {
