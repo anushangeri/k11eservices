@@ -63,6 +63,8 @@
 	<%
 		}
 		session.removeAttribute("usertype");
+		session.removeAttribute("name");
+		session.removeAttribute("idType");
 	%>
 	<center>
 		<b>*Individuals are required to self-identify should they
