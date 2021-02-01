@@ -72,10 +72,10 @@
 		<% 
 			if (vList != null && vList.size() > 0) {
 		%>
-			<div class="container body-content" id="tableview">
+			<div class="container body-content">
 				<table id="example"
 					class="table table-striped table-bordered table-sm sortable"
-					cellspacing="0" width="100%">
+					cellspacing="0" width="80%">
 					<thead>
 						<tr>
 							<th class="th-sm">S/N</th>
