@@ -90,8 +90,8 @@
 	background-color: #FFA8A4 !important;
 }
 #tableview{
-	width: 80% !important;
-	margin-left: 2% !important;
+	width: 70% !important;
+	margin-left: 1% !important;
 }
 
 body {

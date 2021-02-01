@@ -72,7 +72,7 @@
 		<% 
 			if (vList != null && vList.size() > 0) {
 		%>
-			<div class="container body-content">
+			<div class="container body-content" id="tableview">
 				<table id="example"
 					class="table table-striped table-bordered table-sm sortable"
 					cellspacing="0" width="80%">
