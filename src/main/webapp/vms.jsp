@@ -74,8 +74,7 @@
 		%>
 			<div class="container body-content" id="tableview">
 				<table id="example"
-					class="table table-striped table-bordered table-sm sortable"
-					cellspacing="0" width="80%">
+					class="table table-striped table-bordered table-sm sortable">
 					<thead>
 						<tr>
 							<th class="th-sm">S/N</th>
