@@ -124,7 +124,7 @@ public class VMSManagerDAO {
             		"              COMPANY_NAME, ID_TYPE, ID_NO, MOBILE_NO, \r\n" + 
             		"              VEHICLE_NO, HOST_NAME,\r\n" + 
             		"              HOST_CONTACT, VISTOR_CARD_ID, COVID_DECLARE, VISIT_PURPOSE, TEMPERATURE, \r\n" + 
-            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS ORDER BY TIME_IN_DT DESC;";
+            		"              TIME_IN_DT, TIME_OUT_DT FROM VMS ORDER BY TIME_IN_DT DESC; ";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
@@ -211,7 +211,7 @@ public class VMSManagerDAO {
             		"              TIME_IN_DT, TIME_OUT_DT "
             		+ "FROM VMS "
             		+ "WHERE NAME = '" + name + "' AND ID_NO ='" + idNo + "' AND ID_TYPE = '" + idType + "' "
-    				+ "ORDER BY TIME_IN_DT DESC LIMIT 1;";
+    				+ "ORDER BY TIME_IN_DT DESC LIMIT 1; ";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
