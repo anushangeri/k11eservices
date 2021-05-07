@@ -478,11 +478,14 @@
                   			           		if(todSiteCount > siteCount){
                   			           			status = eachSite + ": Access: " + (todSiteCount-siteCount) + " men";
                   			           		}
-                  			           		if(todSiteCount < siteCount){
+                  			           		else if(todSiteCount < siteCount){
                   			           			status = eachSite + ": Short: " + (siteCount-todSiteCount) + " men";
                   			           		}
-                  			           		if(todSiteCount == siteCount){
+                  			           		else if(todSiteCount == siteCount){
                   			           			status = eachSite+ ": Full strenght: " + (siteCount-todSiteCount) + " men";
+                  			           		}
+                  			           		else{
+                  			           			status = eachSite+ ": " + siteCount + " site but "+ todSiteCount ;
                   			           		}
                   			           		dutyRoasterMsg.add(status);
                   		             }
