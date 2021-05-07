@@ -494,7 +494,7 @@
                   			           		for(TodHodPair todHodDetails: todHodPairs){
                   			           			if(todHodDetails.getTodDate() != null && todHodDetails.getDutysite() != null &&
                   			           					!StringUtils.isEmpty(todHodDetails.getDutysite()) && !StringUtils.isEmpty(todHodDetails.getTodDateAsStr()) && 
-                  			           				todHodDetails.getDutysite().equals(eachSite) && todHodDetails.getTodDate().compareTo(currentDt) == 0){
+                  			           				todHodDetails.getDutysite().equals(eachSite) && todHodDetails.getTodDate().compareTo(fromDt) == 0){
                   			           				todSiteCount++;
                   			           			}
                   			           		}
