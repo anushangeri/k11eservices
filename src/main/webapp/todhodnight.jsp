@@ -512,7 +512,7 @@
 
 
         <div style="display: block; width: 100%" id="todhodtablediv">
-	            <display:table name="sessionScope.todHodPairs" pagesize="20"
+	            <display:table name="sessionScope.todHodPairs" pagesize="50"
 	                           export="true" sort="list" class="table">
 	                <display:column property="enternricfin" title="NRIC/FIN"
 	                                sortable="true" headerClass="sortable" />
