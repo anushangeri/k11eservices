@@ -439,7 +439,7 @@
                 //to display any shortfall based on TOD, shift, and number of SO required at Site for the system current date MM/DD/YYYY
                 if(!(session.getAttribute("usertype") == null)){
                 	String usertype = (String) session.getAttribute("usertype");
-                	if (usertype.equals("K11ADMIN") && fromDt.compareTo(currentDt) == 0) {
+                	if (usertype.equals("K11ADMIN")) {
                 		try {
                   	     	//Dropdown for duty site START
                   	         String dutySitesUrl
@@ -470,7 +470,7 @@
                   			           		for(TodHodPair todHodDetails: todHodPairs){
                   			           			if(todHodDetails.getTodDate() != null && todHodDetails.getDutysite() != null &&
                   			           					!StringUtils.isEmpty(todHodDetails.getDutysite()) && !StringUtils.isEmpty(todHodDetails.getTodDateAsStr()) && 
-                  			           				todHodDetails.getDutysite().equals(eachSite) && todHodDetails.getTodDate().compareTo(currentDt) == 0){
+                  			           				todHodDetails.getDutysite().equals(eachSite) && todHodDetails.getTodDate().compareTo(fromDt) == 0){
                   			           				todSiteCount++;
                   			           			}
                   			           		}
