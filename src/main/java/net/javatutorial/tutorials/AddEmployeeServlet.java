@@ -1,13 +1,15 @@
 package net.javatutorial.tutorials;
 
+import static java.util.Calendar.DATE;
+import static java.util.Calendar.MONTH;
+import static java.util.Calendar.YEAR;
+
 import java.io.IOException;
-import java.util.Date;
-import java.util.Locale;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,16 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.joda.time.format.DateTimeFormatter;
-
 import net.javatutorial.DAO.EmployeesManagerDAO;
-import net.javatutorial.DAO.EmployeesTblDAO;
 import net.javatutorial.entity.Employee;
-
-import java.util.Calendar;
-import java.util.Locale;
-import static java.util.Calendar.*;
-import java.util.Date;
 
 /**
  * Servlet implementation class AddEmployeeServlet
