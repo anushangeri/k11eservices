@@ -30,9 +30,8 @@ public class AddEmployeeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SimpleDateFormat formatter1 = new SimpleDateFormat("MM/DD/YYYY");  
 		
-		EmployeesManagerDAO empManagerDAO = new EmployeesManagerDAO();
 		
-		int nextVal = empManagerDAO.getNextVal();
+		int nextVal = EmployeesManagerDAO.getNextVal();
 		
 		String employeeId = "K11_" + nextVal;
 		String firstName = request.getParameter("firstName").trim();
@@ -112,7 +111,7 @@ public class AddEmployeeServlet extends HttpServlet {
 				 employeeStatus, highestQual, joiningDt, probDtFrm, probDtTo,
 				 hashedPassword, salt, created_dt, last_modified_dt);
 		
-		String responseObj = empManagerDAO.addEmployee(em);
+		String responseObj = EmployeesManagerDAO.addEmployee(em);
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
         rd.forward(request, response);

@@ -26,7 +26,7 @@ public class EmployeesManagerDAO {
 	        		+ "EMPLOYEE_STATUS, HIGHEST_QUAL, JOINING_DT, PROB_FROM_DT, PROB_TO_DT, "
 	        		+ "PASSWORD, SALT, CREATED_DT, MODIFIED_DT)" + 
 	        		"  VALUES ('" +em.getEmployeeId()+ "','" +em.getFirstName()+ "','" +em.getLastName()+ "','" 
-	        		+em.getGender()+ "','" +em.getMaritalStatus()+ "','" +em.getDob()+ "'," +em.getAge()+ ",'" 
+	        		+em.getGender()+ "','" +em.getMaritalStatus()+ "','" +em.getDob()+ "',0,'" 
 	        		+em.getNationality()+ "','" +em.getPob()+ "','" 
 	        		+em.getIdentification()+ "','" +em.getIdType()+ "','" +em.getIdNo()+ "','" 
 	        		+em.getReligion()+ "','" +em.getRace()+ "','" +em.getMobileNo()+ "','" +em.getEmail()+ "','"

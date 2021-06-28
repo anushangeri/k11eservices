@@ -29,9 +29,7 @@ public class CEmployeeTblServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		EmployeesTblDAO empTblDAO = new EmployeesTblDAO();
-		EmployeesManagerDAO empManagerDAO = new EmployeesManagerDAO();
-		String responseObj = empTblDAO.createEmpTbl();
+		String responseObj = EmployeesTblDAO.createEmpTbl();
 		
 		//creating an admin account
 		//standard password, allow officer to update later
@@ -50,7 +48,7 @@ public class CEmployeeTblServlet extends HttpServlet {
 				null, null, null, null, null,
 				 hashedPassword, salt, created_dt, last_modified_dt);
 		
-		responseObj = empManagerDAO.addEmployee(admin);
+		responseObj = EmployeesManagerDAO.addEmployee(admin);
 		
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("managedatabase.jsp");
