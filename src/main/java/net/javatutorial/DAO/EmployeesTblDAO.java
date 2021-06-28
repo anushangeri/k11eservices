@@ -21,7 +21,7 @@ public class EmployeesTblDAO {
 	        		"   EMPLOYEE_ID   VARCHAR (100)     NOT NULL,c" + 
 	        		"   FIRST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   LAST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
-	        		"   GENDER VARCHAR (2)      NULL,\r\n" + 
+	        		"   GENDER VARCHAR (50)      NULL,\r\n" + 
 	        		"   MARITAL_STATUS VARCHAR (50)     NULL, \r\n" + 
 	        		"   DOB TIMESTAMP    NOT NULL DEFAULT NOW(),\r\n" + 
 	        		"   AGE  INT      NULL,\r\n" + 
