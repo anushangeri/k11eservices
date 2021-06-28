@@ -34,7 +34,7 @@ public class EmployeesManagerDAO {
 	        		+em.getEmployeeStatus()+ "','" +em.getHighestQualification()+ "','" +em.getJoiningDt()+ "','" 
 	        		+em.getProbDtFrm()+ "','" +em.getProbDtTo()+ "','" +em.getPassword()+ "','" +em.getSalt()+ "','"
 	        		+em.getCreated_dt()+ "','" +em.getLast_modified_dt()+"');");
-	        rs = stmt.executeQuery("SELECT LAST(NAME) FROM EMPLOYEES;");
+	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM EMPLOYEES;");
 	        message = "Successful Added";
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
