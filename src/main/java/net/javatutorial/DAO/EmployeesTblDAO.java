@@ -18,7 +18,7 @@ public class EmployeesTblDAO {
 //	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
 	        stmt.executeUpdate("DROP TABLE IF EXISTS EMPLOYEES; \r\n"
 	        		+ "CREATE TABLE IF NOT EXISTS EMPLOYEES (\r\n" + 
-	        		"   EMPLOYEE_ID   VARCHAR (100)     NOT NULL,c" + 
+	        		"   EMPLOYEE_ID   VARCHAR (100)     NOT NULL," + 
 	        		"   FIRST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   LAST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   GENDER VARCHAR (50)      NULL,\r\n" + 
@@ -55,6 +55,7 @@ public class EmployeesTblDAO {
 //	        while (rs.next()) {
 //	        	responseObj = responseObj + "Read from DB: " + rs.getTimestamp("tick");
 //	        }
+	        message = "Successful";
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			message = "" + e;
@@ -64,7 +65,7 @@ public class EmployeesTblDAO {
 			//e.printStackTrace();
 			message = "" + e;
 		}
-		message = "Successful";
+		
 		return message;
 	}
 	public static String deleteEmpTbl(){
