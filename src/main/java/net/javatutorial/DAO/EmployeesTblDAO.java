@@ -16,9 +16,9 @@ public class EmployeesTblDAO {
 			connection = Main.getConnection();
 			Statement stmt = connection.createStatement();
 //	        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-	        stmt.executeUpdate("DROP TABLE IF EXISTS EMPLOYEES;"
+	        stmt.executeUpdate("DROP TABLE IF EXISTS EMPLOYEES; \r\n"
 	        		+ "CREATE TABLE IF NOT EXISTS EMPLOYEES (\r\n" + 
-	        		"   EMPLOYEE_ID   VARCHAR (100)     NOT NULL,\r\n" + 
+	        		"   EMPLOYEE_ID   VARCHAR (100)     NOT NULL,c" + 
 	        		"   FIRST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   LAST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   GENDER VARCHAR (2)      NULL,\r\n" + 
