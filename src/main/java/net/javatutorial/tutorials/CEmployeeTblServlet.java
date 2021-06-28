@@ -6,6 +6,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -39,14 +42,14 @@ public class CEmployeeTblServlet extends HttpServlet {
 		String salt = PasswordUtils.generateSalt(512).get();
 		String hashedPassword = PasswordUtils.hashPassword(password, salt).get();
 		
-		Date created_dt = (Date) Calendar.getInstance().getTime();
-		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
+		ZonedDateTime zdt = ZonedDateTime.now(ZoneId.of("Singapore")) ;
+		Timestamp timestamp = Timestamp.valueOf(zdt.toLocalDateTime());
 		
-		Employee admin = new Employee("K11_1", "K11ADMIN", "K11ADMIN", null, null, created_dt,
+		Employee admin = new Employee("K11_1", "K11ADMIN", "K11ADMIN", null, null, timestamp,
 				0, null, null, null, null, "S1234567D", null,
 				null, null, null, null, null, null,
-				null, null, created_dt, created_dt, created_dt,
-				 hashedPassword, salt, created_dt, last_modified_dt);
+				null, null, timestamp, timestamp, timestamp,
+				 hashedPassword, salt, timestamp, timestamp);
 		
 		responseObj = EmployeesManagerDAO.addEmployee(admin);
 		

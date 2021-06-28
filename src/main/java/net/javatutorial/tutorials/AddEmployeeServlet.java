@@ -5,8 +5,11 @@ import static java.util.Calendar.MONTH;
 import static java.util.Calendar.YEAR;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -45,12 +48,19 @@ public class AddEmployeeServlet extends HttpServlet {
 		Date probDtFrm = null;
 		Date probDtTo = null;
 		
+		Timestamp dobTs = null;
+		Timestamp joiningTs = null;
+		Timestamp probTsFrm = null;
+		Timestamp probTsTo = null;
+		
 		try {
 			Date curDt = new Date();
 			Calendar currDtCal = Calendar.getInstance(Locale.US);
 			currDtCal.setTime(curDt);
 			
 			dob = (Date) formatter1.parse(request.getParameter("dob"));
+			dobTs = new Timestamp(dob.getTime());  
+			
 			Calendar dobcal = Calendar.getInstance(Locale.US);
 			dobcal.setTime(dob);
 			
@@ -59,8 +69,6 @@ public class AddEmployeeServlet extends HttpServlet {
 		        (dobcal.get(MONTH) == currDtCal.get(MONTH) && dobcal.get(DATE) > currDtCal.get(DATE))) {
 		    	age--;
 		    }
-		    
-			
 			
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
@@ -85,11 +93,17 @@ public class AddEmployeeServlet extends HttpServlet {
 		String employeeStatus = request.getParameter("employeeStatus");
 		String highestQual = request.getParameter("highestQual");
 
-
+		
 		try {
 			joiningDt = (Date) formatter1.parse(request.getParameter("joiningDt"));
+			joiningTs = new Timestamp(joiningDt.getTime());  
+			
 			probDtFrm = (Date) formatter1.parse(request.getParameter("probDtFrm"));
+			probTsFrm = new Timestamp(probDtFrm.getTime());  
+			
 			probDtTo = (Date) formatter1.parse(request.getParameter("probDtTo"));
+			probTsTo = new Timestamp(probDtTo.getTime());  
+			
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,14 +116,14 @@ public class AddEmployeeServlet extends HttpServlet {
 		String salt = PasswordUtils.generateSalt(512).get();
 		String hashedPassword = PasswordUtils.hashPassword(password, salt).get();
 		
-		Date created_dt = (Date) Calendar.getInstance().getTime();
-		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
+		ZonedDateTime zdt = ZonedDateTime.now(ZoneId.of("Singapore")) ;
+		Timestamp timestamp = Timestamp.valueOf(zdt.toLocalDateTime());
 		
-		Employee em = new Employee(employeeId, firstName, lastName, gender, maritalStatus, dob,
+		Employee em = new Employee(employeeId, firstName, lastName, gender, maritalStatus, dobTs,
 				 age, nationality, pob, identification, idType, idNo, religion,
 				 race, mobileNo, email, emergencyName, emergencyRlp, emergencyNo,
-				 employeeStatus, highestQual, joiningDt, probDtFrm, probDtTo,
-				 hashedPassword, salt, created_dt, last_modified_dt);
+				 employeeStatus, highestQual, joiningTs, probTsFrm, probTsTo,
+				 hashedPassword, salt, timestamp, timestamp);
 		
 		String responseObj = EmployeesManagerDAO.addEmployee(em);
 		request.setAttribute("responseObj", responseObj);

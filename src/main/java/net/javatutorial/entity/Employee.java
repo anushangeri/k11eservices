@@ -1,5 +1,6 @@
 package net.javatutorial.entity;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Employee {
@@ -8,7 +9,7 @@ public class Employee {
     private String lastName;
     private String gender;
     private String maritalStatus;
-    private Date dob;
+    private Timestamp dob;
     private int age;
     private String nationality;
     private String pob;
@@ -24,20 +25,20 @@ public class Employee {
     private String emergencyNo;
     private String employeeStatus;
     private String highestQualification;
-    private Date joiningDt;
-    private Date probDtFrm;
-    private Date probDtTo;
+    private Timestamp joiningDt;
+    private Timestamp probDtFrm;
+    private Timestamp probDtTo;
     private String password;
     private String salt;
     
-    private Date created_dt;
-    private Date last_modified_dt;
+    private Timestamp created_dt;
+    private Timestamp last_modified_dt;
     
-	public Employee(String employeeId, String firstName, String lastName, String gender, String maritalStatus, Date dob,
+	public Employee(String employeeId, String firstName, String lastName, String gender, String maritalStatus, Timestamp dob,
 			int age, String nationality, String pob, String identification, String idType, String idNo, String religion,
 			String race, String mobileNo, String email, String emergencyName, String emergencyRlp, String emergencyNo,
-			String employeeStatus, String highestQualification, Date joiningDt, Date probDtFrm, Date probDtTo,
-			String password, String salt, Date created_dt, Date last_modified_dt) {
+			String employeeStatus, String highestQualification, Timestamp joiningDt, Timestamp probDtFrm, Timestamp probDtTo,
+			String password, String salt, Timestamp created_dt, Timestamp last_modified_dt) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
@@ -131,13 +132,13 @@ public class Employee {
 	/**
 	 * @return the dob
 	 */
-	public Date getDob() {
+	public Timestamp getDob() {
 		return dob;
 	}
 	/**
 	 * @param dob the dob to set
 	 */
-	public void setDob(Date dob) {
+	public void setDob(Timestamp dob) {
 		this.dob = dob;
 	}
 	/**
@@ -323,37 +324,37 @@ public class Employee {
 	/**
 	 * @return the joiningDt
 	 */
-	public Date getJoiningDt() {
+	public Timestamp getJoiningDt() {
 		return joiningDt;
 	}
 	/**
 	 * @param joiningDt the joiningDt to set
 	 */
-	public void setJoiningDt(Date joiningDt) {
+	public void setJoiningDt(Timestamp joiningDt) {
 		this.joiningDt = joiningDt;
 	}
 	/**
 	 * @return the probDtFrm
 	 */
-	public Date getProbDtFrm() {
+	public Timestamp getProbDtFrm() {
 		return probDtFrm;
 	}
 	/**
 	 * @param probDtFrm the probDtFrm to set
 	 */
-	public void setProbDtFrm(Date probDtFrm) {
+	public void setProbDtFrm(Timestamp probDtFrm) {
 		this.probDtFrm = probDtFrm;
 	}
 	/**
 	 * @return the probDtTo
 	 */
-	public Date getProbDtTo() {
+	public Timestamp getProbDtTo() {
 		return probDtTo;
 	}
 	/**
 	 * @param probDtTo the probDtTo to set
 	 */
-	public void setProbDtTo(Date probDtTo) {
+	public void setProbDtTo(Timestamp probDtTo) {
 		this.probDtTo = probDtTo;
 	}
 	/**
@@ -383,25 +384,25 @@ public class Employee {
 	/**
 	 * @return the created_dt
 	 */
-	public Date getCreated_dt() {
+	public Timestamp getCreated_dt() {
 		return created_dt;
 	}
 	/**
 	 * @param created_dt the created_dt to set
 	 */
-	public void setCreated_dt(Date created_dt) {
+	public void setCreated_dt(Timestamp created_dt) {
 		this.created_dt = created_dt;
 	}
 	/**
 	 * @return the last_modified_dt
 	 */
-	public Date getLast_modified_dt() {
+	public Timestamp getLast_modified_dt() {
 		return last_modified_dt;
 	}
 	/**
 	 * @param last_modified_dt the last_modified_dt to set
 	 */
-	public void setLast_modified_dt(Date last_modified_dt) {
+	public void setLast_modified_dt(Timestamp last_modified_dt) {
 		this.last_modified_dt = last_modified_dt;
 	}
 	@Override
