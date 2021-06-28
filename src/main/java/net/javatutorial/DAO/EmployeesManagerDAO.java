@@ -44,7 +44,7 @@ public class EmployeesManagerDAO {
 			//e.printStackTrace();
 			message = "" + e;
 		}
-		message = "Successful";
+		message = "Successful Added";
 		return message;
 	}
 	public static int getNextVal(){
