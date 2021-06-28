@@ -33,7 +33,7 @@ public class EmployeesManagerDAO {
 	        		+em.getEmergencyName()+ "','" +em.getEmergencyRlp()+ "','" +em.getEmergencyNo()+ "','" 
 	        		+em.getEmployeeStatus()+ "','" +em.getHighestQualification()+ "','" +em.getJoiningDt()+ "','" 
 	        		+em.getProbDtFrm()+ "','" +em.getProbDtTo()+ "','" +em.getPassword()+ "','" +em.getSalt()+ "','"
-	        		+em.getCreated_dt()+ "','" +em.getLast_modified_dt()+"')");
+	        		+em.getCreated_dt()+ "','" +em.getLast_modified_dt()+"');");
 	        rs = stmt.executeQuery("SELECT LAST(NAME) FROM EMPLOYEES;");
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
