@@ -42,10 +42,10 @@ public class CEmployeeTblServlet extends HttpServlet {
 		Date created_dt = (Date) Calendar.getInstance().getTime();
 		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
 		
-		Employee admin = new Employee("K11_1", "K11ADMIN", "K11ADMIN", null, null, null,
+		Employee admin = new Employee("K11_1", "K11ADMIN", "K11ADMIN", null, null, created_dt,
 				0, null, null, null, null, "S1234567D", null,
 				null, null, null, null, null, null,
-				null, null, null, null, null,
+				null, null, created_dt, created_dt, created_dt,
 				 hashedPassword, salt, created_dt, last_modified_dt);
 		
 		responseObj = EmployeesManagerDAO.addEmployee(admin);
