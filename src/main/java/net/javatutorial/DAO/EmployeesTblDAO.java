@@ -23,7 +23,7 @@ public class EmployeesTblDAO {
 	        		"   LAST_NAME VARCHAR (100)     NOT NULL,\r\n" + 
 	        		"   GENDER VARCHAR (2)      NULL,\r\n" + 
 	        		"   MARITAL_STATUS VARCHAR (50)     NULL, \r\n" + 
-	        		"   DOB DATE      NULL,\r\n" + 
+	        		"   DOB TIMESTAMP    NOT NULL DEFAULT NOW(),\r\n" + 
 	        		"   AGE  INT      NULL,\r\n" + 
 	        		"   NATIONALITY VARCHAR (100)      NULL,\r\n" + 
 	        		"   POB VARCHAR (100)     NULL, \r\n" + 
@@ -39,9 +39,9 @@ public class EmployeesTblDAO {
 	        		"   EMERGENCY_CONTACT  VARCHAR (100)  NULL,\r\n" + 
 	        		"   EMPLOYEE_STATUS VARCHAR(50)  NULL, \r\n" + 
 	        		"   HIGHEST_QUAL VARCHAR (100)      NULL, \r\n" + 
-	        		"   JOINING_DT DATE      NULL,\r\n" + 
-	        		"   PROB_FROM_DT DATE   NULL, \r\n" + 
-	        		"   PROB_TO_DT DATE   NULL,	\r\n" + 
+	        		"   JOINING_DT TIMESTAMP    NOT NULL DEFAULT NOW(),\r\n" + 
+	        		"   PROB_FROM_DT TIMESTAMP   NOT NULL DEFAULT NOW(), \r\n" + 
+	        		"   PROB_TO_DT TIMESTAMP   NOT NULL DEFAULT NOW(),	\r\n" + 
 	        		"   PASSWORD  VARCHAR (255) NOT NULL,   \r\n" + 
 	        		"   SALT  VARCHAR (8000) NOT NULL,   \r\n" + 
 	        		
