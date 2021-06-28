@@ -32,7 +32,7 @@ public class EmployeesTblDAO {
 	        		"   ID_NO VARCHAR (100)    NOT NULL, \r\n" + 
 	        		"   RELIGION VARCHAR (100)     NULL, \r\n" + 
 	        		"   RACE VARCHAR (100)     NULL,\r\n" + 
-	        		"   MOBILE_NO  VARCHAR (100) NOT NULL,   \r\n" + 
+	        		"   MOBILE_NO  VARCHAR (100)  NULL,   \r\n" + 
 	        		"   EMAIL  VARCHAR (100) NULL,\r\n" + 
 	        		"   EMERGENCY_NAME  VARCHAR (100)  NULL, \r\n" + 
 	        		"   EMERGENCY_RLP  VARCHAR (50) NULL,  \r\n" + 
@@ -47,7 +47,7 @@ public class EmployeesTblDAO {
 	        		
 
 	        		"   CREATED_DT TIMESTAMP  NOT NULL DEFAULT NOW(),\r\n" + 
-	        		"   MODIFIED_DT TIMESTAMP   NULL DEFAULT NOW(), \r\n" + 
+	        		"   MODIFIED_DT TIMESTAMP   NOT NULL DEFAULT NOW(), \r\n" + 
 	        		"   PRIMARY KEY (EMPLOYEE_ID) \r\n" + 
 	        		");");
 //	        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
