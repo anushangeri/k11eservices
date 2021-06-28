@@ -19,6 +19,7 @@ import org.joda.time.format.DateTimeFormatter;
 
 import net.javatutorial.DAO.EmployeesManagerDAO;
 import net.javatutorial.DAO.EmployeesTblDAO;
+import net.javatutorial.entity.Employee;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -33,7 +34,7 @@ public class AddEmployeeServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		SimpleDateFormat formatter1=new SimpleDateFormat("MM/DD/YYYY");  
+		SimpleDateFormat formatter1 = new SimpleDateFormat("MM/DD/YYYY");  
 		
 		EmployeesManagerDAO empManagerDAO = new EmployeesManagerDAO();
 		
@@ -46,12 +47,17 @@ public class AddEmployeeServlet extends HttpServlet {
 		String maritalStatus = request.getParameter("maritalStatus");
 		
 		int age = 0;
+		Date dob = null;
+		Date joiningDt = null;
+		Date probDtFrm = null;
+		Date probDtTo = null;
+		
 		try {
 			Date curDt = new Date();
 			Calendar currDtCal = Calendar.getInstance(Locale.US);
 			currDtCal.setTime(curDt);
 			
-			Date dob = (Date) formatter1.parse(request.getParameter("dob"));
+			dob = (Date) formatter1.parse(request.getParameter("dob"));
 			Calendar dobcal = Calendar.getInstance(Locale.US);
 			dobcal.setTime(dob);
 			
@@ -68,7 +74,6 @@ public class AddEmployeeServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		
 		String nationality = request.getParameter("nationality");
 		String pob = request.getParameter("pob");
 		String identification = request.getParameter("identification");
@@ -78,38 +83,42 @@ public class AddEmployeeServlet extends HttpServlet {
 		String race = request.getParameter("race");
 		
 		String mobileNo = request.getParameter("mobileNo");
+		String email = request.getParameter("email");
 		
 		String emergencyName = request.getParameter("emergencyName");
 		String emergencyRlp = request.getParameter("emergencyRlp");
 		String emergencyNo = request.getParameter("emergencyNo");
 		
-		String email = request.getParameter("email");
-		String allowLogin = request.getParameter("allowLogin");
-		
 		String employeeStatus = request.getParameter("employeeStatus");
+		String highestQual = request.getParameter("highestQual");
+
+
 		try {
-			Date joiningDt = (Date) formatter1.parse(request.getParameter("joiningDt"));
-			Date probDtFrm = (Date) formatter1.parse(request.getParameter("probDtFrm"));
-			Date probDtTo = (Date) formatter1.parse(request.getParameter("probDtTo"));
+			joiningDt = (Date) formatter1.parse(request.getParameter("joiningDt"));
+			probDtFrm = (Date) formatter1.parse(request.getParameter("probDtFrm"));
+			probDtTo = (Date) formatter1.parse(request.getParameter("probDtTo"));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		//standard password, allow officer to update later
+		String password = "P@ssw0rd";
 		
-		
-		String supervisor = request.getParameter("supervisor");
-		String highestQual = request.getParameter("highestQual");
-		
-		String password = "password";
-		
-		String created_by = "Shangeri";
-		String last_modified_by = "Shangeri";
+		//hashing the password
+		String salt = PasswordUtils.generateSalt(512).get();
+		String hashedPassword = PasswordUtils.hashPassword(password, salt).get();
 		
 		Date created_dt = (Date) Calendar.getInstance().getTime();
 		Date last_modified_dt = (Date) Calendar.getInstance().getTime();
 		
-		String responseObj = " " + age + employeeId;
+		Employee em = new Employee(employeeId, firstName, lastName, gender, maritalStatus, dob,
+				 age, nationality, pob, identification, idType, idNo, religion,
+				 race, mobileNo, email, emergencyName, emergencyRlp, emergencyNo,
+				 employeeStatus, highestQual, joiningDt, probDtFrm, probDtTo,
+				 hashedPassword, salt, created_dt, last_modified_dt);
+		
+		String responseObj = empManagerDAO.addEmployee(em);
 		request.setAttribute("responseObj", responseObj);
         RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
         rd.forward(request, response);

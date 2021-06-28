@@ -17,37 +17,9 @@
 	<servlet>
 		<description />
 
-		<display-name>CEmployeeTblServlet</display-name>
-		<servlet-name>CEmployeeTblServlet</servlet-name>
-		<servlet-class>net.javatutorial.tutorials.CEmployeeTblServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<description />
-
 		<display-name>CVMSTblServlet</display-name>
 		<servlet-name>CVMSTblServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.CVMSTblServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<description />
-
-		<display-name>DEmployeeTblServlet</display-name>
-		<servlet-name>DEmployeeTblServlet</servlet-name>
-		<servlet-class>net.javatutorial.tutorials.DEmployeeTblServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<description />
-
-		<display-name>AddEmployeeServlet</display-name>
-		<servlet-name>AddEmployeeServlet</servlet-name>
-		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<description />
-
-		<display-name>UEmployeeTblServlet</display-name>
-		<servlet-name>UEmployeeTblServlet</servlet-name>
-		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<display-name>UVMSTblServlet</display-name>
@@ -138,7 +110,32 @@
 		<servlet-name>VehRegLoginVerifyServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.VehRegLoginVerifyServlet</servlet-class>
 	</servlet>
-
+	<!-- Employee Module Start -->
+	<servlet>
+		<description />
+		<display-name>CEmployeeTblServlet</display-name>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UEmployeeTblServlet</display-name>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>DEmployeeTblServlet</display-name>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>AddEmployeeServlet</display-name>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
+	</servlet>
+	<!-- Employee Module End -->
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>

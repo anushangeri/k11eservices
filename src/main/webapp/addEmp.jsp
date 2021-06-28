@@ -308,7 +308,7 @@
 	      </select>
 	    </div>
 	    <div class="form-group col-md-6">
-	      <label for="idNumber">IC Number: </label>
+	      <label for="idNumber">ID Number: </label>
 	      <input type="text" class="form-control" name="lastName" placeholder="SxxxxxxxJ" minlength="9" maxlength="9" required>
 	    </div>
 	  </div>
@@ -397,22 +397,6 @@
 	    <div class="form-group col-md-6">
 	      <label for="probDtTo">Probation Date To: </label>
 	      <input class="form-control" id="date" name="probDtTo" placeholder="MM/DD/YYYY" type="text"/>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="supervisor">Supervisor: </label>
-	      <select name="supervisor" class="form-control" required>
-			<option value="Nantha">Nantha</option>
-			<option value="Sethu">Sethu</option>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-6">
-	      <label for="allowLogin">Allow Login 
-	      	<input class="form-check-input" type="checkbox" name="allowLogin" id="exampleRadios2" value="allowLogin">
-	      </label>
-	      
 	    </div>
 	  </div>
 	  

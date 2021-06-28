@@ -64,7 +64,7 @@
 							<img class="center-block" src="employeeparticulars.png"
 								alt="employeeparticulars.jpg">
 							<h4 class="fontheader">
-								<b>MANAGE EMPLOYEE PARTICULARS</b>
+								<b>ADD EMPLOYEE PARTICULARS</b>
 							</h4>
 						</div>
 					</a>
