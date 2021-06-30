@@ -117,8 +117,8 @@ body {
 	<h1 id="k11title">VMS DEMO</h1>
 	<center><b>by K11 SECURITY ENGINEERING</b></center>
 	<br>
-	<b>*Individuals are required to self-identify should they
-			experience any COVID-19 symptoms.</b> <br>
+	<center><b>*Individuals are required to self-identify should they
+			experience any COVID-19 symptoms.</b></center> <br>
 </body>
 
 
