@@ -59,12 +59,12 @@
 				</div>
 				<br>
 				<div class="card">
-					<a href="addEmp.jsp">
+					<a href="employeeLogin.jsp">
 						<div class="eachCard crop">
 							<img class="center-block" src="employeeparticulars.png"
 								alt="employeeparticulars.jpg">
 							<h4 class="fontheader">
-								<b>ADD EMPLOYEE PARTICULARS</b>
+								<b>K11 ATTENDANCE SYSTEM</b>
 							</h4>
 						</div>
 					</a>

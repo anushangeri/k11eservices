@@ -136,29 +136,21 @@
 		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
 	</servlet>
 	<!-- Employee Module End -->
+	<!-- Password Module Start -->
+	<servlet>
+		<description />
+		<display-name>ProcessPasswordServlet</display-name>
+		<servlet-name>ProcessPasswordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ProcessPasswordServlet</servlet-class>
+	</servlet>
+	<!-- Password Module End -->
 	<servlet-mapping>
 		<servlet-name>simpleServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>CEmployeeTblServlet</servlet-name>
-		<url-pattern>/createEmpTbl</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
 		<servlet-name>CVMSTblServlet</servlet-name>
 		<url-pattern>/createVmsTbl</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DEmployeeTblServlet</servlet-name>
-		<url-pattern>/deleteEmpTbl</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AddEmployeeServlet</servlet-name>
-		<url-pattern>/addEmployee</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>UEmployeeTblServlet</servlet-name>
-		<url-pattern>/updateEmpTbl</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>UVMSTblServlet</servlet-name>
@@ -212,4 +204,28 @@
 		<servlet-name>VehRegLoginVerifyServlet</servlet-name>
 		<url-pattern>/vehRegLoginVerify</url-pattern>
 	</servlet-mapping>
+	<!-- Employee Module Start -->
+	<servlet-mapping>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<url-pattern>/createEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<url-pattern>/updateEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<url-pattern>/deleteEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<url-pattern>/addEmployee</url-pattern>
+	</servlet-mapping>
+	<!-- Employee Module End -->
+	<!-- Password Module Start -->
+	<servlet-mapping>
+		<servlet-name>ProcessPasswordServlet</servlet-name>
+		<url-pattern>/verifyLogin</url-pattern>
+	</servlet-mapping>
+	<!-- Password Module End -->
 </web-app>
