@@ -225,183 +225,184 @@
 			<%
         }
     %>
-	<form action="addEmployee" method="post">
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="firstName">First Name: </label>
-	      <input type="text" class="form-control" name="firstName" placeholder="Enter First Name" required>
-	    </div>
-	    <div class="form-group col-md-6">
-	      <label for="lastName">Last Name: </label>
-	      <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name" required>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="email">Email: </label>
-	      <input type="email" class="form-control" name="email" placeholder="e.g. john.doe@gmail.com">
-	    </div>
-	    <div class="form-group col-md-6">
-	      <label for="mobileNo">Mobile Number: </label>
-	      <input type="tel" class="form-control" name="mobileNo" placeholder="e.g. 92233432" required>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-4">
-	      <label for="gender">Gender: </label>
-	      <select name="gender" class="form-control">
-	      	<option value="M">Male</option>
-	      	<option value="F">Female</option>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="maritalStatus">Marital Status: </label>
-	      <select name="maritalStatus" class="form-control">
-	      	<%
-			for(int i=0; i < maritalStatus.size(); i++)
-			{
-			%>
-			<option value="<%=maritalStatus.get(i)%>"> <%=maritalStatus.get(i)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="dob">Date of Birth: </label>
-	      <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYYY" type="text"/>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-4">
-	      <label for="nationality">Nationality: </label>
-	      <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="Singapore" data-flag="true" name="nationality" required></select>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="pob">Place of Birth: </label>
-	      <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="Singapore" data-flag="true" name="pob" required></select>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="identification">Identification: </label>
-	      <select name="identification" class="form-control" required>
-	      	<%
-			for(int j=0; j < identification.size(); j++)
-			{
-			%>
-			<option value="<%=identification.get(j)%>"> <%=identification.get(j)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="idType">ID Type: </label>
-	      <select name="idType" class="form-control" required>
-	      	<%
-			for(int k=0; k < idType.size(); k++)
-			{
-			%>
-			<option value="<%=idType.get(k)%>"> <%=idType.get(k)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-6">
-	      <label for="idNumber">ID Number: </label>
-	      <input type="text" class="form-control" name="lastName" placeholder="SxxxxxxxJ" minlength="9" maxlength="9" required>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="religion">Religion: </label>
-	      <select name="religion" class="form-control">
-	      	<%
-			for(int l=0; l < religion.size(); l++)
-			{
-			%>
-			<option value="<%=religion.get(l)%>"> <%=religion.get(l)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-6">
-	      <label for="race">Race: </label>
-	      <select name="race" class="form-control">
-	      	<%
-			for(int l=0; l < race.size(); l++)
-			{
-			%>
-			<option value="<%=race.get(l)%>"> <%=race.get(l)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-4">
-	      <label for="emergencyName">Emergency Contact Name: </label>
-	      <input type="text" class="form-control" name="emergencyName" placeholder="Enter Emergency Contact Name">
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="emergencyRlp">Emergency Contact Relationship: </label>
-	      <select name="emergencyRlp" class="form-control">
-	      	<%
-			for(int m=0; m < emergencyRlp.size(); m++)
-			{
-			%>
-			<option value="<%=emergencyRlp.get(m)%>"> <%=emergencyRlp.get(m)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="emergencyNo">Emergency Contact Number: </label>
-	      <input type="tel" class="form-control" name="emergencyNo" placeholder="e.g. 92233432">
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-4">
-	      <label for="employeeStatus">Employee Status: </label>
-	      <select name="employeeStatus" class="form-control" required>
-	      	<%
-			for(int n=0; n < employeeStatus.size(); n++)
-			{
-			%>
-			<option value="<%=employeeStatus.get(n)%>"> <%=employeeStatus.get(n)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="joiningDt">Joining Date: </label>
-	      <input class="form-control" id="date" name="joiningDt" placeholder="MM/DD/YYYY" type="text" required/>
-	    </div>
-	    <div class="form-group col-md-4">
-	      <label for="highestQual">Highest Qualification: </label>
-	      <select name="highestQual" class="form-control" required>
-	      	<%
-			for(int p=0; p < highestQual.size(); p++)
-			{
-			%>
-			<option value="<%=highestQual.get(p)%>"> <%=highestQual.get(p)%></option>
-			<% } %>
-	      </select>
-	    </div>
-	  </div>
-	  
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="probDtFrm">Probation Date From: </label>
-	      <input class="form-control" id="date" name="probDtFrm" placeholder="MM/DD/YYYY" type="text"/>
-	    </div>
-	    <div class="form-group col-md-6">
-	      <label for="probDtTo">Probation Date To: </label>
-	      <input class="form-control" id="date" name="probDtTo" placeholder="MM/DD/YYYY" type="text"/>
-	    </div>
-	  </div>
-	  
-	  <button type="submit" class="btn btn-primary">Add Employee</button>
-	</form>
-			
+    <center>
+		<form action="addEmployee" method="post">
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="firstName">First Name: </label>
+		      <input type="text" class="form-control" name="firstName" placeholder="Enter First Name" required>
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="lastName">Last Name: </label>
+		      <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name" required>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="email">Email: </label>
+		      <input type="email" class="form-control" name="email" placeholder="e.g. john.doe@gmail.com">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="mobileNo">Mobile Number: </label>
+		      <input type="tel" class="form-control" name="mobileNo" placeholder="e.g. 92233432" required>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-4">
+		      <label for="gender">Gender: </label>
+		      <select name="gender" class="form-control">
+		      	<option value="M">Male</option>
+		      	<option value="F">Female</option>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="maritalStatus">Marital Status: </label>
+		      <select name="maritalStatus" class="form-control">
+		      	<%
+				for(int i=0; i < maritalStatus.size(); i++)
+				{
+				%>
+				<option value="<%=maritalStatus.get(i)%>"> <%=maritalStatus.get(i)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="dob">Date of Birth: </label>
+		      <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYYY" type="text"/>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-4">
+		      <label for="nationality">Nationality: </label>
+		      <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="Singapore" data-flag="true" name="nationality" required></select>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="pob">Place of Birth: </label>
+		      <select class="selectpicker countrypicker form-control" data-live-search="true" data-default="Singapore" data-flag="true" name="pob" required></select>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="identification">Identification: </label>
+		      <select name="identification" class="form-control" required>
+		      	<%
+				for(int j=0; j < identification.size(); j++)
+				{
+				%>
+				<option value="<%=identification.get(j)%>"> <%=identification.get(j)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="idType">ID Type: </label>
+		      <select name="idType" class="form-control" required>
+		      	<%
+				for(int k=0; k < idType.size(); k++)
+				{
+				%>
+				<option value="<%=idType.get(k)%>"> <%=idType.get(k)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="idNumber">ID Number: </label>
+		      <input type="text" class="form-control" name="lastName" placeholder="SxxxxxxxJ" minlength="9" maxlength="9" required>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="religion">Religion: </label>
+		      <select name="religion" class="form-control">
+		      	<%
+				for(int l=0; l < religion.size(); l++)
+				{
+				%>
+				<option value="<%=religion.get(l)%>"> <%=religion.get(l)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="race">Race: </label>
+		      <select name="race" class="form-control">
+		      	<%
+				for(int l=0; l < race.size(); l++)
+				{
+				%>
+				<option value="<%=race.get(l)%>"> <%=race.get(l)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-4">
+		      <label for="emergencyName">Emergency Contact Name: </label>
+		      <input type="text" class="form-control" name="emergencyName" placeholder="Enter Emergency Contact Name">
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="emergencyRlp">Emergency Contact Relationship: </label>
+		      <select name="emergencyRlp" class="form-control">
+		      	<%
+				for(int m=0; m < emergencyRlp.size(); m++)
+				{
+				%>
+				<option value="<%=emergencyRlp.get(m)%>"> <%=emergencyRlp.get(m)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="emergencyNo">Emergency Contact Number: </label>
+		      <input type="tel" class="form-control" name="emergencyNo" placeholder="e.g. 92233432">
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-4">
+		      <label for="employeeStatus">Employee Status: </label>
+		      <select name="employeeStatus" class="form-control" required>
+		      	<%
+				for(int n=0; n < employeeStatus.size(); n++)
+				{
+				%>
+				<option value="<%=employeeStatus.get(n)%>"> <%=employeeStatus.get(n)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="joiningDt">Joining Date: </label>
+		      <input class="form-control" id="date" name="joiningDt" placeholder="MM/DD/YYYY" type="text" required/>
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="highestQual">Highest Qualification: </label>
+		      <select name="highestQual" class="form-control" required>
+		      	<%
+				for(int p=0; p < highestQual.size(); p++)
+				{
+				%>
+				<option value="<%=highestQual.get(p)%>"> <%=highestQual.get(p)%></option>
+				<% } %>
+		      </select>
+		    </div>
+		  </div>
+		  
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="probDtFrm">Probation Date From: </label>
+		      <input class="form-control" id="date" name="probDtFrm" placeholder="MM/DD/YYYY" type="text"/>
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="probDtTo">Probation Date To: </label>
+		      <input class="form-control" id="date" name="probDtTo" placeholder="MM/DD/YYYY" type="text"/>
+		    </div>
+		  </div>
+		  
+		  <button type="submit" class="btn btn-primary">Add Employee</button>
+		</form>
+	</center>		
 </body>
 </html>

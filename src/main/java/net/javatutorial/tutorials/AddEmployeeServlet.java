@@ -127,7 +127,7 @@ public class AddEmployeeServlet extends HttpServlet {
 		
 		String responseObj = EmployeesManagerDAO.addEmployee(em);
 		request.setAttribute("responseObj", responseObj);
-        RequestDispatcher rd = request.getRequestDispatcher("addEmp.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("employeeMain.jsp");
         rd.forward(request, response);
 	}
 	@Override
