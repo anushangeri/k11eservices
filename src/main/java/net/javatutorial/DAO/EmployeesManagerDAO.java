@@ -58,7 +58,7 @@ public class EmployeesManagerDAO {
 		try {
 			connection = Main.getConnection();
 			stmt = connection.createStatement();
-	        rs = stmt.executeQuery("SELECT MAX(EMPLOYEE_ID) FROM EMPLOYEES;");
+	        rs = stmt.executeQuery("SELECT MAX(REPLACE(Employee_id, 'K11_', '')) FROM EMPLOYEES;");
 	        if(rs != null) {
 	        	while (rs.next()) {
 		        	if(rs.getString(1) != null && !rs.getString(1).isEmpty()) {
