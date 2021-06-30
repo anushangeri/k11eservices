@@ -309,8 +309,8 @@
 		      </select>
 		    </div>
 		    <div class="form-group col-md-6">
-		      <label for="idNumber">ID Number: </label>
-		      <input type="text" class="form-control" name="lastName" placeholder="SxxxxxxxJ" minlength="9" maxlength="9" required>
+		      <label for="idNo">ID Number: </label>
+		      <input type="text" class="form-control" name="idNo" placeholder="SxxxxxxxJ" minlength="9" maxlength="9" required>
 		    </div>
 		  </div>
 		  
