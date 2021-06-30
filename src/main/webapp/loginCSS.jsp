@@ -89,7 +89,11 @@
 .list{
 	background-color: #FFA8A4 !important;
 }
-
+#tableview{
+	width: 80% !important;
+	margin-left: 2% !important;
+	margin-right: 5% !important;
+}
 
 body {
 	background-color: #F3F3F3;
@@ -97,33 +101,7 @@ body {
 </style>
 <nav class="navbar list" role="navigation">
 	<div class="container-fluid">
-	<%if ( !(session.getAttribute("usertype") == null)) {
-			String usertype = (String) session.getAttribute("usertype");
-			if (usertype.equals("K11SECURITY")) {
-	%>
-				<nav class="nav">
-				  <a class="nav-link active" href="todhodsearch.jsp">TOD/HOD Details</a>
-				  <a class="nav-link" href="/logout">Logout</a>
-				</nav>
-			<%} %>
-			<%if (usertype.equals("K11ADMIN")) {%>
-				<nav class="nav">
-				  <a class="nav-link active" href="employeeparticulars.jsp">Employee Particulars</a>
-				  <a class="nav-link" href="payslip.jsp">Generate Payslip</a>
-				  <a class="nav-link" href="todhodsearch.jsp">TOD/HOD Details</a>
-				  <a class="nav-link" href="/logout">Logout</a>
-				</nav>
-			<%} %>
-	<%} %>
-	
-	<%if ( !(session.getAttribute("siteUser") == null)) {
-		String usertype = (String) session.getAttribute("siteUser");
-	%>
-		<nav class="nav">
-		  <a class="nav-link" href="viewVehRegRec.jsp">Vehicle Registration Records</a>
-		  <a class="nav-link" href="/logout">Logout</a>
-		</nav>
-	<%} %>
+	<!-- add links in nav bar if request by client -->
 	</div>
 	<!-- /.container-fluid -->
 </nav>
@@ -133,10 +111,14 @@ body {
 	type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
-<title>K11 eSERVICE</title>
+<title>K11 VMS</title>
 </head>
 <body>
-	<h1 id="k11title">K11 SECURITY ENGINEERING eSERVICE PLATFORM</h1>
+	<h1 id="k11title">eSERVICE Platform</h1>
+	<center><b>by K11 SECURITY ENGINEERING</b></center>
+	<br>
+	<center><b>*Individuals are required to self-identify should they
+			experience any COVID-19 symptoms.</b></center> <br>
 </body>
 
 
