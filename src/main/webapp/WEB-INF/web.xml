@@ -135,6 +135,12 @@
 		<servlet-name>AddEmployeeServlet</servlet-name>
 		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description />
+		<display-name>ViewEmployeeRecordServlet</display-name>
+		<servlet-name>ViewEmployeeRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewEmployeeRecordServlet</servlet-class>
+	</servlet>
 	<!-- Employee Module End -->
 	<!-- Password Module Start -->
 	<servlet>
@@ -220,6 +226,10 @@
 	<servlet-mapping>
 		<servlet-name>AddEmployeeServlet</servlet-name>
 		<url-pattern>/addEmployee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewEmployeeRecordServlet</servlet-name>
+		<url-pattern>/retrieveAllEmployeeRecords</url-pattern>
 	</servlet-mapping>
 	<!-- Employee Module End -->
 	<!-- Password Module Start -->
