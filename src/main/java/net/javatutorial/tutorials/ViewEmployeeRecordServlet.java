@@ -25,10 +25,10 @@ public class ViewEmployeeRecordServlet extends HttpServlet {
 		String usertype = (String) request.getSession(false).getAttribute("usertype");
 		String idNo = (String) request.getSession(false).getAttribute("idNo");
 		String name = (String) request.getSession(false).getAttribute("name");
-		String message = "No vehicle records available for: " + name;
+		String message = "No employee records available for: " + name;
 		ArrayList<Employee> vList = null;
 		if(!StringUtils.isEmpty(idNo)) {
-			if(usertype != null) {
+			if(usertype != null && !usertype.toUpperCase().equals("SECURITY OFFICER")) {
 				vList = EmployeesManagerDAO.retrieveAll();
 				message = "List of employee records";
 				request.setAttribute("vList", vList);
