@@ -61,14 +61,6 @@ public class AddEmployeeServlet extends HttpServlet {
 			dob = (Date) formatter1.parse(request.getParameter("dob"));
 			dobTs = new Timestamp(dob.getTime());  
 			
-			Calendar dobcal = Calendar.getInstance(Locale.US);
-			dobcal.setTime(dob);
-			
-			age = currDtCal.get(YEAR) - dobcal.get(YEAR);
-		    if (dobcal.get(MONTH) > currDtCal.get(MONTH) || 
-		        (dobcal.get(MONTH) == currDtCal.get(MONTH) && dobcal.get(DATE) > currDtCal.get(DATE))) {
-		    	age--;
-		    }
 			
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
@@ -120,7 +112,7 @@ public class AddEmployeeServlet extends HttpServlet {
 		Timestamp timestamp = Timestamp.valueOf(zdt.toLocalDateTime());
 		
 		Employee em = new Employee(employeeId, firstName, lastName, gender, maritalStatus, dobTs,
-				 age, nationality, pob, identification, idType, idNo, religion,
+				 nationality, pob, identification, idType, idNo, religion,
 				 race, mobileNo, email, emergencyName, emergencyRlp, emergencyNo,
 				 employeeStatus, highestQual, joiningTs, probTsFrm, probTsTo,
 				 hashedPassword, salt, timestamp, timestamp);

@@ -10,7 +10,6 @@ public class Employee {
     private String gender;
     private String maritalStatus;
     private Timestamp dob;
-    private int age;
     private String nationality;
     private String pob;
     private String identification;
@@ -35,7 +34,7 @@ public class Employee {
     private Timestamp last_modified_dt;
     
 	public Employee(String employeeId, String firstName, String lastName, String gender, String maritalStatus, Timestamp dob,
-			int age, String nationality, String pob, String identification, String idType, String idNo, String religion,
+			String nationality, String pob, String identification, String idType, String idNo, String religion,
 			String race, String mobileNo, String email, String emergencyName, String emergencyRlp, String emergencyNo,
 			String employeeStatus, String highestQualification, Timestamp joiningDt, Timestamp probDtFrm, Timestamp probDtTo,
 			String password, String salt, Timestamp created_dt, Timestamp last_modified_dt) {
@@ -46,7 +45,6 @@ public class Employee {
 		this.gender = gender;
 		this.maritalStatus = maritalStatus;
 		this.dob = dob;
-		this.age = age;
 		this.nationality = nationality;
 		this.pob = pob;
 		this.identification = identification;
@@ -140,18 +138,6 @@ public class Employee {
 	 */
 	public void setDob(Timestamp dob) {
 		this.dob = dob;
-	}
-	/**
-	 * @return the age
-	 */
-	public int getAge() {
-		return age;
-	}
-	/**
-	 * @param age the age to set
-	 */
-	public void setAge(int age) {
-		this.age = age;
 	}
 	/**
 	 * @return the nationality
@@ -408,7 +394,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", gender=" + gender + ", maritalStatus=" + maritalStatus + ", dob=" + dob + ", age=" + age
+				+ ", gender=" + gender + ", maritalStatus=" + maritalStatus + ", dob=" + dob
 				+ ", nationality=" + nationality + ", pob=" + pob + ", identification=" + identification + ", idType="
 				+ idType + ", idNo=" + idNo + ", religion=" + religion + ", race=" + race + ", mobileNo=" + mobileNo
 				+ ", email=" + email + ", emergencyName=" + emergencyName + ", emergencyRlp=" + emergencyRlp

@@ -35,11 +35,11 @@
 	        }
   		%>	
 		<div class="container">
-			<form action="vms" method="get" >
+			<form action="retrieveAllEmployeeRecords" method="get" >
 				<button type="submit" id="removeBackground">
 					<div class="card bg-dark text-white">
 						<div class="card-body font-size-percent">
-							View Visitor Records<br> 
+							View Employee Records<br> 
 							Select this.
 
 						</div>
@@ -74,8 +74,6 @@
 				if (!userInput.toUpperCase().equals("SECURITY OFFICER")){ %>
 					<a href="addEmp.jsp" class="btn btn-warning btn-lg active"
 					role="button" aria-pressed="true">Create Employee Record</a>
-					<a href="/retrieveAllClientRecords" class="btn btn-warning btn-lg active"
-					role="button" aria-pressed="true">Manage Employee Records</a>
 					<br>
 				<%	
 				}
