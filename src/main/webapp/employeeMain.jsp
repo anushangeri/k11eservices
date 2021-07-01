@@ -26,7 +26,14 @@
 <body>
 	<center>
 		<label class="heading">Welcome! Hi, <%=request.getSession(false).getAttribute("name")%></label>
-			
+		 <%
+	        String responseObj = (String) request.getAttribute("responseObj");
+	        if (responseObj != null) {
+	            %>
+	            <label class="heading"><%=responseObj%></label>
+	            <%
+	        }
+  		%>	
 		<div class="container">
 			<form action="vms" method="get" >
 				<button type="submit" id="removeBackground">
