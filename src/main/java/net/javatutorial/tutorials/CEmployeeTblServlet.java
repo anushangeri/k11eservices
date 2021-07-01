@@ -46,7 +46,7 @@ public class CEmployeeTblServlet extends HttpServlet {
 		Timestamp timestamp = Timestamp.valueOf(zdt.toLocalDateTime());
 		
 		Employee admin = new Employee("K11_1", "K11ADMIN", "K11ADMIN", null, null, timestamp,
-				0, null, null, null, null, "S1234567D", null,
+				null, null, null, null, "S1234567D", null,
 				null, null, null, null, null, null,
 				null, null, timestamp, timestamp, timestamp,
 				 hashedPassword, salt, timestamp, timestamp);
